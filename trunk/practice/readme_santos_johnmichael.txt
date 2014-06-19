@@ -1,1 +1,0 @@
-John Michael Santo Santos y Rama
