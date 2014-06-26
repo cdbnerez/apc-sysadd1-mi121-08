@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Contact Us</h1>
+<h1>Recommendation Form</h1>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+If you have any recommendations, inquiries or other questions, please fill out the following form. Thank you.
 </p>
 
 <div class="form">
@@ -80,6 +80,7 @@ If you have business inquiries or other questions, please fill out the following
 
 <?php $this->endWidget(); ?>
 
+<h2 align=center> Thank You for your visiting our recommendation page. </h2>
 </div><!-- form -->
 
 <?php endif; ?>
