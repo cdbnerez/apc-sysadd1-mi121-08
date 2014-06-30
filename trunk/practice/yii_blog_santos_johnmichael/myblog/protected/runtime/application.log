@@ -1,0 +1,40 @@
+2014/06/30 10:48:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/User".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/User')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_santos_johnmichael\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=gii/User
+---
+2014/06/30 10:49:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "User".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_santos_johnmichael\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=User
+---
+2014/06/30 10:49:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_santos_johnmichael\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=user
+---
+2014/06/30 10:49:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_santos_johnmichael\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=post
+---
+2014/06/30 10:50:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_santos_johnmichael\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=Post
+---
