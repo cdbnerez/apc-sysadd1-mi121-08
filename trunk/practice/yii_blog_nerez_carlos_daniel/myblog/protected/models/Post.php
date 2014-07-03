@@ -50,12 +50,14 @@ class Post extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
-			'comments' => array(self::HAS_MANY, 'Comment', 'post_id'),
-			'author' => array(self::BELONGS_TO, 'User', 'author_id'),
-		);
+				'author' => array(self::BELONGS_TO, 'User', 'author_id'),
+				'comments' => array(self::HAS_MANY, 'Comment', 'post_id',
+				'condition'=>'comments.status='.Comment::STATUS_APPROVED,
+				'order'=>'comments.create_time DESC'),
+				'commentCount' => array(self::STAT, 'Comment', 'post_id',
+				'condition'=>'status='.Comment::STATUS APPROVED),
+				);
 	}
 
 	/**
