@@ -121,4 +121,20 @@ class Post extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function normalizeTags($attribute,$params)
+	{
+	$this->tags=Tag::array2string(array unique(Tag::string2array($this->tags)));
+	}
+	//where array2string and string2array are new methods we need to deﬁne in the Tag model
+	//class:
+	public static function string2array($tags)
+	{
+	return preg split(’/\s*,\s*/’,trim($tags),-1,PREG SPLIT NO EMPTY);
+	}
+	public static function array2string($tags)
+	{
+	return implode(’, ’,$tags);
+	}
+
 }
