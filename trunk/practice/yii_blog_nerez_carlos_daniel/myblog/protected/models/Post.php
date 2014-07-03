@@ -35,13 +35,13 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, status, author_id', 'required'),
-			array('status, create_time, update_time, author_id', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>128),
-			array('tags', 'safe'),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, tags, status, create_time, update_time, author_id', 'safe', 'on'=>'search'),
+                      array('title, content, status', 'required'),
+                      array('title', 'length', 'max'=>128),
+                      array('status', 'in', 'range'=>array(1,2,3)),
+                      array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/',
+					  'message'=>'Tags can only contain word characters.'),
+                      array('tags', 'normalizeTags'),
+                      array('title, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -113,8 +113,23 @@ class Post extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Post the static model class
 	 */
+	 
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
+	
+	public function normalizeTags($attribute,$params)
+    {
+        $this->tags=Tag::array2string(array unique(Tag::string2array($this->tags)));
+    }
+	
+    public static function string2array($tags)
+    {
+        return preg split('/\s*,\s*/',trim($tags),-1,PREG SPLIT NO EMPTY);
+    }
+    public static function array2string($tags)
+    {
+        return implode(', ',$tags);
+    }
 }
