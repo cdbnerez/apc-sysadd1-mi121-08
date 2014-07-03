@@ -21,6 +21,7 @@ class Comment extends CActiveRecord
 	const STATUS PENDING=1;
 	const STATUS APPROVED=2;
 	
+	
 	public function tableName()
 	{
 		return '{{comment}}';
