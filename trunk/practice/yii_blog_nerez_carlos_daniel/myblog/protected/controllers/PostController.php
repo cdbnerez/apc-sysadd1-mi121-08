@@ -170,7 +170,7 @@ class PostController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Post('search');
-		$model->unsetAttributes();  // clear any default values
+		//$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Post']))
 			$model->attributes=$_GET['Post'];
 
