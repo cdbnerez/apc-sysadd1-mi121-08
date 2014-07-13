@@ -162,4 +162,17 @@ class Post extends CActiveRecord
 		else
 			return false;
 	}
+
+	protected function afterSave()
+	{
+		parent::afterSave();
+		Tag::model()->updateFrequency($this->_oldTags, $this->tags);
+	}
+
+	private $_oldTags;
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->_oldTags=$this->tags;
+	}
 }
