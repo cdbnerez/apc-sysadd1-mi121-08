@@ -134,4 +134,12 @@ class Post extends CActiveRecord
     {
         return implode(', ',$tags);
     }
+	
+	public function getUrl()
+    {
+        return Yii::app()->createUrl('post/view', array(
+        'id'=>$this->id,
+        'title'=>$this->title,
+        ));
+    }
 }
