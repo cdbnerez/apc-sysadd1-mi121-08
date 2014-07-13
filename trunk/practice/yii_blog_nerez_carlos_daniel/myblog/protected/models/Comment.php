@@ -18,8 +18,8 @@
  */
 class Comment extends CActiveRecord
 	{
-	const STATUS PENDING=1;
-	const STATUS APPROVED=2;
+	const STATUS_PENDING=1;
+	const STATUS_APPROVED=2;
 	
 	
 	public function tableName()
