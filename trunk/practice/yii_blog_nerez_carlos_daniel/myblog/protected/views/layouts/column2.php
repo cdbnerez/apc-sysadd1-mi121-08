@@ -24,6 +24,7 @@
 
 <div id="sidebar">
     <?php if(!Yii::app()->user->isGuest) $this->widget('UserMenu'); ?>
+	<?php $this->widget('TagCloud', array('maxTags'=>Yii::app()->params['tagCloudCount'],)); ?>
 </div>
 
 <?php $this->endContent(); ?>
