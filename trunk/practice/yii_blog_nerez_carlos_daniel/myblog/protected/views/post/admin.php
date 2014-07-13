@@ -23,7 +23,7 @@ $this->breadcrumbs=array(
         ),
 		
         array(
-            'name'=>'create time',
+            'name'=>'create_time',
             'type'=>'datetime',
             'filter'=>false,
         ),

@@ -51,7 +51,7 @@ $this->menu=array(
 		</div>
 	<?php else: ?>
 	
-	<?php $this->renderPartial('/comment/ form',array(
+	<?php $this->renderPartial('/comment/_form',array(
 				'model'=>$comment,
 	)); ?>
 	<?php endif; ?>
