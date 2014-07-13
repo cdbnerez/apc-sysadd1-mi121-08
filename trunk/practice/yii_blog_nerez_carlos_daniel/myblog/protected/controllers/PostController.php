@@ -66,7 +66,7 @@ class PostController extends Controller
 			if($post->addComment($comment))
 			{
     			if($comment->status==Comment::STATUS_PENDING)
-    			Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted') //")" was user input 
+    			Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted'); //")" was user input 
 				$this->refresh();
 			}
 		}

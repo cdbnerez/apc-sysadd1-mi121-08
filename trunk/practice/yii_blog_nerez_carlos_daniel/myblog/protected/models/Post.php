@@ -192,7 +192,7 @@ class Post extends CActiveRecord
 		
 		else
 		$comment->status=Comment::STATUS_APPROVED;
-		$comment->post id=$this->id;
+		$comment->post_id=$this->id;
 		
 		return $comment->save();
 	}
