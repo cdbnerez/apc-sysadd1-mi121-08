@@ -115,7 +115,7 @@ class Lookup extends CActiveRecord
    	{
       	if(!isset(self::$_items[$type]))
       	self::loadItems($type);
-      	return isset(self::$ items[$type][$code]) ? self::$_items[$type][$code] : false;
+      	return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
    	}
 
    	private static function loadItems($type)

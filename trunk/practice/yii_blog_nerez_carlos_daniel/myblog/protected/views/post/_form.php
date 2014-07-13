@@ -60,10 +60,13 @@
 		<?php echo $form->textField($model,'author_id'); ?>
 		<?php echo $form->error($model,'author_id'); ?>
 	</div>
+	
+	<?php echo $form->dropDownList($model,'status',Lookup::items('PostStatus')); ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
+	
 
 <?php $this->endWidget(); ?>
 
