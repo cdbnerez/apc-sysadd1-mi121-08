@@ -133,7 +133,8 @@ class Post extends CActiveRecord
     {
         return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
     }
-    public static function array2string($tags)
+    
+	public static function array2string($tags)
     {
         return implode(', ',$tags);
     }
@@ -175,5 +176,12 @@ class Post extends CActiveRecord
 	{
 		parent::afterFind();
 		$this->_oldTags=$this->tags;
+	}
+	
+	protected function afterDelete()
+	{
+		parent::afterDelete();
+		Comment::model()->deleteAll('post id='.$this->id);
+		Tag::model()->updateFrequency($this->tags, '');
 	}
 }
