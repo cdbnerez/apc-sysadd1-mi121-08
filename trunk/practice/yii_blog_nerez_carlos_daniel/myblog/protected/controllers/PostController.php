@@ -46,11 +46,34 @@ class PostController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView()
 	{
+		$post=$this->loadModel();
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		'model'=>$post,
 		));
+	}
+	
+	private $_model;
+	
+	public function loadModel()
+	{
+		if($this->_model===null)
+		{
+			if(isset($_GET['id']))
+			{
+				if(Yii::app()->user->isGuest)
+				$condition='status='.Post::STATUS PUBLISHED
+					.' OR status='.Post::STATUS ARCHIVED;
+				else
+				$condition='';
+				$this->_model=Post::model()->findByPk($_GET['id'], $condition);
+			}
+			
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+		}
+		return $this->_model;
 	}
 
 	/**

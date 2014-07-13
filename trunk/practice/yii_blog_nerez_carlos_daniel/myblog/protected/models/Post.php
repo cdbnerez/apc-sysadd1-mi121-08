@@ -170,6 +170,7 @@ class Post extends CActiveRecord
 	}
 
 	private $_oldTags;
+	
 	protected function afterFind()
 	{
 		parent::afterFind();
