@@ -30,4 +30,17 @@ $this->menu=array(
 		'update_time',
 		'author_id',
 	),
-)); ?>
+)); 
+<div id="comments">
+    <?php if($model->commentCount>=1): ?>
+    <h3>
+        <?php echo $model->commentCount . 'comment(s)'; ?>
+    </h3>
+    <?php $this->renderPartial(' comments',array(
+                                'post'=>$model,
+                                'comments'=>$model->comments,
+    )); ?>
+    <?php endif; ?>
+</div>
+    
+?>
