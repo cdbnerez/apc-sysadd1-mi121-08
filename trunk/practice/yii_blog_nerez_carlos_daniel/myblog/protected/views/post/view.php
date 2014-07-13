@@ -30,9 +30,11 @@ $this->menu=array(
 		'update_time',
 		'author_id',
 	),
-)); 
+));     
+?>
 <div id="comments">
-    <?php if($model->commentCount>=1): ?>
+    
+	<?php if($model->commentCount>=1): ?>
     <h3>
         <?php echo $model->commentCount . 'comment(s)'; ?>
     </h3>
@@ -41,6 +43,17 @@ $this->menu=array(
                                 'comments'=>$model->comments,
     )); ?>
     <?php endif; ?>
+	
+	<h3>Leave a Comment</h3>
+	<?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
+		<div class="flash-success">
+			<?php echo Yii::app()->user->getFlash('commentSubmitted'); ?>
+		</div>
+	<?php else: ?>
+	
+	<?php $this->renderPartial('/comment/ form',array(
+				'model'=>$comment,
+	)); ?>
+	<?php endif; ?>
 </div>
-    
-?>
+
