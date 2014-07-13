@@ -63,8 +63,8 @@ class PostController extends Controller
 			if(isset($_GET['id']))
 			{
 				if(Yii::app()->user->isGuest)
-				$condition='status='.Post::STATUS PUBLISHED
-					.' OR status='.Post::STATUS ARCHIVED;
+				$condition='status='.Post::STATUS_PUBLISHED
+					.' OR status='.Post::STATUS_ARCHIVED;
 				else
 				$condition='';
 				$this->_model=Post::model()->findByPk($_GET['id'], $condition);
@@ -142,7 +142,23 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Post');
+		$criteria=new CDbCriteria(array(
+		'condition'=>'status='.Post::STATUS_PUBLISHED,
+		'order'=>'update time DESC',
+		'with'=>'commentCount',
+		));
+
+		if(isset($_GET['tag']))
+			$criteria->addSearchCondition('tags',$_GET['tag']);
+
+		$dataProvider=new CActiveDataProvider('Post', array(
+			'pagination'=>array(
+				'pageSize'=>5,
+			),
+			
+			'criteria'=>$criteria,
+		));
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -170,6 +186,7 @@ class PostController extends Controller
 	 * @return Post the loaded model
 	 * @throws CHttpException
 	 */
+	/**
 	public function loadModel($id)
 	{
 		$model=Post::model()->findByPk($id);
@@ -177,7 +194,7 @@ class PostController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
+    **/
 	/**
 	 * Performs the AJAX validation.
 	 * @param Post $model the model to be validated
