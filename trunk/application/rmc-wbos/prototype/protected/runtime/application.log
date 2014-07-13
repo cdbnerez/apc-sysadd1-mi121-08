@@ -504,3 +504,67 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=gii/crud/index
 HTTP_REFERER=http://localhost/prototype/index.php?r=gii/default/index
 ---
+2014/07/13 06:36:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbl_pos".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tbl_pos')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=tbl_pos
+---
+2014/07/13 06:36:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbl_post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tbl_post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=tbl_post
+---
+2014/07/13 06:36:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Tbl_post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Tbl_post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=Tbl_post
+---
+2014/07/13 06:36:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=Post
+---
+2014/07/13 06:36:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=post
+---
+2014/07/13 06:49:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "PaymentMethod".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('PaymentMethod')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=PaymentMethod
+---
+2014/07/13 06:49:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymentMethod".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod
+---
+2014/07/13 06:49:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymentmethod".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentmethod')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=paymentmethod
+---

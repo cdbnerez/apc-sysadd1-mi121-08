@@ -56,7 +56,7 @@ class Post extends CActiveRecord
 				'condition'=>'comments.status='.Comment::STATUS_APPROVED,
 				'order'=>'comments.create_time DESC'),
 				'commentCount' => array(self::STAT, 'Comment', 'post_id',
-				'condition'=>'status='.Comment::STATUS APPROVED),
+				'condition'=>'status='.Comment::STATUS_APPROVED),
 				);
 	}
 
@@ -123,12 +123,12 @@ class Post extends CActiveRecord
 	
 	public function normalizeTags($attribute,$params)
     {
-        $this->tags=Tag::array2string(array unique(Tag::string2array($this->tags)));
+        $this->tags=Tag::array2string(array_unique(Tag::string2array($this->tags)));
     }
 	
     public static function string2array($tags)
     {
-        return preg split('/\s*,\s*/',trim($tags),-1,PREG SPLIT NO EMPTY);
+        return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
     }
     public static function array2string($tags)
     {
