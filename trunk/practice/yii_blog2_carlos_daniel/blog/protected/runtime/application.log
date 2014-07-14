@@ -1,0 +1,8 @@
+2014/07/14 10:52:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/default/login".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/default/log...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog2_carlos_daniel\blog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog2/index.php?r=gii/default/login
+---
