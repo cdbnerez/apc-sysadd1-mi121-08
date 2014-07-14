@@ -1,0 +1,221 @@
+2014/07/13 07:59:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact;".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('contact;')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('contact;')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/contact;')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/myblog/index.php?r=site/contact;
+---
+2014/07/13 10:59:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'myblog.comment' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `comment`.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php (13)
+2014/07/13 11:00:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "User".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('User')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=User
+---
+2014/07/13 11:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/Post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/Post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=gii/Post
+---
+2014/07/13 11:01:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=post
+---
+2014/07/13 11:01:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=Post
+---
+2014/07/13 11:01:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbl_post".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tbl_post')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=tbl_post
+---
+2014/07/13 18:16:09 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity.demo" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(10): CComponent->__get('demo')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#2 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:18:46 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "validatePassword".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): CActiveRecord->__call('validatePasswor...', Array)
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:43:47 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('salt')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\User.php(21): CActiveRecord->__get('salt')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:45:14 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('salt')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\User.php(21): CActiveRecord->__get('salt')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:50:22 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('salt')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\User.php(21): CActiveRecord->__get('salt')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:52:43 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('salt')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\User.php(21): CActiveRecord->__get('salt')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/13 18:54:14 [error] [exception.CException] exception 'CException' with message 'Property "User.salt" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('salt')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\User.php(21): CActiveRecord->__get('salt')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\components\UserIdentity.php(14): User->validatePassword('1234')
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
+2014/07/14 08:53:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_sample_blog\myblog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/myblog/index.php?r=post/admin
+HTTP_REFERER=http://localhost/myblog/index.php?r=post/create
+---
