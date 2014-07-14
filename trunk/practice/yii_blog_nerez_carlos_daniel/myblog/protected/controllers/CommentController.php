@@ -186,7 +186,8 @@ class CommentController extends Controller
 			$this->redirect(array('index'));
 		}
 		else
-			throw new CHttpException(400,'Invalid request...');
+
+		throw new CHttpException(400,'Invalid request...');
 	}
 	
 }

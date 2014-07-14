@@ -2,6 +2,23 @@
 
 class PostController extends Controller
 {
+	public function accessRules()
+	{
+		return array(
+			array('allow', // allow all users to perform 'list' and 'show' actions
+			'actions'=>array('index', 'view'),
+			'users'=>array('*'),
+			),
+
+			array('allow', // allow authenticated users to perform any action
+			'users'=>array('@'),
+			),
+
+			array('deny', // deny all users
+			'users'=>array('*'),
+			),
+		);
+	}
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -24,23 +41,6 @@ class PostController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow', // allow all users to perform 'list' and 'show' actions
-			'actions'=>array('index', 'view'),
-			'users'=>array('*'),
-			),
-
-			array('allow', // allow authenticated users to perform any action
-			'users'=>array('@'),
-			),
-
-			array('deny', // deny all users
-			'users'=>array('*'),
-			),
-		);
-	}
 
 	/**
 	 * Displays a particular model.
@@ -48,13 +48,30 @@ class PostController extends Controller
 	 */
 	public function actionView()
     {
-    $post=$this->loadModel();
-    $comment=$this->newComment($post);
-    $this->render('view',array(
-        'model'=>$post,
-        'comment'=>$comment,
-        ));
+        $post=$this->loadModel();
+        $comment=$this->newComment($post);
+        
+		$this->render('view',array(
+            'model'=>$post,
+            'comment'=>$comment,
+            ));
     }
+	
+	protected function newComment($post)
+	{
+    	$comment=new Comment;
+    	if(isset($_POST['Comment']))
+		{
+            $comment->attributes=$_POST['Comment'];
+			if($post->addComment($comment))
+			{
+    			if($comment->status==Comment::STATUS_PENDING)
+    			Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted'); //")" was user input 
+				$this->refresh();
+			}
+		}
+		return $comment;
+	}
 
 	private $_model;
 	
@@ -75,25 +92,8 @@ class PostController extends Controller
 		if($this->_model===null)
 		throw new CHttpException(404,'The requested page does not exist.');
 		}
-	return $this->_model;
+		return $this->_model;
 	}
-
-	protected function newComment($post)
-	{
-    	$comment=new Comment;
-    	if(isset($_POST['Comment']))
-		{
-            $comment->attributes=$_POST['Comment'];
-			if($post->addComment($comment))
-			{
-    			if($comment->status==Comment::STATUS_PENDING)
-    			Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted'); //")" was user input 
-				$this->refresh();
-			}
-		}
-		return $comment;
-	}
-	
 
 	/**
 	 * Creates a new model.

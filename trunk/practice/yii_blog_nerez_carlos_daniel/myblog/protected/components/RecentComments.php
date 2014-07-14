@@ -16,3 +16,4 @@ class RecentComments extends CPortlet
         $this->render('recentComments');
     }
 }
+?>

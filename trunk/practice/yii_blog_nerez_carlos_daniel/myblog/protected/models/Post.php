@@ -22,6 +22,15 @@ class Post extends CActiveRecord
     const STATUS_DRAFT=1;
     const STATUS_PUBLISHED=2;
     const STATUS_ARCHIVED=3;
+	
+	public function getUrl()
+    {
+        return Yii::app()->createUrl('post/view', array(
+        'id'=>$this->id,
+        'title'=>$this->title,
+        ));
+    }
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -128,25 +137,7 @@ class Post extends CActiveRecord
     {
         $this->tags=Tag::array2string(array_unique(Tag::string2array($this->tags)));
     }
-	
-    public static function string2array($tags)
-    {
-        return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
-    }
-    
-	public static function array2string($tags)
-    {
-        return implode(', ',$tags);
-    }
-	
-	public function getUrl()
-    {
-        return Yii::app()->createUrl('post/view', array(
-        'id'=>$this->id,
-        'title'=>$this->title,
-        ));
-    }
-
+		
 	protected function beforeSave()
 	{
 		if(parent::beforeSave())
@@ -181,19 +172,18 @@ class Post extends CActiveRecord
 	protected function afterDelete()
 	{
 		parent::afterDelete();
-		Comment::model()->deleteAll('post id='.$this->id);
+		Comment::model()->deleteAll('post_id='.$this->id);
 		Tag::model()->updateFrequency($this->tags, '');
 	}
 	
 	public function addComment($comment)
 	{
 		if(Yii::app()->params['commentNeedApproval'])
-		$comment->status=Comment::STATUS_PENDING;
-		
+			$comment->status=Comment::STATUS_PENDING;
 		else
-		$comment->status=Comment::STATUS_APPROVED;
-		$comment->post_id=$this->id;
+			$comment->status=Comment::STATUS_APPROVED;
 		
+		$comment->post_id=$this->id;
 		return $comment->save();
 	}
 }

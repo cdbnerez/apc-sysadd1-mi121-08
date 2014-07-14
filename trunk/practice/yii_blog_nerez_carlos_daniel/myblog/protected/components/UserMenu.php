@@ -15,3 +15,4 @@ class UserMenu extends CPortlet
         $this->render('userMenu');
     }
 }
+?>

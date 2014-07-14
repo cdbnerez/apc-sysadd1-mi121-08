@@ -18,8 +18,8 @@
  */
 class Comment extends CActiveRecord
 	{
-
-	
+		const STATUS_PENDING=1;
+		const STATUS_APPROVED=2;
 	
 	public function tableName()
 	{
@@ -146,9 +146,6 @@ class Comment extends CActiveRecord
 		}
 		return $comment;
 	}
-	
-	const STATUS_PENDING=1;
-	const STATUS_APPROVED=2;
 	
 	public function approve()
 	{
