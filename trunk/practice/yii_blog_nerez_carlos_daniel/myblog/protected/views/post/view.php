@@ -38,11 +38,12 @@ $this->menu=array(
     <h3>
         <?php echo $model->commentCount . 'comment(s)'; ?>
     </h3>
-    <?php $this->renderPartial(' comments',array(
+    <?php $this->renderPartial('_comments',array(
                                 'post'=>$model,
                                 'comments'=>$model->comments,
     )); ?>
     <?php endif; ?>
+	
 	
 	<h3>Leave a Comment</h3>
 	<?php if(Yii::app()->user->hasFlash('commentSubmitted')): ?>
@@ -55,5 +56,7 @@ $this->menu=array(
 				'model'=>$comment,
 	)); ?>
 	<?php endif; ?>
-</div>
+	
+	
+</div><!-- comments -->
 

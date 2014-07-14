@@ -47,13 +47,15 @@ class PostController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView()
-	{
-		$post=$this->loadModel();
-		$this->render('view',array(
-			'model'=>$post,
-			));
-	}
-	
+    {
+    $post=$this->loadModel();
+    $comment=$this->newComment($post);
+    $this->render('view',array(
+        'model'=>$post,
+        'comment'=>$comment,
+        ));
+    }
+
 	private $_model;
 	
 	public function loadModel()
@@ -81,8 +83,7 @@ class PostController extends Controller
     	$comment=new Comment;
     	if(isset($_POST['Comment']))
 		{
-
-			$comment->attributes=$_POST['Comment'];
+            $comment->attributes=$_POST['Comment'];
 			if($post->addComment($comment))
 			{
     			if($comment->status==Comment::STATUS_PENDING)
@@ -92,6 +93,7 @@ class PostController extends Controller
 		}
 		return $comment;
 	}
+	
 
 	/**
 	 * Creates a new model.
