@@ -15,3 +15,13 @@ Stack trace:
 REQUEST_URI=/myblog/index.php?r=comment/admin
 HTTP_REFERER=http://localhost/myblog/index.php?r=comment/index
 ---
+2014/07/09 02:35:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/crud/index....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\practice\yii_blog_nerez_carlos_daniel\myblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/myblog/index.php?r=gii/crud/index.php
+---
