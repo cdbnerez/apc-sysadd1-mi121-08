@@ -2,13 +2,13 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE SCHEMA IF NOT EXISTS `RMC` DEFAULT CHARACTER SET utf8 ;
-USE `RMC` ;
+CREATE SCHEMA IF NOT EXISTS `rmc-wbos` DEFAULT CHARACTER SET utf8 ;
+USE `rmc-wbos` ;
 
 -- -----------------------------------------------------
--- Table `RMC`.`customer`
+-- Table `rmc-wbos`.`customer`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`customer` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`customer` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `cus_type` VARCHAR(45) NOT NULL,
   `cus_company` VARCHAR(45) NULL,
@@ -22,9 +22,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`delivery`
+-- Table `rmc-wbos`.`delivery`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`delivery` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`delivery` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `del_add` VARCHAR(45) NOT NULL,
   `del_city` VARCHAR(45) NOT NULL,
@@ -35,16 +35,16 @@ CREATE TABLE IF NOT EXISTS `RMC`.`delivery` (
   INDEX `fk_delivery_customer1_idx` (`customer_id` ASC),
   CONSTRAINT `fk_delivery_customer1`
     FOREIGN KEY (`customer_id`)
-    REFERENCES `RMC`.`customer` (`id`)
+    REFERENCES `rmc-wbos`.`customer` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`payment_terms`
+-- Table `rmc-wbos`.`payment_terms`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`payment_terms` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`payment_terms` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `pay_terms` INT NOT NULL,
   `pay_per_month` INT NOT NULL,
@@ -54,9 +54,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`payment_method`
+-- Table `rmc-wbos`.`payment_method`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`payment_method` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`payment_method` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `payment_type` VARCHAR(5) NOT NULL,
   `payment_desc` VARCHAR(45) NOT NULL,
@@ -71,16 +71,16 @@ CREATE TABLE IF NOT EXISTS `RMC`.`payment_method` (
   INDEX `fk_payment_method_payment_terms1_idx` (`payment_terms_id` ASC),
   CONSTRAINT `fk_payment_method_payment_terms1`
     FOREIGN KEY (`payment_terms_id`)
-    REFERENCES `RMC`.`payment_terms` (`id`)
+    REFERENCES `rmc-wbos`.`payment_terms` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`order`
+-- Table `rmc-wbos`.`order`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`order` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`order` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `order_date` VARCHAR(45) NOT NULL,
   `order_total` DECIMAL NOT NULL,
@@ -95,26 +95,26 @@ CREATE TABLE IF NOT EXISTS `RMC`.`order` (
   INDEX `fk_order_payment_method1_idx` (`payment_method_id` ASC),
   CONSTRAINT `fk_order_customer1`
     FOREIGN KEY (`customer_id`)
-    REFERENCES `RMC`.`customer` (`id`)
+    REFERENCES `rmc-wbos`.`customer` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_delivery1`
     FOREIGN KEY (`delivery_id`)
-    REFERENCES `RMC`.`delivery` (`id`)
+    REFERENCES `rmc-wbos`.`delivery` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_payment_method1`
     FOREIGN KEY (`payment_method_id`)
-    REFERENCES `RMC`.`payment_method` (`id`)
+    REFERENCES `rmc-wbos`.`payment_method` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`item_inventory`
+-- Table `rmc-wbos`.`item_inventory`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`item_inventory` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`item_inventory` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `item_desc` VARCHAR(100) NOT NULL,
   `item_price` DECIMAL NOT NULL,
@@ -123,9 +123,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `RMC`.`order_list`
+-- Table `rmc-wbos`.`order_list`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `RMC`.`order_list` (
+CREATE TABLE IF NOT EXISTS `rmc-wbos`.`order_list` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `item_qty` INT NOT NULL,
   `item_inventory_id` INT NOT NULL,
@@ -135,12 +135,12 @@ CREATE TABLE IF NOT EXISTS `RMC`.`order_list` (
   INDEX `fk_order_list_order1_idx` (`order_id` ASC),
   CONSTRAINT `fk_order_list_item_inventory1`
     FOREIGN KEY (`item_inventory_id`)
-    REFERENCES `RMC`.`item_inventory` (`id`)
+    REFERENCES `rmc-wbos`.`item_inventory` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_list_order1`
     FOREIGN KEY (`order_id`)
-    REFERENCES `RMC`.`order` (`id`)
+    REFERENCES `rmc-wbos`.`order` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
