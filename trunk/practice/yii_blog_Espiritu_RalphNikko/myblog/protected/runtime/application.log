@@ -1,0 +1,24 @@
+2014/07/20 12:13:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lookup".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('lookup')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=lookup
+---
+2014/07/20 12:13:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=user
+---
+2014/07/20 12:14:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lookup".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('lookup')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=lookup
+---
