@@ -1011,6 +1011,7 @@ Stack trace:
 #30 {main}
 REQUEST_URI=/prototype/index.php?r=user
 ---
+<<<<<<< HEAD
 2014/07/20 12:36:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'rmc.tbl_user' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_user`.
 in C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\user\index.php (20)
 in C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\UserController.php (128)
@@ -1107,6 +1108,9 @@ REQUEST_URI=/prototype/index.php?r=iteminventory/admin
 HTTP_REFERER=http://localhost/prototype/index.php?r=iteminventory
 ---
 2014/07/20 12:38:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+=======
+2014/07/20 12:37:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+>>>>>>> 8ab838d66415c135b31556921b5b67397a58fec6
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
 #1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
@@ -1116,6 +1120,7 @@ Stack trace:
 #5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+<<<<<<< HEAD
 #8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/admin')
 #9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #10 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
@@ -1124,6 +1129,16 @@ REQUEST_URI=/prototype/index.php?r=customer/admin
 HTTP_REFERER=http://localhost/prototype/index.php?r=customer
 ---
 2014/07/20 12:38:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+=======
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentTerms/ad...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/prototype/index.php?r=paymentTerms/admin
+HTTP_REFERER=http://localhost/prototype/index.php?r=PaymentTerms
+---
+2014/07/20 12:37:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+>>>>>>> 8ab838d66415c135b31556921b5b67397a58fec6
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
 #1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
@@ -1135,6 +1150,7 @@ Stack trace:
 #7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
 #8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/admin')
 #9 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+<<<<<<< HEAD
 #10 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
 #11 {main}
 REQUEST_URI=/prototype/index.php?r=customer/admin
@@ -1212,4 +1228,10 @@ Stack trace:
 #29 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
 #30 {main}
 REQUEST_URI=/prototype/index.php?r=user
+=======
+#10 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/prototype/index.php?r=customer/admin
+HTTP_REFERER=http://localhost/prototype/index.php?r=Customer
+>>>>>>> 8ab838d66415c135b31556921b5b67397a58fec6
 ---
