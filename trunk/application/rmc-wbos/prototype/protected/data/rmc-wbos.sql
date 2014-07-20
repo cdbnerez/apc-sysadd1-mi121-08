@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2014 at 06:28 PM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: Jul 20, 2014 at 06:54 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -60,7 +60,14 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_delivery_customer1_idx` (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `delivery`
+--
+
+INSERT INTO `delivery` (`id`, `del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES
+(4, '1234-A Juan Luna st, Paseo De Roxas', 'Makati', 'Philippines', '1000', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `item_inventory` (
 --
 
 INSERT INTO `item_inventory` (`id`, `item_desc`, `item_price`) VALUES
-(1, 'Beverage', '20');
+(1, 'Peanut Butter 200 grams', '500');
 
 -- --------------------------------------------------------
 
@@ -90,7 +97,7 @@ INSERT INTO `item_inventory` (`id`, `item_desc`, `item_price`) VALUES
 
 CREATE TABLE IF NOT EXISTS `order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_date` varchar(45) NOT NULL,
+  `order_date` date NOT NULL,
   `order_total` decimal(10,0) NOT NULL,
   `payment_total` decimal(10,0) NOT NULL,
   `order_status` varchar(45) NOT NULL,
@@ -101,7 +108,14 @@ CREATE TABLE IF NOT EXISTS `order` (
   KEY `fk_order_customer1_idx` (`customer_id`),
   KEY `fk_order_delivery1_idx` (`delivery_id`),
   KEY `fk_order_payment_method1_idx` (`payment_method_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES
+(4, '9999-12-31', '500', '0', 'approved', 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -117,7 +131,14 @@ CREATE TABLE IF NOT EXISTS `order_list` (
   PRIMARY KEY (`id`),
   KEY `fk_order_list_item_inventory1_idx` (`item_inventory_id`),
   KEY `fk_order_list_order1_idx` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `order_list`
+--
+
+INSERT INTO `order_list` (`id`, `item_qty`, `item_inventory_id`, `order_id`) VALUES
+(2, 1, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -138,7 +159,14 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
   `payment_terms_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_payment_method_payment_terms1_idx` (`payment_terms_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `payment_method`
+--
+
+INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `payment_method`, `card_no`, `cvc_no`, `card_type`, `bank_name`, `card_expire`, `payment_terms_id`) VALUES
+(1, 'I', 'Installments', 'Installments', 2147483647, 123, 'Credit', 'ABC Bank', '9999-12-31', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `payment_terms` (
 --
 
 INSERT INTO `payment_terms` (`id`, `pay_terms`, `pay_per_month`, `pay_discount`) VALUES
-(1, 123, 5, 20);
+(1, 5, 100, 0);
 
 --
 -- Constraints for dumped tables

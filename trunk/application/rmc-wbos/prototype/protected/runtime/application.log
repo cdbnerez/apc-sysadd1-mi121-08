@@ -1532,3 +1532,227 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=paymentmethod/create
 HTTP_REFERER=http://localhost/prototype/index.php?r=paymentmethod/create
 ---
+2014/07/20 18:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymenyTerms".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymenyTerms')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=paymenyTerms
+---
+2014/07/20 18:37:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "paymentType".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentType')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=paymentType
+---
+2014/07/20 18:39:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 6 Error on delete of 'C:\xampp\tmp\#sql1134_9c_0.MYD' (Errcode: 13 - Permission denied). The SQL statement executed was: SHOW FULL COLUMNS FROM `payment_method`.
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php (65)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:39:42 [error] [exception.CDbException] exception 'CDbException' with message 'The table "payment_method" for active record class "PaymentMethod" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(PaymentMethod))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(65): CActiveRecord->__construct()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/c...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=paymentMethod/create
+---
+2014/07/20 18:43:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Cus".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Cus')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=Cus
+---
+2014/07/20 18:46:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:46:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeliveryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delivery/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=delivery/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=delivery/create
+---
+2014/07/20 18:47:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:47:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeliveryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delivery/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=delivery/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=delivery/create
+---
+2014/07/20 18:47:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:47:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`delivery`, CONSTRAINT `fk_delivery_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `delivery` (`del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\DeliveryController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeliveryController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('delivery/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=delivery/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=delivery/create
+---
+2014/07/20 18:49:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:49:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=order/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/create
+---
+2014/07/20 18:50:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:50:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=order/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/create
+---
+2014/07/20 18:51:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:51:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order`, CONSTRAINT `fk_order_delivery1` FOREIGN KEY (`delivery_id`) REFERENCES `delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order` (`order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=order/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/create
+---
+2014/07/20 18:53:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order_list` (`item_qty`, `item_inventory_id`, `order_id`) VALUES (:yp0, :yp1, :yp2).
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderListController.php (73)
+in C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/07/20 18:53:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `order_list` (`item_qty`, `item_inventory_id`, `order_id`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderListController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderListController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orderlist/creat...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JB\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=orderlist/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=orderlist/create
+---
