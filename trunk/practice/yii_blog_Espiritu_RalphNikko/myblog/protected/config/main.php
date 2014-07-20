@@ -6,13 +6,6 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	
-	'components'=>array(
-	
-	'db'=>array(
-	'connectionString'=>'C:\xampp\htdocs\myblog\protected\data',
-	'tablePrefix'=>'tbl ',
-	
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
 
@@ -30,7 +23,7 @@ return array(
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -54,17 +47,19 @@ return array(
 			),
 		),
 		*/
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
 		// uncomment the following to use a MySQL database
+		*/
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=prototype',
+			'connectionString' => 'mysql:host=localhost;dbname=myblog',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'tablePrefix' => 'tbl_',
 		),
 		
 		'errorHandler'=>array(
@@ -94,6 +89,4 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
-),
-),
 );
