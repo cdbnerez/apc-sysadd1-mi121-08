@@ -1,0 +1,8 @@
+2014/07/21 10:39:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\student\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\midterm_test\Nerez_Carlos_Daniel_midterms\ourspace\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ourspace/index.php?r=comment
+---
