@@ -29,5 +29,19 @@
 	<?php echo CHtml::encode($data->created_at); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('home_address')); ?>:</b>
+	<?php echo CHtml::encode($data->home_address); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('landline')); ?>:</b>
+	<?php echo CHtml::encode($data->landline); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cellphone')); ?>:</b>
+	<?php echo CHtml::encode($data->cellphone); ?>
+	<br />
+
+	*/ ?>
 
 </div>

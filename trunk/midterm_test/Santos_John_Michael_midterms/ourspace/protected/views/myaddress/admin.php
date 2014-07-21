@@ -51,6 +51,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'lastname',
 		'gender',
 		'created_at',
+		/*
+		'home_address',
+		'landline',
+		'cellphone',
+		*/
 		array(
 			'class'=>'CButtonColumn',
 		),
