@@ -1,24 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "myaddress".
+ * This is the model class for table "user".
  *
- * The followings are the available columns in table 'myaddress':
+ * The followings are the available columns in table 'user':
  * @property integer $id
- * @property string $firstname
- * @property string $middlename
- * @property string $lastname
- * @property string $gender
- * @property string $created_at
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ * @property string $profile
  */
-class Myaddress extends CActiveRecord
+class User extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'myaddress';
+		return 'user';
 	}
 
 	/**
@@ -29,12 +28,11 @@ class Myaddress extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('firstname, middlename, lastname, gender, created_at', 'required'),
-			array('firstname, middlename, lastname', 'length', 'max'=>30),
-			array('gender', 'length', 'max'=>1),
+			array('username, password, email, profile', 'required'),
+			array('username, password, email', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, firstname, middlename, lastname, gender, created_at', 'safe', 'on'=>'search'),
+			array('id, username, password, email, profile', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,6 +44,7 @@ class Myaddress extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			
 		);
 	}
 
@@ -56,11 +55,10 @@ class Myaddress extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'firstname' => 'First Name',
-			'middlename' => 'Middle Name',
-			'lastname' => 'Last Name',
-			'gender' => 'Male / Female',
-			'created_at' => 'Created At',
+			'username' => 'Username',
+			'password' => 'Password',
+			'email' => 'Email',
+			'profile' => 'Profile',
 		);
 	}
 
@@ -83,11 +81,10 @@ class Myaddress extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('firstname',$this->firstname,true);
-		$criteria->compare('middlename',$this->middlename,true);
-		$criteria->compare('lastname',$this->lastname,true);
-		$criteria->compare('gender',$this->gender,true);
-		$criteria->compare('created_at',$this->created_at,true);
+		$criteria->compare('username',$this->username,true);
+		$criteria->compare('password',$this->password,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('profile',$this->profile,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -98,10 +95,19 @@ class Myaddress extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Myaddress the static model class
+	 * @return User the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
+	
+	public function validatePassword($password)
+{
+return CPasswordHelper::verifyPassword($password,$this->password);
+}
+public function hashPassword($password)
+{
+return CPasswordHelper::hashPassword($password);
+}
 }
