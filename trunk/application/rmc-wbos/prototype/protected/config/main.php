@@ -54,7 +54,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		*/
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=rmc',
+			'connectionString' => 'mysql:host=localhost;dbname=rmc-wbos',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',

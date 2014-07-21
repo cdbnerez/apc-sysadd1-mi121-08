@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_post".
+ * This is the model class for table "myblog.tbl_post".
  *
- * The followings are the available columns in table 'tbl_post':
+ * The followings are the available columns in table 'myblog.tbl_post':
  * @property integer $id
  * @property string $title
  * @property string $content
@@ -24,7 +24,7 @@ class TblPost extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_post';
+		return 'myblog.tbl_post';
 	}
 
 	/**
