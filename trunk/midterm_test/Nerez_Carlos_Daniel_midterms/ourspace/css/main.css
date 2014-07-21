@@ -3,15 +3,15 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	font: normal 10pt Comic Sans MS,Helvetica,sans-serif;
+	background: pink;
 }
 
 #page
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: white;
+	background: aqua;
 	border: 1px solid #C9E0ED;
 }
 
@@ -65,7 +65,7 @@ body
 
 #mainmenu ul li a
 {
-	color:#ffffff;
+	color:yellow;
 	background-color:transparent;
 	font-size:12px;
 	font-weight:bold;
@@ -75,7 +75,7 @@ body
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
-	color: #6399cd;
+	color: green;
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
