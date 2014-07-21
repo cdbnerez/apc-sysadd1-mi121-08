@@ -64,7 +64,7 @@ class Myaddress extends CActiveRecord
 			'firstname' => 'First Name',
 			'middlename' => 'Middle Name',
 			'lastname' => 'Last Name',
-			'gender' => 'Gender',
+			'gender' => 'Male / Female',
 			'created_at' => 'Created At',
 			'home_address' => 'Home Address',
 			'landline' => 'Landline',
