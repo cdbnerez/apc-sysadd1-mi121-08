@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2014 at 10:57 AM
+-- Generation Time: Jul 21, 2014 at 11:31 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
   `landline` varchar(20) DEFAULT NULL,
   `cellphone` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `myaddress`
+--
+
+INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
+(1, 'Ceedee', 'Baluyot', 'Nerez', 'M', '0000-00-00 00:00:00', 'Manila, Philippines', '111-11-11', '63999-999-9999');
 
 -- --------------------------------------------------------
 
@@ -51,6 +58,28 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `author` varchar(255) NOT NULL,
   `body` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mycomment`
+--
+
+INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
+(1, 1, 'Ceedee', 'hahaha yiiiii!', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `profile` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
