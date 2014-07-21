@@ -3,15 +3,15 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	font: normal 12pt Verdana,Arial,sans-serif;
+	background: #00FFFF;
 }
 
 #page
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: white;
+	background: DC143C;
 	border: 1px solid #C9E0ED;
 }
 
