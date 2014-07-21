@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_tag".
+ * This is the model class for table "myblog.tbl_tag".
  *
- * The followings are the available columns in table 'tbl_tag':
+ * The followings are the available columns in table 'myblog.tbl_tag':
  * @property integer $id
  * @property string $name
  * @property integer $frequency
@@ -15,7 +15,7 @@ class TblTag extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_tag';
+		return 'myblog.tbl_tag';
 	}
 
 	/**
