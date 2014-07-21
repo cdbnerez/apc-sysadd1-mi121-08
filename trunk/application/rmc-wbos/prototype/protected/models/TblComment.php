@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_comment".
+ * This is the model class for table "myblog.tbl_comment".
  *
- * The followings are the available columns in table 'tbl_comment':
+ * The followings are the available columns in table 'myblog.tbl_comment':
  * @property integer $id
  * @property string $content
  * @property integer $status
@@ -23,7 +23,7 @@ class TblComment extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_comment';
+		return 'myblog.tbl_comment';
 	}
 
 	/**

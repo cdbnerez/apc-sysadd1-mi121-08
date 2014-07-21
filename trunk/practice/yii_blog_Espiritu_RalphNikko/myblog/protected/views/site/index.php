@@ -10,7 +10,8 @@ $this->pageTitle=Yii::app()->name;
 
 
 <ul>
-	<li><h1>Aviation:</h1></li>
+	<li><h1>Welcome to my blog!:</h1></li>
+	<p>Good day! welcome to my web application. This page was created through the use of Yii framework</p>
 	
 	<li><h1>Music:</h1> <code><?php echo $this->getLayoutFile('main'); ?></code></li>
 </ul>

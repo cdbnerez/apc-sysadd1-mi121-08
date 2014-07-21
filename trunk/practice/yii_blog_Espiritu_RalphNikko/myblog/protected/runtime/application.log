@@ -62,3 +62,11 @@ REQUEST_URI=/myblog/
 in C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\protected\views\layouts\main.php (25)
 in C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\protected\views\layouts\column1.php (6)
 in C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\protected\controllers\SiteController.php (32)
+2014/07/21 04:59:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Guest\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\practice\yii_blog_Espiritu_RalphNikko\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=comment
+---

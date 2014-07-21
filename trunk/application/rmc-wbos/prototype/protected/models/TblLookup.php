@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "tbl_lookup".
+ * This is the model class for table "myblog.tbl_lookup".
  *
- * The followings are the available columns in table 'tbl_lookup':
+ * The followings are the available columns in table 'myblog.tbl_lookup':
  * @property integer $id
  * @property string $name
  * @property integer $code
@@ -17,7 +17,7 @@ class TblLookup extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_lookup';
+		return 'myblog.tbl_lookup';
 	}
 
 	/**
