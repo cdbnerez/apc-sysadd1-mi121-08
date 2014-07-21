@@ -3,7 +3,7 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 12pt Comic Sans,Helvetica,sans-serif;
+	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: #EFEFEF;
 }
 
@@ -20,13 +20,11 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
-	background-color: yellow;
 }
 
 #content
 {
     padding: 20px;
-	background-color:cyan;
 }
 
 #sidebar
