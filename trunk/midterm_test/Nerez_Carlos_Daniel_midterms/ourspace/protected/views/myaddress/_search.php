@@ -41,6 +41,21 @@
 		<?php echo $form->textField($model,'created_at'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'home_address'); ?>
+		<?php echo $form->textField($model,'home_address',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'landline'); ?>
+		<?php echo $form->textField($model,'landline',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cellphone'); ?>
+		<?php echo $form->textField($model,'cellphone',array('size'=>20,'maxlength'=>20)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

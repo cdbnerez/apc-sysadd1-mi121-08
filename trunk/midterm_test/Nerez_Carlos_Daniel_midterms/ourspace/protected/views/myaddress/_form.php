@@ -49,6 +49,24 @@
 		<?php echo $form->error($model,'created_at'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'home_address'); ?>
+		<?php echo $form->textField($model,'home_address',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'home_address'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'landline'); ?>
+		<?php echo $form->textField($model,'landline',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'landline'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'cellphone'); ?>
+		<?php echo $form->textField($model,'cellphone',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'cellphone'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
