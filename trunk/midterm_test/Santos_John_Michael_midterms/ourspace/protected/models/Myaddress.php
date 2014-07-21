@@ -10,6 +10,9 @@
  * @property string $lastname
  * @property string $gender
  * @property string $created_at
+ * @property string $home_address
+ * @property string $landline
+ * @property integer $cellphone
  */
 class Myaddress extends CActiveRecord
 {
@@ -30,11 +33,14 @@ class Myaddress extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('firstname, middlename, lastname, gender, created_at', 'required'),
+			array('cellphone', 'numerical', 'integerOnly'=>true),
 			array('firstname, middlename, lastname', 'length', 'max'=>30),
 			array('gender', 'length', 'max'=>1),
+			array('home_address', 'length', 'max'=>50),
+			array('landline', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, firstname, middlename, lastname, gender, created_at', 'safe', 'on'=>'search'),
+			array('id, firstname, middlename, lastname, gender, created_at, home_address, landline, cellphone', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,11 +62,14 @@ class Myaddress extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'firstname' => 'First Name',
-			'middlename' => 'Middle Name',
-			'lastname' => 'Last Name',
-			'gender' => 'Male / Female',
+			'firstname' => 'Firstname',
+			'middlename' => 'Middlename',
+			'lastname' => 'Lastname',
+			'gender' => 'Gender',
 			'created_at' => 'Created At',
+			'home_address' => 'Home Address',
+			'landline' => 'Landline',
+			'cellphone' => 'Cellphone',
 		);
 	}
 
@@ -88,6 +97,9 @@ class Myaddress extends CActiveRecord
 		$criteria->compare('lastname',$this->lastname,true);
 		$criteria->compare('gender',$this->gender,true);
 		$criteria->compare('created_at',$this->created_at,true);
+		$criteria->compare('home_address',$this->home_address,true);
+		$criteria->compare('landline',$this->landline,true);
+		$criteria->compare('cellphone',$this->cellphone);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
