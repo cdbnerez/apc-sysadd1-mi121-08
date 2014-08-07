@@ -44,9 +44,16 @@
 	</div>
 
 	<div class="row">
+	
 		<?php echo $form->labelEx($model,'customer_id'); ?>
-		<?php echo $form->textField($model,'customer_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'customer_id', CHtml::listData(
+		Customer::model()->findAll(), 'id', 'cus_lname'),
+		array('prompt' => 'Select a customer last name')
+		); ?>
+		
 		<?php echo $form->error($model,'customer_id'); ?>
+	
 	</div>
 
 	<div class="row">
