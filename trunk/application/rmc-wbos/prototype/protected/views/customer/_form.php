@@ -6,6 +6,7 @@
 
 <div class="form">
 
+
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'customer-form',
 	// Please note: When you enable ajax validation, make sure the corresponding

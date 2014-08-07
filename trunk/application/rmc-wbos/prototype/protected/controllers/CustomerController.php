@@ -66,6 +66,7 @@ class CustomerController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
 
 		if(isset($_POST['Customer']))
 		{
@@ -170,4 +171,6 @@ class CustomerController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	
 }
