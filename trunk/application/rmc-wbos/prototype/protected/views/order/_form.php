@@ -48,7 +48,7 @@
 		<?php echo $form->labelEx($model,'customer_id'); ?>
 		
 		<?php echo $form->dropDownList($model, 'customer_id', CHtml::listData(
-		Customer::model()->findAll(), 'id', 'cus_lname'),
+		Customer::model()->findAll(), 'id', 'FullName'),
 		array('prompt' => 'Select a customer last name')
 		); ?>
 		
