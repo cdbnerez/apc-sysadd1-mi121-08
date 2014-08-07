@@ -121,4 +121,11 @@ class Customer extends CActiveRecord
      return $this->cus_type . " " . $this->cus_company . " " . $this->cus_fname . " " . $this->cus_lname . " " . $this->cus_user_name . " " . $this->cus_user_passwd . " " . $this->cus_contact_num;
 	}*/
 	
+
+	public function getFullName()
+	{
+    
+	   return $this->cus_lname . ", " . $this->cus_fname;
+	
+	}
 }
