@@ -58,7 +58,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'delivery_id'); ?>
-		<?php echo $form->textField($model,'delivery_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'delivery_id', CHtml::listData(
+		Delivery::model()->findAll(), 'id', 'del_add'),
+		array('prompt' => 'Select a delivery address')
+		); ?>
+	
+	
 		<?php echo $form->error($model,'delivery_id'); ?>
 	</div>
 
