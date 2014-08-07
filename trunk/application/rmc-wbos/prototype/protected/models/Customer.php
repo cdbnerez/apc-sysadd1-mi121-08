@@ -115,4 +115,11 @@ class Customer extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getFullName()
+	{
+    
+	   return $this->cus_lname . ", " . $this->cus_fname;
+	
+	}
 }
