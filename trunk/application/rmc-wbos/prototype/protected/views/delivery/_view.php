@@ -26,7 +26,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
-	<?php echo CHtml::encode($data->customer_id); ?>
+	<?php echo CHtml::encode($data->customer->FullName); ?>
 	<br />
 
 
