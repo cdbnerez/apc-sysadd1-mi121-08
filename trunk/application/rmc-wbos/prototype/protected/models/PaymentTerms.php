@@ -57,9 +57,9 @@ class PaymentTerms extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'pay_terms' => 'Pay Terms',
-			'pay_per_month' => 'Pay Per Month',
-			'pay_discount' => 'Pay Discount',
+			'pay_terms' => 'Payment Terms',
+			'pay_per_month' => 'Payment Per Month',
+			'pay_discount' => 'Payment Discount',
 		);
 	}
 
