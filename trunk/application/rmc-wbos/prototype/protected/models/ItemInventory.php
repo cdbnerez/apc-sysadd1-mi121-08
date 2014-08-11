@@ -57,7 +57,7 @@ class ItemInventory extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'item_desc' => 'Item Desc',
+			'item_desc' => 'Item Description',
 			'item_price' => 'Item Price',
 		);
 	}
