@@ -23,8 +23,9 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'cus_type'); ?>
 	
-		<?php echo $form->textField($model,'cus_type',array('size'=>45,'maxlength'=>45)); ?>
-		
+	    <?php echo $form->dropDownList($model,'cus_type',array("Retail"=>"Retail", "Wholesale"=>"Wholesale", "Walk-In"=>"Walk-In")
+		,array('empty'=>'Select Customer Type')); ?>
+	
 		<?php echo $form->error($model,'cus_type'); ?>
 	</div>
 
