@@ -63,13 +63,13 @@ class Customer extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cus_type' => 'Cus Type',
-			'cus_company' => 'Cus Company',
-			'cus_fname' => 'Cus Fname',
-			'cus_lname' => 'Cus Lname',
-			'cus_user_name' => 'Cus User Name',
-			'cus_user_passwd' => 'Cus User Passwd',
-			'cus_contact_num' => 'Cus Contact Num',
+			'cus_type' => 'Customer Type',
+			'cus_company' => 'Customer Company Name',
+			'cus_fname' => 'Customer Full Name',
+			'cus_lname' => 'Customer Last Name',
+			'cus_user_name' => 'Customer profile username',
+			'cus_user_passwd' => 'Customer profile password',
+			'cus_contact_num' => 'Customer Contact Number',
 		);
 	}
 
