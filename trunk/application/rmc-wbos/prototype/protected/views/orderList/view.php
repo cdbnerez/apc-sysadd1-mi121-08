@@ -23,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'item_qty',
-		'item_inventory_id',
+		array('label'=>'Item Description', 'value'=>$model->itemInventory->item_desc),
 		'order_id',
 	),
 )); ?>
