@@ -26,8 +26,8 @@ $this->menu=array(
 		'order_total',
 		'payment_total',
 		'order_status',
-		'customer_id',
-		'delivery_id',
+		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
+		array('label'=>'Customer Delivery Address', 'value'=>$model->delivery->FullAddress),
 		'payment_method_id',
 	),
 )); ?>
