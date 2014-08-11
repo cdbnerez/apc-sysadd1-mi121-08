@@ -14,7 +14,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('item_inventory_id')); ?>:</b>
-	<?php echo CHtml::encode($data->itemDesc); ?>
+	<?php echo CHtml::encode($data->itemInventory->itemDesc); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('order_id')); ?>:</b>

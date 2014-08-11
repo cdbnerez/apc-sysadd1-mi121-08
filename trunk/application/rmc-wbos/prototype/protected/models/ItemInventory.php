@@ -99,4 +99,9 @@ class ItemInventory extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getitemDesc()
+	{
+		return $this->item_desc;
+	}
 }
