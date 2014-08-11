@@ -18,7 +18,7 @@
  * @property Order[] $orders
  */
 class Customer extends CActiveRecord
-{
+{	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -120,4 +120,11 @@ class Customer extends CActiveRecord
 	{
 	   return $this->cus_lname . ", " . $this->cus_fname;
 	}
+	/**
+	public static string dropDownList(string $name, string $select, array $data, array $htmlOptions=array ( ))
+	
+	$selected = 1;
+	echo CHtml::dropDownList('status', $selected, 
+              array('1' => 'Draft', '2' => 'Publish');
+	**/
 }

@@ -22,7 +22,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cus_type'); ?>
+	
 		<?php echo $form->textField($model,'cus_type',array('size'=>45,'maxlength'=>45)); ?>
+		
 		<?php echo $form->error($model,'cus_type'); ?>
 	</div>
 
