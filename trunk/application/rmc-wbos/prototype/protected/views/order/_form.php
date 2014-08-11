@@ -64,13 +64,17 @@
 		array('prompt' => 'Select a delivery address')
 		); ?>
 	
-	
 		<?php echo $form->error($model,'delivery_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_method_id'); ?>
-		<?php echo $form->textField($model,'payment_method_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'payment_method_id', CHtml::listData(
+		paymentMethod::model()->findAll(), 'id', 'payment_method'),
+		array('prompt' => 'Select a Payment Method')
+		); ?>
+				
 		<?php echo $form->error($model,'payment_method_id'); ?>
 	</div>
 

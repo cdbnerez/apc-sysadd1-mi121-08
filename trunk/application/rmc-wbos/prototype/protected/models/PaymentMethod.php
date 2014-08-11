@@ -75,7 +75,7 @@ class PaymentMethod extends CActiveRecord
 			'card_type' => 'Card Type',
 			'bank_name' => 'Bank Name',
 			'card_expire' => 'Card Expire',
-			'payment_terms_id' => 'Payment Terms',
+			'payment_terms_id' => 'Payment Terms ID:',
 		);
 	}
 

@@ -30,7 +30,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('delivery_id')); ?>:</b>
-	<?php echo CHtml::encode($data->delivery_id); ?>
+	<?php echo CHtml::encode($data->delivery->FullAddress); ?>
 	<br />
 
 	<?php /*

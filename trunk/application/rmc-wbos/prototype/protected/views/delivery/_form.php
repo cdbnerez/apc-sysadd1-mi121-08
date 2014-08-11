@@ -45,7 +45,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'customer_id'); ?>
-		<?php echo $form->textField($model,'customer_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'customer_id', CHtml::listData(
+		Customer::model()->findAll(), 'id', 'FullName'),
+		array('prompt' => 'Select a customer last name')
+		); ?>
+		
 		<?php echo $form->error($model,'customer_id'); ?>
 	</div>
 

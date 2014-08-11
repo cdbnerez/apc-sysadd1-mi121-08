@@ -111,4 +111,9 @@ class Delivery extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getFullAddress()
+	{
+	   return $this->del_add . ", " . $this->del_city . ", " . $this->del_country . ", " . $this->del_zip;
+	}
 }
