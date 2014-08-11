@@ -26,6 +26,6 @@ $this->menu=array(
 		'del_city',
 		'del_country',
 		'del_zip',
-		'customer_id',
+		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
 	),
 )); ?>
