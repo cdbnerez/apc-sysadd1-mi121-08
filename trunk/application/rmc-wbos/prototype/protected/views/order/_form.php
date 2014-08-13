@@ -39,7 +39,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'order_status'); ?>
-		<?php echo $form->textField($model,'order_status',array('size'=>45,'maxlength'=>45)); ?>
+		
+		<?php echo $form->dropDownList($model,'order_status',array("Approved"=>"Approved", "Denied"=>"Denied", "Pending"=>"Pending")
+		,array('empty'=>'Select Order Status')); ?>
+		
 		<?php echo $form->error($model,'order_status'); ?>
 	</div>
 
@@ -71,7 +74,7 @@
 		<?php echo $form->labelEx($model,'payment_method_id'); ?>
 		
 		<?php echo $form->dropDownList($model, 'payment_method_id', CHtml::listData(
-		paymentMethod::model()->findAll(), 'id', 'payment_method'),
+		paymentMethod::model()->findAll(), 'id', 'id'),
 		array('prompt' => 'Select a Payment Method')
 		); ?>
 				
