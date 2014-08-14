@@ -21,7 +21,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'pay_terms'); ?>
-		<?php echo $form->textField($model,'pay_terms'); ?>
+		
+		<?php echo $form->dropDownList($model,'pay_terms',array(3=>3 . " Months", 6=>6 ." Months", 9=>9 ." Months")
+		,array('empty'=>'Select Payment Term')); ?>
+		
 		<?php echo $form->error($model,'pay_terms'); ?>
 	</div>
 
