@@ -60,7 +60,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'card_type'); ?>
-		<?php echo $form->textField($model,'card_type',array('size'=>45,'maxlength'=>45)); ?>
+		
+		<?php echo $form->dropDownList($model,'card_type',array("DEBIT"=>"Debit", "CREDIT"=>"Credit")
+		,array('empty'=>'Select Card Type')); ?>
+		
 		<?php echo $form->error($model,'card_type'); ?>
 	</div>
 
