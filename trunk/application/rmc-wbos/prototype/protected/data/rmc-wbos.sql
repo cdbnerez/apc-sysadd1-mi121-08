@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2014 at 10:23 AM
+-- Generation Time: Aug 14, 2014 at 03:36 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -118,8 +118,8 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 
 INSERT INTO `order` (`id`, `order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES
-(4, '9999-12-31', '500', '0', 'approved', 1, 4, 1),
-(5, '0000-00-00', '21', '700', 'Pending', 2, 5, 2);
+(4, '2014-08-01', '500', '0', 'Approved', 1, 4, 1),
+(5, '2014-08-02', '21', '700', 'Approved', 2, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -171,8 +171,8 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
 --
 
 INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `payment_method`, `card_no`, `cvc_no`, `card_type`, `bank_name`, `card_expire`, `payment_terms_id`) VALUES
-(1, 'I', 'Installments', 'Installments', 2147483647, 123, 'Credit', 'ABC Bank', '9999-12-31', 1),
-(2, '1', 'It is where you credit card to purchase', 'Credit Card', 12345, 7777, 'Credit Card', 'BDO', '0000-00-00', 2);
+(1, 'CARD', 'CARD', 'CARD', 2147483647, 123, 'CREDIT', 'BDO', '2014-08-12', 1),
+(2, 'CARD', 'CARD', 'CARD', 12345, 777, 'DEBIT', 'BPI', '2014-08-06', 2);
 
 -- --------------------------------------------------------
 
