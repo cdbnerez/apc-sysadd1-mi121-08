@@ -30,7 +30,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_desc'); ?>
-		<?php echo $form->textField($model,'payment_desc',array('size'=>45,'maxlength'=>45)); ?>
+		
+			<?php echo $form->dropDownList($model,'payment_desc',array("INSTALMENT"=>"instalment", "CASH"=>"cash", "CARD"=>"card")
+		,array('empty'=>'Select Payment Description')); ?>
+		
+
 		<?php echo $form->error($model,'payment_desc'); ?>
 	</div>
 
