@@ -21,7 +21,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'order_date'); ?>
-		<?php echo $form->textField($model,'order_date',array('size'=>45,'maxlength'=>45)); ?>
+		
+		<?php echo CHtml::activeTextField($model,'order_date',array("id"=>"order_date")); ?>
+		<?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'order_date',
+        'ifFormat'=>'%Y-%m-%d',
+		));
+		?>
+		
 		<?php echo $form->error($model,'order_date'); ?>
 	</div>
 
