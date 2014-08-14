@@ -21,7 +21,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_type'); ?>
-		<?php echo $form->textField($model,'payment_type',array('size'=>5,'maxlength'=>5)); ?>
+		
+		<?php echo $form->dropDownList($model,'payment_type',array("INT"=>"int", "CASH"=>"cash", "CARD"=>"card")
+		,array('empty'=>'Select Payment Type')); ?>
+		
 		<?php echo $form->error($model,'payment_type'); ?>
 	</div>
 
