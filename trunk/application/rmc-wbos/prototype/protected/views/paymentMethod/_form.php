@@ -66,7 +66,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bank_name'); ?>
-		<?php echo $form->textField($model,'bank_name',array('size'=>45,'maxlength'=>45)); ?>
+		
+		<?php echo $form->dropDownList($model,'bank_name',array("BDO"=>"Banco De Oro", "Robinsons"=>"Robinsons Bank", "BPI"=>"Bank of the Philippine Islands")
+		,array('empty'=>'Select Bank Name')); ?>
+		
 		<?php echo $form->error($model,'bank_name'); ?>
 	</div>
 
