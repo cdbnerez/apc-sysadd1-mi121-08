@@ -22,7 +22,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_type'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_type',array("INT"=>"int", "CASH"=>"cash", "CARD"=>"card")
+		<?php echo $form->dropDownList($model,'payment_type',array("INS"=>"ins", "CASH"=>"cash", "CARD"=>"card")
 		,array('empty'=>'Select Payment Type')); ?>
 		
 		<?php echo $form->error($model,'payment_type'); ?>
