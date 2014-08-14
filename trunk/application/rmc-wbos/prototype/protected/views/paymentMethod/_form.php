@@ -69,7 +69,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_terms_id'); ?>
-		<?php echo $form->textField($model,'payment_terms_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'payment_terms_id', CHtml::listData(
+		PaymentTerms::model()->findAll(), 'id', 'id'),
+		array('prompt' => 'Select a Payment ID')
+		); ?>
+		
 		<?php echo $form->error($model,'payment_terms_id'); ?>
 	</div>
 
