@@ -78,7 +78,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'card_expire'); ?>
-		<?php echo $form->textField($model,'card_expire'); ?>
+		
+		<?php echo CHtml::activeTextField($model,'card_expire',array("id"=>"card_expire")); ?>
+		<?php $this->widget('application.extensions.calendar.SCalendar',
+        array(
+        'inputField'=>'card_expire',
+        'ifFormat'=>'%Y-%m-%d',
+		));
+		?>
+		
 		<?php echo $form->error($model,'card_expire'); ?>
 	</div>
 
