@@ -68,13 +68,13 @@ class PaymentMethod extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'payment_type' => 'Payment Type',
-			'payment_desc' => 'Payment Desc',
+			'payment_desc' => 'Payment Description',
 			'payment_method' => 'Payment Method',
 			'card_no' => 'Card No.',
-			'cvc_no' => 'Cvc No.',
+			'cvc_no' => 'Card Cvc Number',
 			'card_type' => 'Card Type',
-			'bank_name' => 'Bank Name',
-			'card_expire' => 'Card Expire',
+			'card_expire' => 'Card Expiration Date',
+			'bank_name' => 'Issuing Bank',
 			'payment_terms_id' => 'Payment Terms ID:',
 		);
 	}
