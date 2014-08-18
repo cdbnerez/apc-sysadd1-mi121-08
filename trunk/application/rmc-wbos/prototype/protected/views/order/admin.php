@@ -50,11 +50,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'order_total',
 		'payment_total',
 		'order_status',
-		'customer_id',
-		/*
-		'delivery_id',
-		'payment_method_id',
-		*/
+		array('name'=>'customer_id', 'header'=>'Customer Last Name ', 'value'=>'$data->customer->cus_lname'),
+		array('name'=>'delivery_id', 'header'=>' Delivery Address ', 'value'=>'$data->delivery->FullAddress'),
+		array('name'=>'payment_method_id', 'header'=>'Payment Method ', 'value'=>'$data->paymentMethod->id'),
 		array(
 			'class'=>'CButtonColumn',
 		),

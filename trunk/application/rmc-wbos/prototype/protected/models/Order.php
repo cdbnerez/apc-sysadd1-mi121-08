@@ -102,10 +102,27 @@ class Order extends CActiveRecord
 		$criteria->compare('order_total',$this->order_total,true);
 		$criteria->compare('payment_total',$this->payment_total,true);
 		$criteria->compare('order_status',$this->order_status,true);
+		
+		
+		$criteria->compare('t.id',$this->id);
+    	$criteria->compare('customer.cus_lname',$this->customer_id, true);
+		$criteria->with=array('customer');
+		
+		/**
+		$criteria->compare('u.id',$this->id);
+    	$criteria->compare('delivery.del_add',$this->delivery_id, true);
+		$criteria->with=array('delivery');
+		
+		
+		$criteria->compare('v.id',$this->id);
+    	$criteria->compare('paymentMethod.payment_method',$this->payment_method_id, true);
+		$criteria->with=array('paymentMethod');
+		
+		
 		$criteria->compare('customer_id',$this->customer_id);
 		$criteria->compare('delivery_id',$this->delivery_id);
 		$criteria->compare('payment_method_id',$this->payment_method_id);
-
+         **/
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
