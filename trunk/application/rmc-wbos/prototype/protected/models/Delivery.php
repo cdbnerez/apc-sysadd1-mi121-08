@@ -94,7 +94,14 @@ class Delivery extends CActiveRecord
 		$criteria->compare('del_city',$this->del_city,true);
 		$criteria->compare('del_country',$this->del_country,true);
 		$criteria->compare('del_zip',$this->del_zip,true);
-		$criteria->compare('customer_id',$this->customer_id);
+		
+		//$criteria->compare('customer_id',$this->customer_id);
+		
+		$criteria->compare('t.id',$this->id);
+    	$criteria->compare('customer.cus_lname',$this->customer_id, true);
+
+	    //load the related table at the same time:
+		$criteria->with=array('customer');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -116,4 +123,6 @@ class Delivery extends CActiveRecord
 	{
 	   return $this->del_add . ", " . $this->del_city . ", " . $this->del_country . ", " . $this->del_zip;
 	}
+	
+	
 }
