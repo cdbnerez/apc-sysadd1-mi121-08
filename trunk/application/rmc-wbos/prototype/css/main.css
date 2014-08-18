@@ -60,6 +60,7 @@ body
 {
 	//background:white url(bg.gif) repeat-x left top;
 	background-color:orange;
+	border: 5px ridge #0000FF;
 }
 
 #mainmenu ul
@@ -143,6 +144,7 @@ div.view
 	padding: 10px;
 	margin: 10px 0;
 	border: 1px solid #C9E0ED;
+	background-color:#FACC2E;
 }
 
 div.breadcrumbs
