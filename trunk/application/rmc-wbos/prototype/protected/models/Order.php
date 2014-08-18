@@ -73,8 +73,8 @@ class Order extends CActiveRecord
 			'order_total' => 'Order Total',
 			'payment_total' => 'Payment Total',
 			'order_status' => 'Order Status',
-			'customer_id' => 'Customer ID',
-			'delivery_id' => 'Delivery ID',
+			'customer_id' => 'Customer Name',
+			'delivery_id' => 'Delivery Address',
 			'payment_method_id' => 'Payment Method ID',
 		);
 	}
