@@ -4,7 +4,9 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	//background-image: url("white.jpg");
+	//background-repeat: repeat y;
+	background:white;
 }
 
 #page
@@ -13,6 +15,8 @@ body
 	margin-bottom: 5px;
 	background: white;
 	border: 1px solid #C9E0ED;
+	
+	
 }
 
 #header
@@ -20,10 +24,14 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
+	color:orange;
+	font-size: 16px;
+	text-align:center;
 }
 
 #content
 {
+	background-color:white;
     padding: 20px;
 }
 
@@ -39,6 +47,7 @@ body
 	font-size: 0.8em;
 	text-align: center;
 	border-top: 1px solid #C9E0ED;
+	background-color:whi;
 }
 
 #logo
