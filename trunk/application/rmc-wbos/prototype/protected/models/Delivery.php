@@ -95,9 +95,10 @@ class Delivery extends CActiveRecord
 		$criteria->compare('del_country',$this->del_country,true);
 		$criteria->compare('del_zip',$this->del_zip,true);
 		
+		$criteria->with=array('customer');
 		$criteria->compare('t.id',$this->id);
     	$criteria->compare('customer.cus_lname',$this->customer_id, true);
-		$criteria->with=array('customer');
+		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
