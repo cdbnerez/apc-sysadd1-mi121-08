@@ -37,9 +37,16 @@
 	</div>
 
 	<div class="row">
+		
 		<?php echo $form->labelEx($model,'order_id'); ?>
-		<?php echo $form->textField($model,'order_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'order_id', CHtml::listData(
+		Order::model()->findAll(), 'id', 'id'),
+		array('prompt' => 'Select an Order ID')
+		); ?>
+	
 		<?php echo $form->error($model,'order_id'); ?>
+	
 	</div>
 
 	<div class="row buttons">
