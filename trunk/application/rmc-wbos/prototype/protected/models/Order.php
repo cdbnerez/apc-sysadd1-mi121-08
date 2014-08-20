@@ -107,7 +107,7 @@ class Order extends CActiveRecord
 		
 		$criteria->compare('t.id',$this->id);
     	$criteria->compare('customer.cus_lname',$this->customer_id, true);
-	
+		
 		$criteria->compare('t.id',$this->id);
     	$criteria->compare('delivery.del_add',$this->delivery_id, true);
 		
