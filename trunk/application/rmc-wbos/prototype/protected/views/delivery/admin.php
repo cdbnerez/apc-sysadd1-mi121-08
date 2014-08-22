@@ -50,7 +50,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'del_city',
 		'del_country',
 		'del_zip',
-		array('name'=>'customer_id', 'header'=>'Customer Last Name ', 'value'=>'$data->customer->cus_lname'),
+		array('name'=>'customer_id', 'header'=>'Customer Last Name ', 'value'=>'$data->customer->FullName'),
 		array(
 			'class'=>'CButtonColumn',
 		),
