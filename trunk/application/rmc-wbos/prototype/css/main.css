@@ -25,7 +25,7 @@ body
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
 	color:orange;
-	font-size: 16px;
+	font: normal 16px Arial,Helvetica,sans-serif;
 	text-align:center;
 }
 
