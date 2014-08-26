@@ -82,7 +82,7 @@
 		<?php echo $form->labelEx($model,'payment_method_id'); ?>
 		
 		<?php echo $form->dropDownList($model, 'payment_method_id', CHtml::listData(
-		paymentMethod::model()->findAll(), 'id', 'id'),
+		PaymentMethod::model()->findAll(), 'id', 'id'),
 		array('prompt' => 'Select a Payment Method')
 		); ?>
 				

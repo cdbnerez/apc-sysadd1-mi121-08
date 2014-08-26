@@ -29,7 +29,7 @@
 		<?php echo $form->labelEx($model,'item_inventory_id'); ?>
 		
 		<?php echo $form->dropDownList($model, 'item_inventory_id', CHtml::listData(
-		itemInventory::model()->findAll(), 'id', 'item_desc'),
+		ItemInventory::model()->findAll(), 'id', 'item_desc'),
 		array('prompt' => 'Select an item description')
 		); ?>
 
