@@ -40,7 +40,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_method'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_method',array("INSTALMENT"=>"instalment", "CASH"=>"cash", "CARD"=>"card")
+		<?php echo $form->dropDownList($model,'payment_method',array("Card, Straight"=>"Card, Straight", "Card, Terms"=>"Card, Terms", "Card, Instalment"=>"Card, Instalment")
 		,array('empty'=>'Select Payment Method')); ?>
 		
 		<?php echo $form->error($model,'payment_method'); ?>
