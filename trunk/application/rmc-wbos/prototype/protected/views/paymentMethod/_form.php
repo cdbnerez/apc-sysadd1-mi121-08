@@ -31,7 +31,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_desc'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_desc',array("INSTALMENT"=>"instalment", "CASH"=>"cash", "CARD"=>"card")
+		<?php echo $form->dropDownList($model,'payment_desc',array("Card Payment (Straight)"=>"Card Payment (Straight)", "Card Payment (Instalment)"=>"Card Payment (Instalment)", "Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
 		,array('empty'=>'Select Payment Description')); ?>
 		
 		<?php echo $form->error($model,'payment_desc'); ?>
