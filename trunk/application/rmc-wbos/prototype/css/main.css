@@ -4,9 +4,9 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	//background-image: url("white.jpg");
-	//background-repeat: repeat y;
-	background:white;
+	background-image: url("brown.jpg");
+	//background-repeat: repeat x;
+	//background:white;
 }
 
 #page
@@ -24,9 +24,10 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
-	color:orange;
+	color:white;
 	font: normal 16px Arial,Helvetica,sans-serif;
 	text-align:center;
+	background-color: #B40404;
 }
 
 #content
@@ -45,15 +46,17 @@ body
 	padding: 10px;
 	margin: 10px 20px;
 	font-size: 0.8em;
+	color:white;
 	text-align: center;
 	border-top: 1px solid #C9E0ED;
-	background-color:whi;
+	background-color: #B40404;
 }
 
 #logo
 {
 	padding: 10px 20px;
 	font-size: 200%;
+	color:white;
 }
 
 #mainmenu
@@ -87,8 +90,9 @@ body
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
 	color: #6399cd;
-	background-color:#EFF4FA;
+	background-color:black;
 	text-decoration:none;
+	font-size:15px;
 }
 
 div.flash-error, div.flash-notice, div.flash-success
