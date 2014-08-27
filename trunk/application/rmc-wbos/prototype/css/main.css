@@ -57,13 +57,14 @@ body
 	padding: 10px 20px;
 	font-size: 200%;
 	color:white;
+	border: 5px ridge gray;
 }
 
 #mainmenu
 {
 	//background:white url(bg.gif) repeat-x left top;
-	background-color:orange;
-	border: 5px ridge #0000FF;
+	background-color:#7B0616;
+	border: 5px ridge gray;
 }
 
 #mainmenu ul
@@ -148,7 +149,8 @@ div.view
 	padding: 10px;
 	margin: 10px 0;
 	border: 1px solid #C9E0ED;
-	background-color:#FACC2E;
+	background-color:#FEE5CB;
+	color: black;
 }
 
 div.breadcrumbs
