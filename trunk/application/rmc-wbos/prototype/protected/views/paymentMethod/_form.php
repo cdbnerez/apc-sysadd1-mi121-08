@@ -31,7 +31,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_desc'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_desc',array("Card Payment (Straight)"=>"Card Payment (Straight)", "Card Payment (Instalment)"=>"Card Payment (Instalment)", "Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
+		<?php echo $form->dropDownList($model,'payment_desc',array("Card Payment (Straight)"=>"Card Payment (Straight)", "Card Payment (Installment)"=>"Card Payment (Installment)", "Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
 		,array('empty'=>'Select Payment Description')); ?>
 		
 		<?php echo $form->error($model,'payment_desc'); ?>
@@ -40,7 +40,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_method'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_method',array("Card, Straight"=>"Card, Straight", "Card, Terms"=>"Card, Terms", "Card, Instalment"=>"Card, Instalment")
+		<?php echo $form->dropDownList($model,'payment_method',array("Card, Straight"=>"Card, Straight", "Card, Terms"=>"Card, Terms", "Card, Installment"=>"Card, Installment")
 		,array('empty'=>'Select Payment Method')); ?>
 		
 		<?php echo $form->error($model,'payment_method'); ?>
