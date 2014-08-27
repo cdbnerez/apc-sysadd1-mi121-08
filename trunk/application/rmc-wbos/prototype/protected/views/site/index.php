@@ -9,9 +9,10 @@ $this->pageTitle=Yii::app()->name;
 <h3><p align = center> Welcome to the Rodzon Marketing Corporation - Web Based Ordering System (RMC-WBOS)!</p></h2>
 
 <p align = justify> There are two versions of this web application. The first version is the localhost version and the other one is
-a hosted version. To access the hosted version, <a href="http://www.apc.csf.ph/rmc-wbos">click here</a>.</p>
+a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-wbos/">click here</a>.</p>
 
-<p align = justify> To view the documentation of this project, <a href="http://www.projects2.apc.edu.ph/wiki"> click here </a>.</p> 
+<p align = justify> To view the documentation of this project, 
+<a href="http://projects2.apc.edu.ph/wiki/index.php/SYSADD1_MI121_Group_8:_Carlos_Daniel_Nerez_-_BSIT-MI"> click here </a>.</p> 
  
 <!--
 <p>Congratulations! You have successfully created your Yii application.</p>
