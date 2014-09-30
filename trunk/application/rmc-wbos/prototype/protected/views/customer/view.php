@@ -15,8 +15,7 @@ $this->menu=array(
 	array('label'=>'Manage Customer', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View Customer #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->cus_company?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -31,3 +30,22 @@ $this->menu=array(
 		'cus_contact_num',
 	),
 )); ?>
+
+<?php $conf= Delivery::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Delivery Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+			    'del_add',
+			    'del_city',
+			    'del_country',
+			    'del_zip',
+			    //'customer_id' => 'Customer Name'
+			    //array('label'=>'Person', 'value'=>$model->person->FullName),
+			),
+	)); ?>
+<br>
+<?php }} ?>
