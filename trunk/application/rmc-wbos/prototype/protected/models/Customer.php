@@ -53,6 +53,7 @@ class Customer extends CActiveRecord
 		return array(
 			'deliveries' => array(self::HAS_MANY, 'Delivery', 'customer_id'),
 			'orders' => array(self::HAS_MANY, 'Order', 'customer_id'),
+			
 		);
 	}
 

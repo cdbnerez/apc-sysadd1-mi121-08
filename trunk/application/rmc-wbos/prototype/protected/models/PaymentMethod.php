@@ -37,13 +37,13 @@ class PaymentMethod extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('payment_type, payment_desc, payment_method, card_no, cvc_no, card_type, bank_name, card_expire, payment_terms_id', 'required'),
-			array('card_no, cvc_no, payment_terms_id', 'numerical', 'integerOnly'=>true),
+			array('payment_type, payment_desc, bank_name, payment_terms_id', 'required'),
+			array('payment_terms_id', 'numerical', 'integerOnly'=>true),
 			array('payment_type', 'length', 'max'=>5),
-			array('payment_desc, payment_method, card_type, bank_name', 'length', 'max'=>45),
+			array('payment_desc, bank_name', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, payment_type, payment_desc, payment_method, card_no, cvc_no, card_type, bank_name, card_expire, payment_terms_id', 'safe', 'on'=>'search'),
+			array('id, payment_type, payment_desc, bank_name, payment_terms_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,6 +57,7 @@ class PaymentMethod extends CActiveRecord
 		return array(
 			'orders' => array(self::HAS_MANY, 'Order', 'payment_method_id'),
 			'paymentTerms' => array(self::BELONGS_TO, 'PaymentTerms', 'payment_terms_id'),
+
 		);
 	}
 
@@ -69,11 +70,11 @@ class PaymentMethod extends CActiveRecord
 			'id' => 'ID',
 			'payment_type' => 'Payment Type',
 			'payment_desc' => 'Payment Description',
-			'payment_method' => 'Payment Method',
-			'card_no' => 'Card No.',
-			'cvc_no' => 'Card Cvc Number',
-			'card_type' => 'Card Type',
-			'card_expire' => 'Card Expiration Date',
+			//'payment_method' => 'Payment Method',
+			//'card_no' => 'Card No.',
+			//'cvc_no' => 'Card Cvc Number',
+			//'card_type' => 'Card Type',
+			//'card_expire' => 'Card Expiration Date',
 			'bank_name' => 'Issuing Bank',
 			'payment_terms_id' => 'Payment Terms ID:',
 		);
@@ -100,12 +101,12 @@ class PaymentMethod extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('payment_type',$this->payment_type,true);
 		$criteria->compare('payment_desc',$this->payment_desc,true);
-		$criteria->compare('payment_method',$this->payment_method,true);
-		$criteria->compare('card_no',$this->card_no);
-		$criteria->compare('cvc_no',$this->cvc_no);
-		$criteria->compare('card_type',$this->card_type,true);
+		//$criteria->compare('payment_method',$this->payment_method,true);
+		//$criteria->compare('card_no',$this->card_no);
+		//$criteria->compare('cvc_no',$this->cvc_no);
+		//$criteria->compare('card_type',$this->card_type,true);
 		$criteria->compare('bank_name',$this->bank_name,true);
-		$criteria->compare('card_expire',$this->card_expire,true);
+		//$criteria->compare('card_expire',$this->card_expire,true);
 		$criteria->compare('payment_terms_id',$this->payment_terms_id);
 
 		return new CActiveDataProvider($this, array(

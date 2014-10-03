@@ -57,7 +57,7 @@ class Order extends CActiveRecord
 		return array(
 			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
 			'delivery' => array(self::BELONGS_TO, 'Delivery', 'delivery_id'),
-			'paymentMethod' => array(self::BELONGS_TO, 'PaymentMethod', 'payment_method_id'),
+			'paymentMethod' => array(self::HAS_MANY, 'PaymentMethod', 'payment_method_id'),
 			'orderLists' => array(self::HAS_MANY, 'OrderList', 'order_id'),
 		);
 	}

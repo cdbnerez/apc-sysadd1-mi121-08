@@ -80,7 +80,7 @@ $this->menu=array(
 			   	//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				'payment_method_id',
 				//'payment_desc',
-				//'bank_name',
+				'bank_name',
 			    //'customer_id' => 'Customer Name'
 			    //array('label'=>'Person', 'value'=>$model->person->FullName),
 			),
