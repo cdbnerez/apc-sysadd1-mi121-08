@@ -123,4 +123,9 @@ class PaymentMethod extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+		public function getPaymentType()
+	{
+	   return $this->payment_type;
+	}
 }
