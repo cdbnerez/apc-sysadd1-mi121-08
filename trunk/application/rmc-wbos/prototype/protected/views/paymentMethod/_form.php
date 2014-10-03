@@ -22,7 +22,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_type'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_type',array("CASH"=>"Cash", "CARD"=>"Card")
+		<?php echo $form->dropDownList($model,'payment_type',array("CASH"=>"Cash", "Cheque"=>"Cheque")
 		,array('empty'=>'Select Payment Type')); ?>
 		
 		<?php echo $form->error($model,'payment_type'); ?>
@@ -31,7 +31,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_desc'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_desc',array("Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
+		<?php echo $form->dropDownList($model,'payment_desc',array("Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cheque"=>"Cheque", "Cash (Terms)"=>"Cash (Terms)")
 		,array('empty'=>'Select Payment Description')); ?>
 		
 		<?php echo $form->error($model,'payment_desc'); ?>
