@@ -31,42 +31,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_desc'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_desc',array("Card Payment (Straight)"=>"Card Payment (Straight)", "Card Payment (Installment)"=>"Card Payment (Installment)", "Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
+		<?php echo $form->dropDownList($model,'payment_desc',array("Cash (Straight)"=>"Cash (Straight)", "Cash (Cash Upon Delivery)"=>"Cash (Cash Upon Delivery)", "Cash (Cheque)"=>"Cash (Cheque)", "Cash (Terms)"=>"Cash (Terms)")
 		,array('empty'=>'Select Payment Description')); ?>
 		
 		<?php echo $form->error($model,'payment_desc'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'payment_method'); ?>
-		
-		<?php echo $form->dropDownList($model,'payment_method',array("Card, Straight"=>"Card, Straight", "Card, Terms"=>"Card, Terms", "Card, Installment"=>"Card, Installment")
-		,array('empty'=>'Select Payment Method')); ?>
-		
-		<?php echo $form->error($model,'payment_method'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'card_no'); ?>
-		<?php echo $form->textField($model,'card_no'); ?>
-		<?php echo $form->error($model,'card_no'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'cvc_no'); ?>
-		<?php echo $form->textField($model,'cvc_no'); ?>
-		<?php echo $form->error($model,'cvc_no'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'card_type'); ?>
-		
-		<?php echo $form->dropDownList($model,'card_type',array("DEBIT"=>"Debit", "CREDIT"=>"Credit")
-		,array('empty'=>'Select Card Type')); ?>
-		
-		<?php echo $form->error($model,'card_type'); ?>
-	</div>
-
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'bank_name'); ?>
 		
@@ -74,20 +44,6 @@
 		,array('empty'=>'Select Bank Name')); ?>
 		
 		<?php echo $form->error($model,'bank_name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'card_expire'); ?>
-		
-		<?php echo CHtml::activeTextField($model,'card_expire',array("id"=>"card_expire")); ?>
-		<?php $this->widget('application.extensions.calendar.SCalendar',
-        array(
-        'inputField'=>'card_expire',
-        'ifFormat'=>'%Y-%m-%d',
-		));
-		?>
-		
-		<?php echo $form->error($model,'card_expire'); ?>
 	</div>
 
 	<div class="row">

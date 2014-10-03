@@ -24,12 +24,7 @@ $this->menu=array(
 		'id',
 		'payment_type',
 		'payment_desc',
-		'payment_method',
-		'card_no',
-		'cvc_no',
-		'card_type',
 		'bank_name',
-		'card_expire',
 		'payment_terms_id',
 	),
 )); ?>

@@ -48,12 +48,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'payment_type',
 		'payment_desc',
-		'payment_method',
-		'card_no',
-		'cvc_no',
+		'bank_name',
 		/*
 		'card_type',
-		'bank_name',
 		'card_expire',
 		'payment_terms_id',
 		*/

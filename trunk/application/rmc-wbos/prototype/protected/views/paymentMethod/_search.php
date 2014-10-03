@@ -27,33 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'payment_method'); ?>
-		<?php echo $form->textField($model,'payment_method',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'card_no'); ?>
-		<?php echo $form->textField($model,'card_no'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'cvc_no'); ?>
-		<?php echo $form->textField($model,'cvc_no'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'card_type'); ?>
-		<?php echo $form->textField($model,'card_type',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'bank_name'); ?>
 		<?php echo $form->textField($model,'bank_name',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'card_expire'); ?>
-		<?php echo $form->textField($model,'card_expire'); ?>
 	</div>
 
 	<div class="row">
