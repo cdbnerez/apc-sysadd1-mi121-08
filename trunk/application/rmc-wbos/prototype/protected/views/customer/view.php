@@ -49,3 +49,22 @@ $this->menu=array(
 	)); ?>
 <br>
 <?php }} ?>
+
+<?php $conf= Order::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Order Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+			    'order_date',
+				'order_total',
+				'payment_total',
+				'order_status',
+			    //'customer_id' => 'Customer Name'
+			    //array('label'=>'Person', 'value'=>$model->person->FullName),
+			),
+	)); ?>
+<br>
+<?php }} ?>
