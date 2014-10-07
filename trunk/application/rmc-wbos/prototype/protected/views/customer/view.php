@@ -81,6 +81,8 @@ $this->menu=array(
 				//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				'bank_name',
 				'payment_desc',
+				'payment_type',
+				
 				//array('label'=>'Payment Type', 'value'=>$conf->bank_name),
 			    //array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				//'payment_desc',
