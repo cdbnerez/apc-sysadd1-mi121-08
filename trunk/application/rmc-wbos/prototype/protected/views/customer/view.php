@@ -48,7 +48,7 @@ $this->menu=array(
 			),
 	)); ?>
 <br>
-<?php }} ?>
+
 
 <?php $conf= Order::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
@@ -67,9 +67,9 @@ $this->menu=array(
 			),
 	)); ?>
 <br>
-<?php }} ?>
 
-<?php $conf= Order::model()->findAll('payment_method_id = :a', array(':a'=>$model->id));?>
+
+<?php $conf= PaymentMethod::model()->findAll('id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
 <h2>Payment Method Information</h2>
@@ -77,9 +77,10 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
-				'payment_method_id',
+				//'payment_method_id',
 				//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
-				//'bank_name',
+				'bank_name',
+				'payment_desc',
 				//array('label'=>'Payment Type', 'value'=>$conf->bank_name),
 			    //array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				//'payment_desc',
@@ -88,4 +89,6 @@ $this->menu=array(
 			),
 	)); ?>
 <br>
+<?php }} ?>
+<?php }} ?>
 <?php }} ?>
