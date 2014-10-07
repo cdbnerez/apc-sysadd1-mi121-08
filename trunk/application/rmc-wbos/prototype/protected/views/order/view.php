@@ -31,3 +31,5 @@ $this->menu=array(
 		'payment_method_id',
 	),
 )); ?>
+
+
