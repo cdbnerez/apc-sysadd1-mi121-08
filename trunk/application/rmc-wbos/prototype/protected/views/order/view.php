@@ -31,3 +31,11 @@ $this->menu=array(
 		'payment_method_id',
 	),
 )); ?>
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ac281dce9a0bf833acd750656c4aa2b15c80637
+>>>>>>> 51d25009516cc7be0c8e875db0944482f63e684c
