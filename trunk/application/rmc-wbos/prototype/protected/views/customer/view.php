@@ -77,11 +77,13 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
-			   	//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				'payment_method_id',
+				//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
+				//'bank_name',
+				//array('label'=>'Payment Type', 'value'=>$conf->bank_name),
+			    //array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
 				//'payment_desc',
-				'bank_name',
-			    //'customer_id' => 'Customer Name'
+				//'customer_id' => 'Customer Name'
 			    //array('label'=>'Person', 'value'=>$model->person->FullName),
 			),
 	)); ?>

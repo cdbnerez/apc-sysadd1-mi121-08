@@ -56,7 +56,7 @@ class PaymentMethod extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'orders' => array(self::HAS_MANY, 'Order', 'payment_method_id'),
-			'paymentTerms' => array(self::BELONGS_TO, 'PaymentTerms', 'payment_terms_id'),
+			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
 
 		);
 	}
