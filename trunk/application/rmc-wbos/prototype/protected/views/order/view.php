@@ -32,3 +32,7 @@ $this->menu=array(
 	),
 )); ?>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ac281dce9a0bf833acd750656c4aa2b15c80637
