@@ -16,7 +16,9 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Order #<?php echo $model->id; ?></h1>
+
+
+<h1> View OrderList # <?php echo $model->id; ?> </h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -31,4 +33,7 @@ $this->menu=array(
 		'payment_method_id',
 	),
 )); ?>
+
+
+
 
