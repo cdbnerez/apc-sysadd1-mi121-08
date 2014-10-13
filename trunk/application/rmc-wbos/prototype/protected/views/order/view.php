@@ -45,8 +45,29 @@ $this->menu=array(
 				'item_qty',
 				'item_inventory_id',
 				'order_id',
+				
 			),
 	)); ?>
 <br>
+<?php }} ?>
 
+<?php
+$query = new CDbCriteria();
+$query->select = 'item_qty';
+$query->condition = 'order_id=:a';
+$query->params = array(':a'=>$model->id);
+//$query->params = array(':id'=>$model->id);
+?>
+<?php $conf= ItemInventory::model()->findAll(OrderList::model()->findAll($query));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>qwerty</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+				'item_desc',				
+			),
+	)); ?>
+<br>
 <?php }} ?>
