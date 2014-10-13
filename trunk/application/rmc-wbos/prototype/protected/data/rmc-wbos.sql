@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2014 at 06:10 AM
+-- Generation Time: Oct 13, 2014 at 01:16 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -33,18 +33,19 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cus_fname` varchar(45) NOT NULL,
   `cus_lname` varchar(45) NOT NULL,
   `cus_user_name` varchar(45) NOT NULL,
-  `cus_user_passwd` varchar(45) NOT NULL,
+  `cus_user_passwd` varchar(255) NOT NULL,
   `cus_contact_num` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `cus_type`, `cus_company`, `cus_fname`, `cus_lname`, `cus_user_name`, `cus_user_passwd`, `cus_contact_num`) VALUES
-(1, '1', 'APC', 'Nikko', 'Espiritu', 'nikko123', 'nikko123', '0981231238'),
-(2, 'Retail', 'JM''s Sari-sari Store', 'John Michael', 'Santos', 'jmsantos', 'jm8322187', '09428032613');
+(1, 'Retail', 'APC', 'Nikko', 'Espiritu', 'nikko123', '299bea33bdf9e2f0488bdb09dc1d36affecd4c078aa4d0753f33d22b5c0d4a13', '0981231238'),
+(2, 'Retail', 'JM''s Sari-sari Store', 'John Michael', 'Santos', 'jmsantos', 'e40db1e082687dffb2ef298f56e3a6c56faf3142e1103f1917e80c0e228bd478', '09428032613'),
+(3, 'Wholesale', 'Milantrovaltis Wholesale Inc.', 'Carlos Daniel', 'Nerez', 'admin', '69f00a573073b56f9ac48463e6ced3e7f11dc834f4ee5010c90dd807124f6d38', '09226905245');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_delivery_customer1_idx` (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `delivery`
@@ -69,7 +70,8 @@ CREATE TABLE IF NOT EXISTS `delivery` (
 
 INSERT INTO `delivery` (`id`, `del_add`, `del_city`, `del_country`, `del_zip`, `customer_id`) VALUES
 (4, '1234-A Juan Luna st, Paseo De Roxas', 'Makati', 'Philippines', '1000', 1),
-(5, '1442 Mactan Street Baclaran', 'Paranaque City', 'Philippines', '0710', 2);
+(5, '1442 Mactan Street Baclaran', 'Paranaque City', 'Philippines', '0710', 2),
+(6, 'Unit 18B03 Victoria de Manila, Taft Avenue', 'Manila', 'Philippines', '1007', 3);
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `item_inventory` (
   `item_desc` varchar(100) NOT NULL,
   `item_price` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `item_inventory`
@@ -90,7 +92,8 @@ CREATE TABLE IF NOT EXISTS `item_inventory` (
 
 INSERT INTO `item_inventory` (`id`, `item_desc`, `item_price`) VALUES
 (1, 'Peanut Butter 200 grams', '500'),
-(2, 'Marshmallow 5grams', '10');
+(2, 'Marshmallow 5 grams', '10'),
+(3, 'Marshmallow 120 grams', '900');
 
 -- --------------------------------------------------------
 
@@ -111,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   KEY `fk_order_customer1_idx` (`customer_id`),
   KEY `fk_order_delivery1_idx` (`delivery_id`),
   KEY `fk_order_payment_method1_idx` (`payment_method_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `order`
@@ -119,7 +122,8 @@ CREATE TABLE IF NOT EXISTS `order` (
 
 INSERT INTO `order` (`id`, `order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES
 (4, '2014-08-01', '500', '0', 'Approved', 1, 4, 1),
-(5, '2014-08-02', '21', '700', 'Approved', 2, 5, 2);
+(5, '2014-08-02', '21', '700', 'Approved', 2, 5, 2),
+(6, '2014-08-20', '900', '0', 'Pending', 3, 6, 3);
 
 -- --------------------------------------------------------
 
@@ -135,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `order_list` (
   PRIMARY KEY (`id`),
   KEY `fk_order_list_item_inventory1_idx` (`item_inventory_id`),
   KEY `fk_order_list_order1_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `order_list`
@@ -143,7 +147,8 @@ CREATE TABLE IF NOT EXISTS `order_list` (
 
 INSERT INTO `order_list` (`id`, `item_qty`, `item_inventory_id`, `order_id`) VALUES
 (2, 1, 1, 4),
-(3, 3, 2, 5);
+(3, 3, 2, 5),
+(5, 1, 3, 6);
 
 -- --------------------------------------------------------
 
@@ -164,15 +169,16 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
   `payment_terms_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_payment_method_payment_terms1_idx` (`payment_terms_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `payment_method`
 --
 
 INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `payment_method`, `card_no`, `cvc_no`, `card_type`, `bank_name`, `card_expire`, `payment_terms_id`) VALUES
-(1, 'CASH', 'Cash (Terms)', 'CARD', 2147483647, 123, 'CREDIT', 'BPI', '2014-08-12', 1),
-(2, 'CASH', 'Cash (Straight)', 'CARD', 12345, 777, 'DEBIT', 'BDO', '2014-08-06', 2);
+(1, 'CARD', 'CARD', 'CARD', 2147483647, 123, 'CREDIT', 'BDO', '2014-08-12', 1),
+(2, 'CARD', 'CARD', 'CARD', 12345, 777, 'DEBIT', 'BPI', '2014-08-06', 2),
+(3, 'CARD', 'CARD', 'CARD', 2147483647, 152, 'CREDIT', 'BPI', '2014-08-31', 3);
 
 -- --------------------------------------------------------
 
@@ -186,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `payment_terms` (
   `pay_per_month` int(11) NOT NULL,
   `pay_discount` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `payment_terms`
@@ -194,7 +200,8 @@ CREATE TABLE IF NOT EXISTS `payment_terms` (
 
 INSERT INTO `payment_terms` (`id`, `pay_terms`, `pay_per_month`, `pay_discount`) VALUES
 (1, 5, 100, 0),
-(2, 1, 2500, 250);
+(2, 1, 2500, 250),
+(3, 9, 100, 20);
 
 --
 -- Constraints for dumped tables
