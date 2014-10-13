@@ -29,22 +29,19 @@ $this->menu=array(
 	),
 )); ?>
 
-<?php $conf= PaymentTerms::model()->findAll('payment_terms_id = :a', array(':a'=>$model->id));?>
+<?php $conf= PaymentTerms::model()->findAll('id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
-<h2>Customer Information</h2>
+<h2>Payment Terms Information</h2>
 <?php foreach ($conf as $row) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
-	        'attributes'=>array(   
-				'cus_type',
-				'cus_company',
-				'cus_fname',
-				'cus_lname',
-				'cus_user_name',
-				'cus_user_passwd',
-				'cus_contact_num',
-			),
+	        'attributes'=>array(  
+			    'id',
+		        'pay_terms',
+		        'pay_per_month',
+		        'pay_discount',	
+		    ),
 	)); ?>
 <br>
 
@@ -55,7 +52,8 @@ $this->menu=array(
 <?php foreach ($conf as $row) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
-	        'attributes'=>array(   
+	        'attributes'=>array( 
+                'id',			
 				'cus_type',
 				'cus_company',
 				'cus_fname',
