@@ -27,3 +27,41 @@ $this->menu=array(
 		'pay_discount',
 	),
 )); ?>
+
+<?php $conf= PaymentMethod::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Payment Method Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(  
+			    'payment_type',
+			    'payment_desc',
+			    'bank_name',
+			    'payment_terms_id',
+		    ),
+	)); ?>
+<br>
+
+<?php $conf= Customer::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Customer Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array( 
+                'id',			
+				'cus_type',
+				'cus_company',
+				'cus_fname',
+				'cus_lname',
+				'cus_user_name',
+				'cus_user_passwd',
+				'cus_contact_num',
+			),
+	)); ?>
+<br>
+<?php }} ?>
+<?php }} ?>
