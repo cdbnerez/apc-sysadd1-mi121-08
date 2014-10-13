@@ -15,8 +15,13 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+	 
+	private $_id;
+	 
 	public function authenticate()
 	{
+	// default authentication
+	/** 
 		$users=array(
 			// username => password
 			'demo'=>'demo',
@@ -30,4 +35,28 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_NONE;
 		return !$this->errorCode;
 	}
+	**/
+
+	//username and password authentication
+	    $username=strtolower($this->username);
+		$user=Employee::model()->find('LOWER(cus_user_name)=?', array($username));
+		
+		if($user === null) 
+		{
+		    $this->errorCode=self::ERROR_USERNAME_INVALID;
+		} 
+		else if ($user->cus_user_passwd !== hash_hmac('sha256', $this->cus_user_passwd = hash_hmac('sha256', $this->cus_user_passwd, Yii::app()->params['encryptionKey']))
+		{
+		    $this->errorCode=self::ERROR_PASSWORD_INVALID;
+		}
+		else
+		{
+		    $this->errorCode=self::ERROR_NONE;
+			$this->setState('type', $user->cus_type);
+			$this->_id = $user->id;
+		}
+		return !$this->errorCode;
+	}
+
+	
 }

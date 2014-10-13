@@ -121,6 +121,13 @@ class Customer extends CActiveRecord
 	{
 	   return $this->cus_lname . ", " . $this->cus_fname;
 	}
+	
+	public function beforeSave()
+	{
+	   $this->cus_user_passwd = hash_hmac('sha256', $this->cus_user_passwd, Yii::app()->params['encryptionKey']);
+	   return parent::beforeSave();
+	}
+	
 	/**
 	public static string dropDownList(string $name, string $select, array $data, array $htmlOptions=array ( ))
 	
