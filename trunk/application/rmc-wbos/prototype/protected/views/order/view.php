@@ -34,6 +34,19 @@ $this->menu=array(
 	),
 )); ?>
 
+<?php $conf= OrderList::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>OrderList Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+				'item_qty',
+				'item_inventory_id',
+				'order_id',
+			),
+	)); ?>
+<br>
 
-
-
+<?php }} ?>
