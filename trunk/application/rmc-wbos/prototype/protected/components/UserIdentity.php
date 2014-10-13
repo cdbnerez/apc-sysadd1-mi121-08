@@ -39,13 +39,13 @@ class UserIdentity extends CUserIdentity
 
 	//username and password authentication
 	    $username=strtolower($this->username);
-		$user=Employee::model()->find('LOWER(cus_user_name)=?', array($username));
+		$user=Customer::model()->find('LOWER(cus_user_name)=?', array($username));
 		
 		if($user === null) 
 		{
 		    $this->errorCode=self::ERROR_USERNAME_INVALID;
 		} 
-		else if ($user->cus_user_passwd !== hash_hmac('sha256', $this->cus_user_passwd = hash_hmac('sha256', $this->cus_user_passwd, Yii::app()->params['encryptionKey']))
+		else if ($user->cus_user_passwd !== hash_hmac('sha256', $this->password, Yii::app()->params['encryptionKey']))
 		{
 		    $this->errorCode=self::ERROR_PASSWORD_INVALID;
 		}
@@ -57,6 +57,10 @@ class UserIdentity extends CUserIdentity
 		}
 		return !$this->errorCode;
 	}
-
+	
+	public function getId()
+	{
+	    return $this->_id;
+	}
 	
 }
