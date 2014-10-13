@@ -10222,15 +10222,34 @@ REQUEST_URI=/prototype/index.php?r=customer/view&id=1
 HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
 >>>>>>> fc951d67e0d89f193b2eab21f66400356fcf3fb6
 ---
+<<<<<<< HEAD
+2014/10/13 04:40:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `payment_method` `t` WHERE order_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (54)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 04:40:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `payment_method` `t` WHERE order_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+=======
 2014/10/13 04:20:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE customer_id = :a.
 in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\paymentMethod\view.php (32)
 in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php (56)
 in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
 2014/10/13 04:20:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE customer_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+>>>>>>> 3f17e507c9ef8431dd6424cb78f7a3eb01b31ca9
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
 #2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+<<<<<<< HEAD
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(54): CActiveRecord->findAll('order_id = :a', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+=======
 #3 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\paymentMethod\view.php(32): CActiveRecord->findAll('customer_id = :...', Array)
 #4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\cd\Doc...')
 #5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\cd\Doc...', Array, true)
@@ -10240,6 +10259,7 @@ Stack trace:
 #9 [internal function]: PaymentMethodController->actionView('1')
 #10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
 #11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+>>>>>>> 3f17e507c9ef8431dd6424cb78f7a3eb01b31ca9
 #12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -10249,12 +10269,291 @@ Stack trace:
 #18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+<<<<<<< HEAD
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/13 04:41:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `payment_method` `t` WHERE customer_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (54)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 04:41:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `payment_method` `t` WHERE customer_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(54): CActiveRecord->findAll('customer_id = :...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/13 04:43:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (36)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 04:43:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(36): CActiveRecord->findAll('order_id = :a', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+=======
 #21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
 #22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #23 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
 #24 {main}
 REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=1
 HTTP_REFERER=http://localhost/prototype/index.php?r=paymentMethod/index
+>>>>>>> 3f17e507c9ef8431dd6424cb78f7a3eb01b31ca9
+---
+2014/10/13 05:37:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_list_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_list_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 05:37:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_list_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_list_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('order_list_id =...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+---
+2014/10/13 05:38:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_inventory_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE item_inventory_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 05:38:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_inventory_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE item_inventory_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('item_inventory_...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+---
+2014/10/13 05:54:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_inventory_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE item_inventory_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 05:54:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_inventory_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE item_inventory_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('item_inventory_...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/13 05:54:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 05:54:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('order_id = :a', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/13 05:54:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 05:54:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('order_id = :a', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/13 06:00:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php (52)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (56)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/10/13 06:00:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `item_inventory` `t` WHERE order_id = :a' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\view.php(52): CActiveRecord->findAll('order_id = :a', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#8 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(56): CController->render('view', Array)
+#9 [internal function]: OrderController->actionView('4')
+#10 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/prototype/index.php?r=order/view&id=4
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
 ---
 2014/10/13 04:31:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'payment_terms_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `payment_terms` `t` WHERE payment_terms_id = :a.
 in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\paymentMethod\view.php (32)
