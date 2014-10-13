@@ -31,7 +31,7 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				//array('label'=>'Contact', 'url'=>array('/site/contact')),
 				
 				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/index')),
 				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
