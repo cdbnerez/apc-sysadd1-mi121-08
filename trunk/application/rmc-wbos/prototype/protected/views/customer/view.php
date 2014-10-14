@@ -67,7 +67,7 @@ $this->menu=array(
 			),
 	)); ?>
 <br>
-
+<?php }} ?>
 
 <?php $conf= PaymentMethod::model()->findAll('id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
@@ -92,5 +92,5 @@ $this->menu=array(
 	)); ?>
 <br>
 <?php }} ?>
-<?php }} ?>
+
 <?php }} ?>
