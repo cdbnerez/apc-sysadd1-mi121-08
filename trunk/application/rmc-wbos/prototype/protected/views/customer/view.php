@@ -93,4 +93,20 @@ $this->menu=array(
 <br>
 <?php }} ?>
 
+<?php $conf= PaymentTerms::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Payment Terms Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+				'pay_terms',
+				'pay_per_month',
+				'pay_discount',
+			),
+	)); ?>
+<br>
+<?php }} ?>
+
 <?php }} ?>
