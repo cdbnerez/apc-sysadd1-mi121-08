@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2014 at 01:16 PM
+-- Generation Time: Oct 14, 2014 at 06:33 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cus_user_passwd` varchar(255) NOT NULL,
   `cus_contact_num` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `customer`
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   KEY `fk_order_customer1_idx` (`customer_id`),
   KEY `fk_order_delivery1_idx` (`delivery_id`),
   KEY `fk_order_payment_method1_idx` (`payment_method_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `order`
@@ -123,7 +123,8 @@ CREATE TABLE IF NOT EXISTS `order` (
 INSERT INTO `order` (`id`, `order_date`, `order_total`, `payment_total`, `order_status`, `customer_id`, `delivery_id`, `payment_method_id`) VALUES
 (4, '2014-08-01', '500', '0', 'Approved', 1, 4, 1),
 (5, '2014-08-02', '21', '700', 'Approved', 2, 5, 2),
-(6, '2014-08-20', '900', '0', 'Pending', 3, 6, 3);
+(6, '2014-08-20', '900', '0', 'Pending', 3, 6, 3),
+(7, '2014-10-14', '5000', '5000', 'Approved', 1, 4, 1);
 
 -- --------------------------------------------------------
 
