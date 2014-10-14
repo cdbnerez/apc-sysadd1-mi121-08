@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Manage Customer', 'url'=>array('admin')),
 );
 ?>
-<h1><?php echo $model->cus_company?></h1>
+<h1><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -38,7 +38,7 @@ $this->menu=array(
 <?php foreach ($conf as $row) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
-	        'attributes'=>array(   
+	        'attributes'=>array(   	
 			    'del_add',
 			    'del_city',
 			    'del_country',
