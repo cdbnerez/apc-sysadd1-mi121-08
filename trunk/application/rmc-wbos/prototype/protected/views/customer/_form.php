@@ -55,7 +55,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cus_user_passwd'); ?>
-		<?php echo $form->textField($model,'cus_user_passwd',array('size'=>45,'maxlength'=>45, 'beforeSave')); ?>
+		<?php echo $form->passwordField($model,'cus_user_passwd',array('size'=>45,'maxlength'=>45, 'beforeSave')); ?>
 		<?php echo $form->error($model,'cus_user_passwd'); ?>
 	</div>
 
@@ -66,7 +66,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Next' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
