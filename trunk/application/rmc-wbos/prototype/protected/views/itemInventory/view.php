@@ -26,3 +26,42 @@ $this->menu=array(
 		'item_price',
 	),
 )); ?>
+
+<?php $conf= Customer::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Customer Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   
+				'cus_fname',
+				'cus_lname',
+				'cus_type',
+				'cus_contact_num',
+			),
+	)); ?>
+<br>
+
+<?php $conf= Delivery::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Delivery Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   	
+			    'del_add',
+			    'del_city',
+			    'del_country',
+			    'del_zip',
+			    //'customer_id' => 'Customer Name'
+			    //array('label'=>'Person', 'value'=>$model->person->FullName),
+			),
+	)); ?>
+<br>
+
+<?php }} ?>
+<?php }} ?>
+
+
