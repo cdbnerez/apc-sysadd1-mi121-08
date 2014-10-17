@@ -32,12 +32,20 @@ class CustomerController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) &&
+					((Yii::app()->user->type==="Admin"))'
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
+			),*/
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) &&
+					((Yii::app()->user->type==="Retail"))'
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
