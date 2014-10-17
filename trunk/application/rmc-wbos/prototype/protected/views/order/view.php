@@ -18,7 +18,7 @@ $this->menu=array(
 
 
 
-<h1> View Order # <?php echo $model->id; ?> </h1>
+<h1>Order Information - <?php echo $model->customer->FullName; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
