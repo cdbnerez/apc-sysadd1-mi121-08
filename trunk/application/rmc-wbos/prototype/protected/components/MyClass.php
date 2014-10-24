@@ -1,3 +1,5 @@
+<?php
+
 class MyClass
 {
   public function BeginRequest(CEvent $event)
@@ -5,3 +7,5 @@ class MyClass
     Yii::app()->theme = Yii::app()->session['theme'];
   }
 }
+
+?>

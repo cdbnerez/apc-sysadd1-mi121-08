@@ -1,3 +1,5 @@
+<?php
+
 class BrowserController extends Controller
 {
     public function actionIndex($theme)
@@ -7,3 +9,5 @@ class BrowserController extends Controller
         Yii::app()->request->redirect($referrer);
     }
 }
+
+?>
