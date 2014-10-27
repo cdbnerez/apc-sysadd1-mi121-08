@@ -12282,3 +12282,36 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=customer/delete&id=1
 HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=1
 ---
+2014/10/27 15:11:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=1
+---
+2014/10/27 15:11:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=1
+---
+2014/10/27 15:16:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order&id2=
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=1
+---
