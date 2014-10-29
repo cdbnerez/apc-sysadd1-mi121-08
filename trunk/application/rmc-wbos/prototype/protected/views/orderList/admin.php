@@ -47,7 +47,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'item_qty',
-		array('name'=>'item_inventory_id', 'header'=>'Item Description', 'value'=>'$data->itemInventory->item_desc'),
+		'item_inventory_id',
 		'order_id',
 		array(
 			'class'=>'CButtonColumn',
