@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2014 at 03:12 PM
+-- Generation Time: Oct 29, 2014 at 04:44 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -60,7 +60,14 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_delivery_order1_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `delivery`
+--
+
+INSERT INTO `delivery` (`id`, `del_add`, `del_city`, `del_country`, `del_zip`, `order_id`) VALUES
+(7, '18B03 Victoria De Manila', 'Manila', 'Philippines', '1006', 8);
 
 -- --------------------------------------------------------
 
@@ -98,7 +105,14 @@ CREATE TABLE IF NOT EXISTS `order` (
   `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_order_customer1_idx` (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`) VALUES
+(8, '2014-10-29', 'Pending', 7);
 
 -- --------------------------------------------------------
 
@@ -116,7 +130,14 @@ CREATE TABLE IF NOT EXISTS `order_list` (
   PRIMARY KEY (`id`),
   KEY `fk_order_list_order1_idx` (`order_id`),
   KEY `fk_order_list_item1_idx` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `order_list`
+--
+
+INSERT INTO `order_list` (`id`, `item_qty`, `order_list_total_amount`, `item_order_total`, `item_id`, `order_id`) VALUES
+(6, 1, '150', '150', 4, 8);
 
 -- --------------------------------------------------------
 
@@ -136,7 +157,14 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
   `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_payment_method_order1_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `payment_method`
+--
+
+INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `bank_name`, `payment_terms`, `payment_per_month`, `payment_discount`, `payment_total_amount`, `order_id`) VALUES
+(4, 'CASH', 'Cash (Straight)', 'Robinsons', 0, 150, 0, '150', 8);
 
 --
 -- Constraints for dumped tables
