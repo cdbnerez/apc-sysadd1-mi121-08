@@ -59,9 +59,9 @@ class OrderList extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'item_qty' => 'Item Quantity',
+			'item_qty' => 'Item Qty',
 			'item_inventory_id' => 'Item Inventory',
-			'order_id' => 'Order ID',
+			'order_id' => 'Order',
 		);
 	}
 
@@ -85,9 +85,7 @@ class OrderList extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('item_qty',$this->item_qty);
-		$criteria->with=array('itemInventory');
-		$criteria->compare('t.id',$this->id);
-		$criteria->compare('itemInventory.item_desc',$this->item_inventory_id, true);
+		$criteria->compare('item_inventory_id',$this->item_inventory_id);
 		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(
