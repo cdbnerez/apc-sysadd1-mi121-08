@@ -13,10 +13,10 @@ $this->menu=array(
 	array('label'=>'Update Customer', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Customer', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Customer', 'url'=>array('admin')),
-	array('label'=>'Add Order', 'url'=>array('order')),
 );
 ?>
-<h1><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
+
+<h1>View Customer #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -31,83 +31,3 @@ $this->menu=array(
 		'cus_contact_num',
 	),
 )); ?>
-
-<?php $conf= Delivery::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Delivery Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   	
-			    'del_add',
-			    'del_city',
-			    'del_country',
-			    'del_zip',
-			    //'customer_id' => 'Customer Name'
-			    //array('label'=>'Person', 'value'=>$model->person->FullName),
-			),
-	)); ?>
-<br>
-
-
-<?php $conf= Order::model()->findAll('customer_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Order Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   
-			    'order_date',
-				'order_total',
-				'payment_total',
-				'order_status',
-			    //'customer_id' => 'Customer Name'
-			    //array('label'=>'Person', 'value'=>$model->person->FullName),
-			),
-	)); ?>
-<br>
-<?php }} ?>
-
-<?php $conf= PaymentMethod::model()->findAll('id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Payment Method Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   
-				//'payment_method_id',
-				//array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
-				'bank_name',
-				'payment_desc',
-				'payment_type',
-				
-				//array('label'=>'Payment Type', 'value'=>$conf->bank_name),
-			    //array('label'=>'Payment Type', 'value'=>$conf->PaymentType),
-				//'payment_desc',
-				//'customer_id' => 'Customer Name'
-			    //array('label'=>'Person', 'value'=>$model->person->FullName),
-			),
-	)); ?>
-<br>
-<?php }} ?>
-
-<?php $conf= PaymentTerms::model()->findAll('id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Payment Terms Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   
-				'pay_terms',
-				'pay_per_month',
-				'pay_discount',
-			),
-	)); ?>
-<br>
-<?php }} ?>
-
-<?php }} ?>

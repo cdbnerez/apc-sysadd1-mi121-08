@@ -25,8 +25,8 @@
 	<?php echo CHtml::encode($data->del_zip); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
-	<?php echo CHtml::encode($data->customer->FullName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('order_id')); ?>:</b>
+	<?php echo CHtml::encode($data->order_id); ?>
 	<br />
 
 

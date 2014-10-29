@@ -9,11 +9,10 @@
  * @property string $del_city
  * @property string $del_country
  * @property string $del_zip
- * @property integer $customer_id
+ * @property integer $order_id
  *
  * The followings are the available model relations:
- * @property Customer $customer
- * @property Order[] $orders
+ * @property Order $order
  */
 class Delivery extends CActiveRecord
 {
@@ -33,13 +32,14 @@ class Delivery extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('del_add, del_city, del_country, customer_id', 'required'),
-			array('customer_id', 'numerical', 'integerOnly'=>true),
-			array('del_add, del_city, del_country', 'length', 'max'=>45),
+			array('del_add, del_city, del_country, order_id', 'required'),
+			array('order_id', 'numerical', 'integerOnly'=>true),
+			array('del_add', 'length', 'max'=>255),
+			array('del_city, del_country', 'length', 'max'=>45),
 			array('del_zip', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, del_add, del_city, del_country, del_zip, customer_id', 'safe', 'on'=>'search'),
+			array('id, del_add, del_city, del_country, del_zip, order_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,8 +51,7 @@ class Delivery extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
-			'orders' => array(self::HAS_MANY, 'Order', 'delivery_id'),
+			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 		);
 	}
 
@@ -63,11 +62,11 @@ class Delivery extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'del_add' => 'Address',
-			'del_city' => 'City/State',
-			'del_country' => 'Country',
-			'del_zip' => 'Zip Code',
-			'customer_id' => 'Customer Name',
+			'del_add' => 'Del Add',
+			'del_city' => 'Del City',
+			'del_country' => 'Del Country',
+			'del_zip' => 'Del Zip',
+			'order_id' => 'Order',
 		);
 	}
 
@@ -94,11 +93,7 @@ class Delivery extends CActiveRecord
 		$criteria->compare('del_city',$this->del_city,true);
 		$criteria->compare('del_country',$this->del_country,true);
 		$criteria->compare('del_zip',$this->del_zip,true);
-		
-		$criteria->with=array('customer');
-		$criteria->compare('t.id',$this->id);
-    	$criteria->compare('customer.cus_lname',$this->customer_id, true);
-		
+		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -115,11 +110,4 @@ class Delivery extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
-	public function getFullAddress()
-	{
-	   return $this->del_add . ", " . $this->del_city . ", " . $this->del_country . ", " . $this->del_zip;
-	}
-	
-	
 }

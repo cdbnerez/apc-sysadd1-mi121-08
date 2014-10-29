@@ -32,21 +32,13 @@ class CustomerController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
-				'users'=>array('@'),
-				'expression'=>'isset(Yii::app()->user->type) &&
-					((Yii::app()->user->type==="Wholesale"))'
-			),
-			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),*/
-			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
 				'users'=>array('@'),
-				'expression'=>'isset(Yii::app()->user->type) &&
-					((Yii::app()->user->type==="Retail"))'
-			),*/
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -74,13 +66,12 @@ class CustomerController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
 
 		if(isset($_POST['Customer']))
 		{
 			$model->attributes=$_POST['Customer'];
 			if($model->save())
-				$this->redirect(array('delivery/create'));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -165,8 +156,6 @@ class CustomerController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-		
-
 	}
 
 	/**
@@ -181,6 +170,4 @@ class CustomerController extends Controller
 			Yii::app()->end();
 		}
 	}
-	
-	
 }

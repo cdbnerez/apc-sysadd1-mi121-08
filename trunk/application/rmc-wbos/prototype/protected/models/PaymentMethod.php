@@ -7,17 +7,15 @@
  * @property integer $id
  * @property string $payment_type
  * @property string $payment_desc
- * @property string $payment_method
- * @property integer $card_no
- * @property integer $cvc_no
- * @property string $card_type
  * @property string $bank_name
- * @property string $card_expire
- * @property integer $payment_terms_id
+ * @property integer $payment_terms
+ * @property integer $payment_per_month
+ * @property integer $payment_discount
+ * @property string $payment_total_amount
+ * @property integer $order_id
  *
  * The followings are the available model relations:
- * @property Order[] $orders
- * @property PaymentTerms $paymentTerms
+ * @property Order $order
  */
 class PaymentMethod extends CActiveRecord
 {
@@ -37,13 +35,14 @@ class PaymentMethod extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('payment_type, payment_desc, bank_name, payment_terms_id', 'required'),
-			array('payment_terms_id', 'numerical', 'integerOnly'=>true),
+			array('payment_type, payment_desc, bank_name, payment_terms, payment_per_month, payment_discount, payment_total_amount, order_id', 'required'),
+			array('payment_terms, payment_per_month, payment_discount, order_id', 'numerical', 'integerOnly'=>true),
 			array('payment_type', 'length', 'max'=>5),
 			array('payment_desc, bank_name', 'length', 'max'=>45),
+			array('payment_total_amount', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, payment_type, payment_desc, bank_name, payment_terms_id', 'safe', 'on'=>'search'),
+			array('id, payment_type, payment_desc, bank_name, payment_terms, payment_per_month, payment_discount, payment_total_amount, order_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,9 +54,7 @@ class PaymentMethod extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'orders' => array(self::HAS_MANY, 'Order', 'payment_method_id'),
-			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
-
+			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 		);
 	}
 
@@ -69,14 +66,13 @@ class PaymentMethod extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'payment_type' => 'Payment Type',
-			'payment_desc' => 'Payment Description',
-			//'payment_method' => 'Payment Method',
-			//'card_no' => 'Card No.',
-			//'cvc_no' => 'Card Cvc Number',
-			//'card_type' => 'Card Type',
-			//'card_expire' => 'Card Expiration Date',
-			'bank_name' => 'Issuing Bank',
-			'payment_terms_id' => 'Payment Terms ID:',
+			'payment_desc' => 'Payment Desc',
+			'bank_name' => 'Bank Name',
+			'payment_terms' => 'Payment Terms',
+			'payment_per_month' => 'Payment Per Month',
+			'payment_discount' => 'Payment Discount',
+			'payment_total_amount' => 'Payment Total Amount',
+			'order_id' => 'Order',
 		);
 	}
 
@@ -101,13 +97,12 @@ class PaymentMethod extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('payment_type',$this->payment_type,true);
 		$criteria->compare('payment_desc',$this->payment_desc,true);
-		//$criteria->compare('payment_method',$this->payment_method,true);
-		//$criteria->compare('card_no',$this->card_no);
-		//$criteria->compare('cvc_no',$this->cvc_no);
-		//$criteria->compare('card_type',$this->card_type,true);
 		$criteria->compare('bank_name',$this->bank_name,true);
-		//$criteria->compare('card_expire',$this->card_expire,true);
-		$criteria->compare('payment_terms_id',$this->payment_terms_id);
+		$criteria->compare('payment_terms',$this->payment_terms);
+		$criteria->compare('payment_per_month',$this->payment_per_month);
+		$criteria->compare('payment_discount',$this->payment_discount);
+		$criteria->compare('payment_total_amount',$this->payment_total_amount,true);
+		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -123,10 +118,5 @@ class PaymentMethod extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-	
-		public function getPaymentType()
-	{
-	   return $this->payment_type;
 	}
 }

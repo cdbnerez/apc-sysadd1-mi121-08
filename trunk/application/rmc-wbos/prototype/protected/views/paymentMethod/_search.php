@@ -32,8 +32,28 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'payment_terms_id'); ?>
-		<?php echo $form->textField($model,'payment_terms_id'); ?>
+		<?php echo $form->label($model,'payment_terms'); ?>
+		<?php echo $form->textField($model,'payment_terms'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'payment_per_month'); ?>
+		<?php echo $form->textField($model,'payment_per_month'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'payment_discount'); ?>
+		<?php echo $form->textField($model,'payment_discount'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'payment_total_amount'); ?>
+		<?php echo $form->textField($model,'payment_total_amount',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'order_id'); ?>
+		<?php echo $form->textField($model,'order_id'); ?>
 	</div>
 
 	<div class="row buttons">

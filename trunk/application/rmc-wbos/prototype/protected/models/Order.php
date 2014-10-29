@@ -6,18 +6,14 @@
  * The followings are the available columns in table 'order':
  * @property integer $id
  * @property string $order_date
- * @property string $order_total
- * @property string $payment_total
  * @property string $order_status
  * @property integer $customer_id
- * @property integer $delivery_id
- * @property integer $payment_method_id
  *
  * The followings are the available model relations:
+ * @property Delivery[] $deliveries
  * @property Customer $customer
- * @property Delivery $delivery
- * @property PaymentMethod $paymentMethod
  * @property OrderList[] $orderLists
+ * @property PaymentMethod[] $paymentMethods
  */
 class Order extends CActiveRecord
 {
@@ -37,13 +33,12 @@ class Order extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('order_date, order_total, payment_total, order_status, customer_id, delivery_id, payment_method_id', 'required'),
-			array('customer_id, delivery_id, payment_method_id', 'numerical', 'integerOnly'=>true),
-			array('order_date, order_status', 'length', 'max'=>45),
-			array('order_total, payment_total', 'length', 'max'=>10),
+			array('order_date, order_status, customer_id', 'required'),
+			array('customer_id', 'numerical', 'integerOnly'=>true),
+			array('order_status', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, order_date, order_total, payment_total, order_status, customer_id, delivery_id, payment_method_id', 'safe', 'on'=>'search'),
+			array('id, order_date, order_status, customer_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,10 +50,10 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'deliveries' => array(self::HAS_MANY, 'Delivery', 'order_id'),
 			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
-			'delivery' => array(self::BELONGS_TO, 'Delivery', 'delivery_id'),
-			'paymentMethod' => array(self::BELONGS_TO, 'PaymentMethod', 'payment_method_id'),
 			'orderLists' => array(self::HAS_MANY, 'OrderList', 'order_id'),
+			'paymentMethods' => array(self::HAS_MANY, 'PaymentMethod', 'order_id'),
 		);
 	}
 
@@ -70,12 +65,8 @@ class Order extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'order_date' => 'Order Date',
-			'order_total' => 'Order Total',
-			'payment_total' => 'Payment Total',
 			'order_status' => 'Order Status',
-			'customer_id' => 'Customer Name',
-			'delivery_id' => 'Delivery Address',
-			'payment_method_id' => 'Payment Method ID',
+			'customer_id' => 'Customer',
 		);
 	}
 
@@ -99,21 +90,9 @@ class Order extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('order_date',$this->order_date,true);
-		$criteria->compare('order_total',$this->order_total,true);
-		$criteria->compare('payment_total',$this->payment_total,true);
 		$criteria->compare('order_status',$this->order_status,true);
-		
-		$criteria->with=array('customer', 'delivery', 'paymentMethod');
-		
-		$criteria->compare('t.id',$this->id);
-    	$criteria->compare('customer.cus_lname',$this->customer_id, true);
-		
-		$criteria->compare('t.id',$this->id);
-    	$criteria->compare('delivery.del_add',$this->delivery_id, true);
-		
-		$criteria->compare('v.id',$this->id);
-    	$criteria->compare('paymentMethod.payment_method',$this->payment_method_id, true);
-	
+		$criteria->compare('customer_id',$this->customer_id);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

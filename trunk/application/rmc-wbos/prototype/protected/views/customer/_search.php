@@ -43,7 +43,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'cus_user_passwd'); ?>
-		<?php echo $form->textField($model,'cus_user_passwd',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'cus_user_passwd',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">

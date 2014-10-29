@@ -6,7 +6,6 @@
 
 <div class="form">
 
-
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'customer-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
@@ -22,10 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cus_type'); ?>
-	
-	    <?php echo $form->dropDownList($model,'cus_type',array("Retail"=>"Retail", "Wholesale"=>"Wholesale", "Walk-In"=>"Walk-In")
-		,array('empty'=>'Select Customer Type')); ?>
-	
+		<?php echo $form->textField($model,'cus_type',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'cus_type'); ?>
 	</div>
 
@@ -55,7 +51,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cus_user_passwd'); ?>
-		<?php echo $form->passwordField($model,'cus_user_passwd',array('size'=>45,'maxlength'=>45, 'beforeSave')); ?>
+		<?php echo $form->textField($model,'cus_user_passwd',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'cus_user_passwd'); ?>
 	</div>
 
@@ -66,7 +62,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Next' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

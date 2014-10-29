@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'del_add'); ?>
-		<?php echo $form->textField($model,'del_add',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'del_add',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
@@ -37,8 +37,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'customer_id'); ?>
-		<?php echo $form->textField($model,'customer_id'); ?>
+		<?php echo $form->label($model,'order_id'); ?>
+		<?php echo $form->textField($model,'order_id'); ?>
 	</div>
 
 	<div class="row buttons">

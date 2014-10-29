@@ -16,53 +16,14 @@ $this->menu=array(
 );
 ?>
 
-
-
-<h1>Order Information - <?php echo $model->customer->FullName; ?></h1>
+<h1>View Order #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
 		'order_date',
-		'order_total',
-		'payment_total',
 		'order_status',
-		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
-		array('label'=>'Customer Delivery Address', 'value'=>$model->delivery->FullAddress),
-		'payment_method_id',
+		'customer_id',
 	),
 )); ?>
-
-<?php $conf= OrderList::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>OrderList Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   
-				'item_qty',
-				'item_inventory_id',
-				'order_id',
-				
-			),
-	)); ?>
-<br>
-
-
-<?php $conf= OrderList::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Item Inventory Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   
-				array('label'=>'Item Name', 'value'=>$row->itemInventory->item_desc),
-				
-			),
-	)); ?>
-<br>
-<?php }} ?>
-<?php }} ?>

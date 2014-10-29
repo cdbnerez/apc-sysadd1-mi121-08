@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Delivery Information - <?php echo $model->customer->FullName; ?></h1>
+<h1>View Delivery #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -26,6 +26,6 @@ $this->menu=array(
 		'del_city',
 		'del_country',
 		'del_zip',
-		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
+		'order_id',
 	),
 )); ?>
