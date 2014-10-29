@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'del_add'); ?>
-		<?php echo $form->textField($model,'del_add',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'del_add',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'del_add'); ?>
 	</div>
 
@@ -45,7 +45,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'order_id'); ?>
-		<?php echo $form->textField($model,'order_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'order_id', CHtml::listData(
+		Order::model()->findAll(), 'id', 'id'),
+		array('prompt' => 'Select a Order No#')
+		); ?>
+		
 		<?php echo $form->error($model,'order_id'); ?>
 	</div>
 
