@@ -20,8 +20,9 @@ class UserIdentity extends CUserIdentity
 	 
 	public function authenticate()
 	{
+	/**
 	// default authentication
-	/** 
+	
 		$users=array(
 			// username => password
 			'demo'=>'demo',
@@ -55,6 +56,7 @@ class UserIdentity extends CUserIdentity
 			$this->setState('type', $user->cus_type);
 			$this->_id = $user->id;
 		}
+	
 		return !$this->errorCode;
 	}
 	
