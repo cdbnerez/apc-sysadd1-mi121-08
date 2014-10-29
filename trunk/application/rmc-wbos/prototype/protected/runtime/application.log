@@ -13078,3 +13078,48 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=customer/admin
 HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
 ---
+2014/10/29 15:07:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "item/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=item/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
+---
+2014/10/29 15:07:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "item/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=item/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/10/29 15:07:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "item/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=item/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=item/index
+---
+2014/10/29 15:07:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "item/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=item/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=item/index
+---
+2014/10/29 15:07:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "item/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=item/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=delivery/index
+---
