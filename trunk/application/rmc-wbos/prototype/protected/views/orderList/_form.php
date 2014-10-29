@@ -20,21 +20,43 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'order_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'order_id', CHtml::listData(
+		Order::model()->findAll(), 'id', 'id'),
+		array('prompt' => 'Select Order No#')
+		); ?>
+		
+		<?php echo $form->error($model,'order_id'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'item_id'); ?>
+		
+		<?php echo $form->dropDownList($model, 'item_id', CHtml::listData(
+		Item::model()->findAll(), 'id', 'item_desc'),
+		array('prompt' => 'Select an Item')
+		); ?>
+		
+		<?php echo $form->error($model,'item_id'); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->labelEx($model,'item_qty'); ?>
 		<?php echo $form->textField($model,'item_qty'); ?>
 		<?php echo $form->error($model,'item_qty'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'item_inventory_id'); ?>
-		<?php echo $form->textField($model,'item_inventory_id'); ?>
-		<?php echo $form->error($model,'item_inventory_id'); ?>
+		<?php echo $form->labelEx($model,'item_order_total'); ?>
+		<?php echo $form->textField($model,'item_order_total',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'item_order_total'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'order_id'); ?>
-		<?php echo $form->textField($model,'order_id'); ?>
-		<?php echo $form->error($model,'order_id'); ?>
+		<?php echo $form->labelEx($model,'order_list_total_amount'); ?>
+		<?php echo $form->textField($model,'order_list_total_amount',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'order_list_total_amount'); ?>
 	</div>
 
 	<div class="row buttons">

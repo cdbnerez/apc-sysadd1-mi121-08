@@ -22,8 +22,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'item_qty',
-		'item_inventory_id',
 		'order_id',
+		array('label'=>'Customer Name', 'value'=>$model->item->item_desc),
+		'item_qty',
+		'item_order_total',
+		'order_list_total_amount',
 	),
 )); ?>
