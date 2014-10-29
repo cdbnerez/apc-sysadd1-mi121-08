@@ -24,6 +24,6 @@ $this->menu=array(
 		'id',
 		'order_date',
 		'order_status',
-		'customer_id',
+		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
 	),
 )); ?>
