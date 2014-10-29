@@ -1,136 +1,172 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 4.0.9
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 29, 2014 at 03:12 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
-CREATE SCHEMA IF NOT EXISTS `rmc-wbos` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `rmc-wbos` ;
-
--- -----------------------------------------------------
--- Table `rmc-wbos`.`customer`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`customer` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `cus_type` VARCHAR(45) NOT NULL,
-  `cus_company` VARCHAR(45) NULL DEFAULT NULL,
-  `cus_fname` VARCHAR(45) NOT NULL,
-  `cus_lname` VARCHAR(45) NOT NULL,
-  `cus_user_name` VARCHAR(45) NOT NULL,
-  `cus_user_passwd` VARCHAR(255) NOT NULL,
-  `cus_contact_num` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 7
-DEFAULT CHARACTER SET = latin1;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `rmc-wbos`.`order`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`order` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `order_date` DATE NOT NULL,
-  `order_status` VARCHAR(45) NOT NULL,
-  `customer_id` INT(11) NOT NULL,
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `rmc-wbos`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cus_type` varchar(45) NOT NULL,
+  `cus_company` varchar(45) DEFAULT NULL,
+  `cus_fname` varchar(45) NOT NULL,
+  `cus_lname` varchar(45) NOT NULL,
+  `cus_user_name` varchar(45) NOT NULL,
+  `cus_user_passwd` varchar(255) NOT NULL,
+  `cus_contact_num` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `cus_type`, `cus_company`, `cus_fname`, `cus_lname`, `cus_user_name`, `cus_user_passwd`, `cus_contact_num`) VALUES
+(7, 'Sytem Admin', 'ABC Company', 'Carlos Daniel', 'Nerez', 'cdbnerez', '13bc5da478f4b1ca535308569c29484bdf8bbc299d83f32eb62bb5e99dad06cf', '09226905245');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `delivery`
+--
+
+CREATE TABLE IF NOT EXISTS `delivery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `del_add` varchar(255) NOT NULL,
+  `del_city` varchar(45) NOT NULL,
+  `del_country` varchar(45) NOT NULL,
+  `del_zip` varchar(10) DEFAULT NULL,
+  `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_order_customer1_idx` (`customer_id` ASC),
-  CONSTRAINT `fk_order_customer1`
-    FOREIGN KEY (`customer_id`)
-    REFERENCES `rmc-wbos`.`customer` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 8
-DEFAULT CHARACTER SET = latin1;
+  KEY `fk_delivery_order1_idx` (`order_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `rmc-wbos`.`delivery`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`delivery` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `del_add` VARCHAR(255) NOT NULL,
-  `del_city` VARCHAR(45) NOT NULL,
-  `del_country` VARCHAR(45) NOT NULL,
-  `del_zip` VARCHAR(10) NULL DEFAULT NULL,
-  `order_id` INT(11) NOT NULL,
+--
+-- Table structure for table `item`
+--
+
+CREATE TABLE IF NOT EXISTS `item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_desc` varchar(100) NOT NULL,
+  `item_price` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`id`, `item_desc`, `item_price`) VALUES
+(4, 'Peanut Butter - 500 grams', '150'),
+(5, 'Peanut Butter - 250 grams', '100'),
+(6, 'Marshmallow - 100 grams', '50'),
+(7, 'Peanut Brittle - 250 grams', '90');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_date` date NOT NULL,
+  `order_status` varchar(45) NOT NULL,
+  `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_delivery_order1_idx` (`order_id` ASC),
-  CONSTRAINT `fk_delivery_order1`
-    FOREIGN KEY (`order_id`)
-    REFERENCES `rmc-wbos`.`order` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 7
-DEFAULT CHARACTER SET = latin1;
+  KEY `fk_order_customer1_idx` (`customer_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `rmc-wbos`.`item`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`item` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `item_desc` VARCHAR(100) NOT NULL,
-  `item_price` DECIMAL(10,0) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = latin1;
+--
+-- Table structure for table `order_list`
+--
 
-
--- -----------------------------------------------------
--- Table `rmc-wbos`.`order_list`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`order_list` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `item_qty` INT(11) NOT NULL,
-  `order_list_total_amount` DECIMAL(10,0) NOT NULL,
-  `item_order_total` DECIMAL(10,0) NOT NULL,
-  `item_id` INT(11) NOT NULL,
-  `order_id` INT(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `order_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_qty` int(11) NOT NULL,
+  `order_list_total_amount` decimal(10,0) NOT NULL,
+  `item_order_total` decimal(10,0) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_order_list_order1_idx` (`order_id` ASC),
-  INDEX `fk_order_list_item1_idx` (`item_id` ASC),
-  CONSTRAINT `fk_order_list_order1`
-    FOREIGN KEY (`order_id`)
-    REFERENCES `rmc-wbos`.`order` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_order_list_item1`
-    FOREIGN KEY (`item_id`)
-    REFERENCES `rmc-wbos`.`item` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 6
-DEFAULT CHARACTER SET = latin1;
+  KEY `fk_order_list_order1_idx` (`order_id`),
+  KEY `fk_order_list_item1_idx` (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `rmc-wbos`.`payment_method`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `rmc-wbos`.`payment_method` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `payment_type` VARCHAR(5) NOT NULL,
-  `payment_desc` VARCHAR(45) NOT NULL,
-  `bank_name` VARCHAR(45) NOT NULL,
-  `payment_terms` INT NOT NULL,
-  `payment_per_month` INT NOT NULL,
-  `payment_discount` INT NOT NULL,
-  `payment_total_amount` DECIMAL(10,0) NOT NULL,
-  `order_id` INT(11) NOT NULL,
+--
+-- Table structure for table `payment_method`
+--
+
+CREATE TABLE IF NOT EXISTS `payment_method` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `payment_type` varchar(5) NOT NULL,
+  `payment_desc` varchar(45) NOT NULL,
+  `bank_name` varchar(45) NOT NULL,
+  `payment_terms` int(11) NOT NULL,
+  `payment_per_month` int(11) NOT NULL,
+  `payment_discount` int(11) NOT NULL,
+  `payment_total_amount` decimal(10,0) NOT NULL,
+  `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_payment_method_order1_idx` (`order_id` ASC),
-  CONSTRAINT `fk_payment_method_order1`
-    FOREIGN KEY (`order_id`)
-    REFERENCES `rmc-wbos`.`order` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = latin1;
+  KEY `fk_payment_method_order1_idx` (`order_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
+--
+-- Constraints for dumped tables
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+--
+-- Constraints for table `delivery`
+--
+ALTER TABLE `delivery`
+  ADD CONSTRAINT `fk_delivery_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `fk_order_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `order_list`
+--
+ALTER TABLE `order_list`
+  ADD CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_order_list_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `payment_method`
+--
+ALTER TABLE `payment_method`
+  ADD CONSTRAINT `fk_payment_method_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
