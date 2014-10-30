@@ -22,8 +22,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'item_inventory_id'); ?>
-		<?php echo $form->textField($model,'item_inventory_id'); ?>
+		<?php echo $form->label($model,'item_id'); ?>
+		<?php echo $form->textField($model,'item_id'); ?>
 	</div>
 
 	<div class="row">
