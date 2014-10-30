@@ -19,6 +19,18 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
+	
+	<?php
+	require_once 'Mobile_Detect.php';
+	
+	
+	$detect = new Mobile_Detect;
+	
+	if ($detect->isMobile() ) {
+	echo '<p> MOBILE </p>';
+	}
+	?>
+	
 	 <div class="row">
                 <?php echo $form->labelEx($model,'cus_type'); ?>
         
