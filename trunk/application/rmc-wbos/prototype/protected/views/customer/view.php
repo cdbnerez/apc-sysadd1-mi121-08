@@ -1,3 +1,4 @@
+
 <?php
 /* @var $this CustomerController */
 /* @var $model Customer */
@@ -16,7 +17,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Customer #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

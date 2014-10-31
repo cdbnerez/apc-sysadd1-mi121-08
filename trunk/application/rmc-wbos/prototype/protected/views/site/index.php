@@ -11,18 +11,31 @@ require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
 	
 	if ($detect->isMobile() ) {
-	echo '<h1><p align = center> Welcome to the Rodzon Marketing Corporation - Web Based Ordering System (RMC-WBOS)!</p></h12>';
+	echo '<h1><p align = center><font color = "blue"> Welcome to the Rodzon Marketing Corporation - Web Based Ordering System (RMC-WBOS)!</font></p></h12>';
 	}else{
 	echo '<h3><p align = center> Welcome to the Rodzon Marketing Corporation - Web Based Ordering System (RMC-WBOS)!</p></h3>';
 	}
 	?>
 
-<p align = justify> There are two versions of this web application. The first version is the localhost version and the other one is
-a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-wbos/">click here</a>.</p>
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
 
+if ($detect->isMobile()){
+echo '<p align = justify><font color = "blue"> There are two versions of this web application. The first version is the localhost version and the other one is
+a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-wbos/">click here</a>.</font></p>
 <p align = justify> To view the documentation of this project, 
-<a href="http://projects2.apc.edu.ph/wiki/index.php/SYSADD1_MI121_Group_8:_Carlos_Daniel_Nerez_-_BSIT-MI"> click here </a>.</p> 
+<a href="http://projects2.apc.edu.ph/wiki/index.php/SYSADD1_MI121_Group_8:_Carlos_Daniel_Nerez_-_BSIT-MI"> click here </a>.</p>';
+}else{
+echo '<p align = justify> There are two versions of this web application. The first version is the localhost version and the other one is
+a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-wbos/">click here</a>.</p>
+<p align = justify> To view the documentation of this project, 
+<a href="http://projects2.apc.edu.ph/wiki/index.php/SYSADD1_MI121_Group_8:_Carlos_Daniel_Nerez_-_BSIT-MI"> click here </a>.</p>';
+}
 
+
+
+?>
 <?php
 	require_once 'Mobile_Detect.php';
 	$detect = new Mobile_Detect;
