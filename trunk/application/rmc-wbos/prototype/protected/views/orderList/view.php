@@ -26,6 +26,6 @@ $this->menu=array(
 		array('label'=>'Customer Name', 'value'=>$model->item->item_desc),
 		'item_qty',
 		'item_order_total',
-		'order_list_total_amount',
+		//'order_list_total_amount',
 	),
 )); ?>
