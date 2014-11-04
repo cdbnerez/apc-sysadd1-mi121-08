@@ -33,12 +33,12 @@ class OrderList extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('item_qty, order_list_total_amount, item_order_total, item_id, order_id', 'required'),
+			array('item_qty, item_order_total, item_id, order_id', 'required'),
 			array('item_qty, item_id, order_id', 'numerical', 'integerOnly'=>true),
-			array('order_list_total_amount, item_order_total', 'length', 'max'=>10),
+			array('item_order_total', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, item_qty, order_list_total_amount, item_order_total, item_id, order_id', 'safe', 'on'=>'search'),
+			array('id, item_qty, item_order_total, item_id, order_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,7 +63,7 @@ class OrderList extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'item_qty' => 'Item Qty',
-			'order_list_total_amount' => 'Order List Total Amount',
+			//'order_list_total_amount' => 'Order List Total Amount',
 			'item_order_total' => 'Item Order Total',
 			'item_id' => 'Item',
 			'order_id' => 'Order',
@@ -90,7 +90,7 @@ class OrderList extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('item_qty',$this->item_qty);
-		$criteria->compare('order_list_total_amount',$this->order_list_total_amount,true);
+		/*$criteria->compare('order_list_total_amount',$this->order_list_total_amount,true);*/
 		$criteria->compare('item_order_total',$this->item_order_total,true);
 		$criteria->compare('item_id',$this->item_id);
 		$criteria->compare('order_id',$this->order_id);
