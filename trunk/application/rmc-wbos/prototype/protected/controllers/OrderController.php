@@ -71,6 +71,7 @@ class OrderController extends Controller
 	public function actionCreate()
 	{
 		$model=new Order;
+		$model->customer_id = Yii::app()->getRequest()->getParam('customer_id');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

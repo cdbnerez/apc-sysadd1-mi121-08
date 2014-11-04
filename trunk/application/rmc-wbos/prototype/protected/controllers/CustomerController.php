@@ -79,7 +79,7 @@ class CustomerController extends Controller
 		{
 			$model->attributes=$_POST['Customer'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('order/create','customer_id'=>$model->id));
 		}
 
 		$this->render('create',array(
