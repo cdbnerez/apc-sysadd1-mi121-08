@@ -30,6 +30,11 @@
 		<?php echo $form->label($model,'customer_id'); ?>
 		<?php echo $form->textField($model,'customer_id'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'order_total'); ?>
+		<?php echo $form->textField($model,'order_total'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
