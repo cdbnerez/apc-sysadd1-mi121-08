@@ -14996,3 +14996,73 @@ REQUEST_URI=/prototype/index.php?r=order/create&customer_id=8
 in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\_form.php (48)
 in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\create.php (18)
 in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (88)
+2014/11/04 05:41:41 [error] [php] Trying to get property of non-object (C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\_form.php:48)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): OrderController->renderFile()
+#1 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\create.php(18): OrderController->renderPartial()
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): OrderController->renderInternal()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): OrderController->renderFile()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): OrderController->renderPartial()
+#6 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(88): OrderController->render()
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderController->actionCreate()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): OrderController->runAction()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): OrderController->filterAccessControl()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): OrderController->runActionWithFilters()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): OrderController->run()
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CWebApplication->run()
+REQUEST_URI=/prototype/index.php?r=order/create
+in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\_form.php (48)
+in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\order\create.php (18)
+in C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (88)
+2014/11/04 05:42:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order&customer_id=10
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
+---
+2014/11/04 05:43:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order&customer_id=10
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
+---
+2014/11/04 05:43:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order&customer_id=10
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
+---
+2014/11/04 05:43:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "order".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('order')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('order')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('customer/order')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\Users\student\Documents\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/prototype/index.php?r=customer/order&customer_id=10
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/index
+---
