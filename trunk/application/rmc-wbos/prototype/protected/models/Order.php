@@ -35,10 +35,11 @@ class Order extends CActiveRecord
 		return array(
 			array('order_date, order_status, customer_id', 'required'),
 			array('customer_id', 'numerical', 'integerOnly'=>true),
+			array('order_total', 'length', 'max'=>10),
 			array('order_status', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, order_date, order_status, customer_id', 'safe', 'on'=>'search'),
+			array('id, order_date, order_total, order_status, customer_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +68,7 @@ class Order extends CActiveRecord
 			'order_date' => 'Order Date',
 			'order_status' => 'Order Status',
 			'customer_id' => 'Customer',
+			'order_total' => 'Order Total',
 		);
 	}
 
@@ -92,6 +94,7 @@ class Order extends CActiveRecord
 		$criteria->compare('order_date',$this->order_date,true);
 		$criteria->compare('order_status',$this->order_status,true);
 		$criteria->compare('customer_id',$this->customer_id);
+		$criteria->compare('order_total',$this->order_total,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
