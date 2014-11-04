@@ -45,15 +45,16 @@
 	<div class="row">
 	
 		<?php echo $form->labelEx($model,'customer_id'); ?>
-		
-		<?php echo $form->dropDownList($model, 'customer_id', CHtml::listData(
-		Customer::model()->findAll(), 'id', 'FullName'),
-		array('prompt' => 'Select a Customer Name')
-		); ?>
-		
+		<?php echo $form->labelEx($model,$model->customer->FullName); ?>
 		<?php echo $form->error($model,'customer_id'); ?>
 	
 	</div>
+	
+	<div class="row">
+        <?php echo $form->labelEx($model,'order_total'); ?>
+        <?php echo $form->textField($model,'order_total',array('size'=>10,'maxlength'=>10)); ?>
+        <?php echo $form->error($model,'order_total'); ?>
+    </div>
 	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

@@ -20,6 +20,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
 	<?php echo CHtml::encode($data->customer->FullName); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('order_total')); ?>:</b>
+    <?php echo CHtml::encode($data->order_total); ?>
+    <br />
 
 
 </div>
