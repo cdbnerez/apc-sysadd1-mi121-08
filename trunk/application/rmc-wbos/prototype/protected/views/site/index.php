@@ -4,8 +4,23 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1><i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-<br>
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+	
+	if ($detect->isMobile() ) {
+	echo '<h3><font color = "blue"><font size = "56px"><i>';
+	echo CHtml::encode(Yii::app()->name);
+	echo '</font></i></h3>';
+	echo '<br>';
+	}else{
+	echo '<h1><i>';
+	echo CHtml::encode(Yii::app()->name);
+	echo '</i></h1>';
+	echo '<br>';
+	}
+?>
+
 <?php
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
@@ -45,7 +60,7 @@ a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-w
 	echo '<p><font color = "red"> Mobile CSS Version </font></p>';
 	}
 	?>
- 
+
 <!--
 <p>Congratulations! You have successfully created your Yii application.</p>
 
