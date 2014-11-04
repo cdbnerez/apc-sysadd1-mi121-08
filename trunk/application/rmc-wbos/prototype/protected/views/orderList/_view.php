@@ -25,8 +25,4 @@
 	<?php echo CHtml::encode($data->item_order_total); ?>
 	<br />
 	
-	<b><?php echo CHtml::encode($data->getAttributeLabel('order_list_total_amount')); ?>:</b>
-	<?php echo CHtml::encode($data->order_list_total_amount); ?>
-	<br />
-
 </div>

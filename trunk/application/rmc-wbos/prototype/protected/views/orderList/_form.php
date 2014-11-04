@@ -52,13 +52,8 @@
 		<?php echo $form->textField($model,'item_order_total',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'item_order_total'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'order_list_total_amount'); ?>
-		<?php echo $form->textField($model,'order_list_total_amount',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'order_list_total_amount'); ?>
-	</div>
-
+    
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
