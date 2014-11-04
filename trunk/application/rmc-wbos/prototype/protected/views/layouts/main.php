@@ -22,9 +22,26 @@
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
+if ($detect->isMobile() ) {
+	echo '<div id="header">';
+	echo '<div id="logo">';
+	echo '<font style = "color:yellow">';
+	echo CHtml::encode(Yii::app()->name);
+	echo '</font>';
+	echo '</div>';
+	echo '</div><!-- header -->';
+	}else{
+	echo '<div id="header">';
+	echo '<div id="logo">';
+	echo CHtml::encode(Yii::app()->name);
+	echo '</div>';
+	echo '</div><!-- header -->';
+	}
+?>
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -63,6 +80,16 @@
 	</div><!-- footer -->
 
 </div><!-- page -->
+
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ($detect->isMobile() ) {
+echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/index"><h2 style = "position:absolute;right:750px;bottom:650px"><font size = "50px"><font color = "white"> HOME </font></h2></a><br>';
+echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/page&view=about"><h2 style = "position:absolute;right:750px;bottom:550px"><font size = "50px"><font color = "white"> ABOUT </font></h2></a><br>';
+echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/login"><h2 style = "position:absolute;right:750px;bottom:490px"><font size = "50px"><font color = "white"> LOGIN </font></h2></a><br>';
+}
+?>
 
 </body>
 </html>
