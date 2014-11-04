@@ -29,8 +29,8 @@
 	<?php echo CHtml::encode($data->cus_user_name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('cus_user_passwd')); ?>:</b>
-	<?php echo CHtml::encode($data->cus_user_passwd); ?>
+	<b><?php /*echo CHtml::encode($data->getAttributeLabel('cus_user_passwd')); ?>:</b>
+	<?php echo CHtml::encode($data->cus_user_passwd); */?>
 	<br />
 
 	<?php /*

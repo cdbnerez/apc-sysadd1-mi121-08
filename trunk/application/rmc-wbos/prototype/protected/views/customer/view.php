@@ -28,7 +28,7 @@ $this->menu=array(
 		'cus_fname',
 		'cus_lname',
 		'cus_user_name',
-		'cus_user_passwd',
+		//'cus_user_passwd',
 		'cus_contact_num',
 	),
 )); ?>
