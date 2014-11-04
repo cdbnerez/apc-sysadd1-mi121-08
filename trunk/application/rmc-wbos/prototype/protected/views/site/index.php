@@ -51,15 +51,7 @@ a hosted version. To access the hosted version, <a href="http://apc.csf.ph/rmc-w
 
 
 ?>
-<?php
-	require_once 'Mobile_Detect.php';
-	$detect = new Mobile_Detect;
-	
-	if ($detect->isMobile() ) {
-	echo '<p border = "10px"> MOBILE </p>';
-	echo '<p><font color = "red"> Mobile CSS Version </font></p>';
-	}
-	?>
+
 
 <!--
 <p>Congratulations! You have successfully created your Yii application.</p>
