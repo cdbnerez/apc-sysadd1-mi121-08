@@ -18,6 +18,19 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
+if ($detect->isMobile() ) {
+
+}
+
+
+?>
+
+
+
 <body>
 
 <div class="container" id="page">
@@ -30,7 +43,9 @@ if ($detect->isMobile() ) {
 	echo '<div id="header">';
 	echo '<div id="logo">';
 	echo '<font style = "color:yellow">';
+	echo '<font size = "20">';
 	echo CHtml::encode(Yii::app()->name);
+	echo '</font>';
 	echo '</font>';
 	echo '</div>';
 	echo '</div><!-- header -->';
