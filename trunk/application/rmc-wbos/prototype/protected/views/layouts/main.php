@@ -23,12 +23,12 @@ if ($detect->isMobile() ) {
 
 	<div id="header">
 		<div id="logo">
-		<center><h1 style="font-size:150px;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
+		<center><h1 style="font-size:150px;color:white;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
 		<ul id="menu">
-	<h1 style="font-size:100px;>
+	<h1 style="font-size:90px;>
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
