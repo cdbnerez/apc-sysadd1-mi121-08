@@ -1,5 +1,67 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
+if ($detect->isMobile() ) {
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/mobilebg.css" />
+
+
+		
+
+</head>
+
+<body>
+<div class="container" id="page">
+
+	<div id="header">
+		<div id="logo">
+		<center><h1 style="font-size:150px;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
+	</div><!-- header -->
+
+	<div id="mainmenu">
+		<ul id="menu">
+	<h1 style="font-size:100px;>
+		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+				
+				
+			),
+		)); ?></h1></ul>
+		
+		</div><!-- mainmenu -->
+	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+
+	<?php echo $content; ?>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+		Copyright &copy; <?php echo date('Y'); ?> by MI121 - Group 08.<br/>
+		All Rights Reserved.<br/>
+		<?php echo Yii::powered(); ?>
+	</div><!-- footer -->
+
+</div><!-- page -->
+
+</body>
+</html>
+
+<?php }else{ ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,45 +80,14 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<?php
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-
-if ($detect->isMobile() ) {
-
-}
-
-
-?>
-
-
-
 <body>
+
 
 <div class="container" id="page">
 
-<?php
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-
-if ($detect->isMobile() ) {
-	echo '<div id="header">';
-	echo '<div id="logo">';
-	echo '<font style = "color:yellow">';
-	echo '<font size = "20">';
-	echo CHtml::encode(Yii::app()->name);
-	echo '</font>';
-	echo '</font>';
-	echo '</div>';
-	echo '</div><!-- header -->';
-	}else{
-	echo '<div id="header">';
-	echo '<div id="logo">';
-	echo CHtml::encode(Yii::app()->name);
-	echo '</div>';
-	echo '</div><!-- header -->';
-	}
-?>
+	<div id="header">
+		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+	</div><!-- header -->
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -66,12 +97,14 @@ if ($detect->isMobile() ) {
 				//array('label'=>'Contact', 'url'=>array('/site/contact')),
 				
 				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/index')),
-				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
+				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
 				array('label'=>'Order', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/order/index')),
 				array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
-				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),			
-				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
-			
+				array('label'=>'Item Inventory', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/itemInventory/index')),
+				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
+				array('label'=>'Payment Terms', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentTerms/index')),
+				
+				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -96,15 +129,8 @@ if ($detect->isMobile() ) {
 
 </div><!-- page -->
 
-<?php
-require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;
-if ($detect->isMobile() ) {
-echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/index"><h2 style = "position:absolute;right:750px;bottom:650px"><font size = "50px"><font color = "white"> HOME </font></h2></a><br>';
-echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/page&view=about"><h2 style = "position:absolute;right:750px;bottom:550px"><font size = "50px"><font color = "white"> ABOUT </font></h2></a><br>';
-echo '<a href = "http://192.168.43.11/prototype/index.php?r=site/login"><h2 style = "position:absolute;right:750px;bottom:490px"><font size = "50px"><font color = "white"> LOGIN </font></h2></a><br>';
-}
-?>
-
 </body>
 </html>
+<?php } ?>
+
+
