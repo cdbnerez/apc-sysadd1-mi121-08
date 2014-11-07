@@ -71,6 +71,7 @@ class OrderListController extends Controller
 	public function actionCreate()
 	{
 		$model=new OrderList;
+		$model->order_id = Yii::app()->getRequest()->getParam('order_id');
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -79,7 +80,7 @@ class OrderListController extends Controller
 		{
 			$model->attributes=$_POST['OrderList'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','order_id'=>$model->id));
 		}
 
 		$this->render('create',array(
