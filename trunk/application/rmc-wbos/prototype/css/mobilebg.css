@@ -1,0 +1,27 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	//color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	//background:maroon;
+	background-image: url("brown.jpg");
+}
+
+
+	
+ul#menu li {
+display:inline;
+background-color: Orange;
+}
+		
+#footer{
+color:white;
+font-size:30px;
+}
+
+#peanut{
+background-image: url("peanut.jpg");
+}
+		
+
