@@ -50,7 +50,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'item_order_total'); ?>
-		<?php echo $form->textField($model,'item_order_total',array('size'=>10,'maxlength'=>10)); ?>
+		
+		
+		<?php //echo $form->textField($model,'item_order_total',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->textField($model,'TotalAmount', array('disabled'=>'disabled')); ?>
+		
 		<?php echo $form->error($model,'item_order_total'); ?>
 	</div>
     
