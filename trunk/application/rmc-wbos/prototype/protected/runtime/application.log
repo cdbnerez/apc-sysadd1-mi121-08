@@ -16862,3 +16862,24 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=PaymentMethod/create&orderList_id=1
 HTTP_REFERER=http://localhost/prototype/index.php?r=orderList/view&id=1
 ---
+2014/11/10 16:39:15 [error] [exception.CException] exception 'CException' with message 'Property "PaymentMethod.orderList" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('orderList', NULL)
+#1 C:\Users\Carlos\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(74): CActiveRecord->__set('orderList', NULL)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PaymentMethodController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('PaymentMethod/c...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\Carlos\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/prototype/index.php?r=PaymentMethod/create&orderList_id=1
+HTTP_REFERER=http://localhost/prototype/index.php?r=orderList/view&id=1
+---
