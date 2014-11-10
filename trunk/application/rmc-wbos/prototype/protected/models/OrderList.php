@@ -33,7 +33,7 @@ class OrderList extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('item_qty, item_order_total, item_id, order_id', 'required'),
+			array('item_qty, item_id, order_id', 'required'),
 			array('item_qty, item_id, order_id', 'numerical', 'integerOnly'=>true),
 			array('item_order_total', 'length', 'max'=>10),
 			// The following rule is used by search().

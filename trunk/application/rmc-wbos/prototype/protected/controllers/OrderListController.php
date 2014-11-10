@@ -80,7 +80,7 @@ class OrderListController extends Controller
 		{
 			$model->attributes=$_POST['OrderList'];
 			if($model->save())
-				$this->redirect(array('view','order_id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(

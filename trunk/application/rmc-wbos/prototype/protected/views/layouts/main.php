@@ -97,12 +97,11 @@ if ($detect->isMobile() ) {
 				//array('label'=>'Contact', 'url'=>array('/site/contact')),
 				
 				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/index')),
-				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
 				array('label'=>'Order', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/order/index')),
 				array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
-				array('label'=>'Item Inventory', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/itemInventory/index')),
 				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
-				array('label'=>'Payment Terms', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentTerms/index')),
+				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
+				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
 				
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
