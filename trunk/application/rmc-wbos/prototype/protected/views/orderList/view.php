@@ -8,11 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	/**
 	array('label'=>'List OrderList', 'url'=>array('index')),
 	array('label'=>'Create OrderList', 'url'=>array('create')),
 	array('label'=>'Update OrderList', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete OrderList', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage OrderList', 'url'=>array('admin')),
+	*/
+	
+	array('label'=>'Create Payment Method for Order List ID# ' .$model->id , 'url'=>array('PaymentMethod/create','orderList_id'=>$model->id)),
 );
 ?>
 
