@@ -3,6 +3,10 @@
 /* @var $model OrderList */
 
 $this->breadcrumbs=array(
+	
+	//$model->order->order_list->id=>array('order_list/view', 'id'=>$model->order_list_id),
+	//$model->id,
+	
 	'Order Lists'=>array('index'),
 	$model->id,
 );

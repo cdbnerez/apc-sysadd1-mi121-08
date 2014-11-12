@@ -4,11 +4,11 @@
 
 $this->breadcrumbs=array(
 	
-	$model->customer->=>array('customer/view', 'id'=>$model->customer_id),
-	$model->id,
-	
-	//'Orders'=>array('index'),
+	//$model->customer->id=>array('customer/view', 'id'=>$model->customer_id),
 	//$model->id,
+	
+	'Orders'=>array('index'),
+	$model->id,
 );
 
 $this->menu=array(
