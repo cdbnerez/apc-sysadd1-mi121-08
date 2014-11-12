@@ -2,8 +2,9 @@
 /* @var $this CustomerController */
 /* @var $model Customer */
 $this->breadcrumbs=array(
+		
 	'Customers'=>array('index'),
-	$model->id,
+	$model->FullName,
 );
 $this->menu=array(
 	/**
