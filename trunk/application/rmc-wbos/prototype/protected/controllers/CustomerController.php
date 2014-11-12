@@ -71,6 +71,7 @@ class CustomerController extends Controller
 	public function actionCreate()
 	{
 		$model=new Customer;
+		
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
