@@ -1,0 +1,25 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	//color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	//background:maroon;
+	background-image: url("brown.jpg");
+}
+
+
+	
+ul#menu li {
+display:inline;
+background-color: #F78181;
+border: 20px ridge #3B0B0B;
+}
+		
+#footer{
+color:white;
+font-size:30px;
+background-color:black;
+border: 10px ridge yellow;
+}	
+

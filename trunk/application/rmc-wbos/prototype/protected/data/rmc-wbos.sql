@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2014 at 04:44 PM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: Nov 07, 2014 at 04:25 AM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `rmc-wbos`
 --
+CREATE DATABASE IF NOT EXISTS `rmc-wbos` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `rmc-wbos`;
 
 -- --------------------------------------------------------
 
@@ -36,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cus_user_passwd` varchar(255) NOT NULL,
   `cus_contact_num` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `cus_type`, `cus_company`, `cus_fname`, `cus_lname`, `cus_user_name`, `cus_user_passwd`, `cus_contact_num`) VALUES
-(7, 'Sytem Admin', 'ABC Company', 'Carlos Daniel', 'Nerez', 'cdbnerez', '13bc5da478f4b1ca535308569c29484bdf8bbc299d83f32eb62bb5e99dad06cf', '09226905245');
+(7, 'Sytem Admin', 'ABC Company', 'Carlos Daniel', 'Nerez', 'cdbnerez', '13bc5da478f4b1ca535308569c29484bdf8bbc299d83f32eb62bb5e99dad06cf', '09226905245'),
+(10, 'Retail', 'Masagana Supermarket', 'Felipe', 'Massa', 'fmassa123', '9a59d13d82fc3831eb5def69955a285794e3d45aad3ea9d5ab266431a926764f', '09524563215');
 
 -- --------------------------------------------------------
 
@@ -103,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `order_date` date NOT NULL,
   `order_status` varchar(45) NOT NULL,
   `customer_id` int(11) NOT NULL,
+  `order_total` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_order_customer1_idx` (`customer_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
@@ -111,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`) VALUES
-(8, '2014-10-29', 'Pending', 7);
+INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`, `order_total`) VALUES
+(8, '2014-10-29', 'Pending', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -123,7 +127,7 @@ INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`) VALUES
 CREATE TABLE IF NOT EXISTS `order_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_qty` int(11) NOT NULL,
-  `order_list_total_amount` decimal(10,0) NOT NULL,
+  `order_list_total_amount` decimal(10,0) DEFAULT NULL,
   `item_order_total` decimal(10,0) NOT NULL,
   `item_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
@@ -186,8 +190,8 @@ ALTER TABLE `order`
 -- Constraints for table `order_list`
 --
 ALTER TABLE `order_list`
-  ADD CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_order_list_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_order_list_item1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `payment_method`
