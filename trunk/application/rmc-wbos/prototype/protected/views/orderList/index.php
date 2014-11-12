@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create OrderList', 'url'=>array('create')),
+	//array('label'=>'Create OrderList', 'url'=>array('create')),
 	array('label'=>'Manage OrderList', 'url'=>array('admin')),
 );
 ?>
