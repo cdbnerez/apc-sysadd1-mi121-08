@@ -45,12 +45,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'order_id'); ?>
-		
-		<?php echo $form->dropDownList($model, 'order_id', CHtml::listData(
-		Order::model()->findAll(), 'id', 'id'),
-		array('prompt' => 'Select a Order No#')
-		); ?>
-		
+		<?php echo $form->labelEx($model,$model->order_id); ?>
 		<?php echo $form->error($model,'order_id'); ?>
 	</div>
 
