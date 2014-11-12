@@ -23,7 +23,7 @@ if ($detect->isMobile() ) {
 
 	<div id="header">
 		<div id="logo">
-		<center><h1 style="font-size:150px;color:white;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
+		<center><h1 style="font-size:150px;color:white;border:25px ridge yellow;background-color:black;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
