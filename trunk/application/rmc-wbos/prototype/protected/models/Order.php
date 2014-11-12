@@ -64,11 +64,11 @@ class Order extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
+			'id' => 'Order ID#',
 			'order_date' => 'Order Date',
 			'order_status' => 'Order Status',
-			'customer_id' => 'Customer',
-			'order_total' => 'Order Total',
+			'customer_id' => 'Customer Name',
+			'order_total' => 'Order Total Amount',
 		);
 	}
 

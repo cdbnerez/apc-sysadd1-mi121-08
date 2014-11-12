@@ -19,7 +19,10 @@ $this->menu=array(
 	
 );
 ?>
-<h1><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
+
+<h1 align = center><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
+<br>
+<h2>Customer Information</h2>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -42,7 +45,8 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
-			    'order_date',
+			    'id',
+				'order_date',
 				'order_status',
 				'order_total',
 			    
@@ -53,7 +57,7 @@ $this->menu=array(
 <?php $conf= OrderList::model()->findAll('order_id = :a', array(':a'=>$row->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
-<h2>OrderList Information</h2>
+<h2>Order List Information</h2>
 <?php foreach ($conf as $row2) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row2,
@@ -66,10 +70,11 @@ $this->menu=array(
 	)); ?>
 <br>
 <?php }} ?>
+
 <?php $conf= PaymentMethod::model()->findAll('order_id = :a', array(':a'=>$row->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
-<h2>Payment Method Information</h2>
+<h2>Payment Information</h2>
 <?php foreach ($conf as $row3) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row3,
@@ -79,10 +84,15 @@ $this->menu=array(
 				'payment_desc',
 				'bank_name',
 				'payment_desc',
+				'payment_terms',
+			    'payment_per_month',
+			    'payment_discount',
+			    'payment_total_amount',
 			),
 	)); ?>
 <br>
 <?php }} ?>
+
 <?php $conf= Delivery::model()->findAll('order_id = :a', array(':a'=>$row->id));?>
 <?php if (count($conf) !== 0){?>
 <br>

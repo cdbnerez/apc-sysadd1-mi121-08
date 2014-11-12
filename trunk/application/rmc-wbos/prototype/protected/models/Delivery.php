@@ -62,11 +62,11 @@ class Delivery extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'del_add' => 'Del Add',
-			'del_city' => 'Del City',
-			'del_country' => 'Del Country',
-			'del_zip' => 'Del Zip',
-			'order_id' => 'Order',
+			'del_add' => 'Address',
+			'del_city' => 'City/State',
+			'del_country' => 'Country',
+			'del_zip' => 'Zip Code',
+			'order_id' => 'Order ID#',
 		);
 	}
 

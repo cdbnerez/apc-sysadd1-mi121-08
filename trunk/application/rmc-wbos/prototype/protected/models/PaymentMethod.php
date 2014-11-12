@@ -66,13 +66,13 @@ class PaymentMethod extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'payment_type' => 'Payment Type',
-			'payment_desc' => 'Payment Desc',
+			'payment_desc' => 'Payment Description',
 			'bank_name' => 'Bank Name',
 			'payment_terms' => 'Payment Terms',
 			'payment_per_month' => 'Payment Per Month',
 			'payment_discount' => 'Payment Discount',
 			'payment_total_amount' => 'Payment Total Amount',
-			'order_id' => 'Order',
+			'order_id' => 'Order ID#',
 		);
 	}
 
