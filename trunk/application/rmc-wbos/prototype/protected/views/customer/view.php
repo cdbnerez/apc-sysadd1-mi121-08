@@ -43,8 +43,7 @@ $this->menu=array(
 <br>
 <h2>Order Information</h2>
 <?php foreach ($conf as $row) { ?>
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
-array('order/update', 'id'=>$row->id)); ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('order/update', 'id'=>$row->id)); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
@@ -62,6 +61,7 @@ array('order/update', 'id'=>$row->id)); ?>
 <br>
 <h2>Order List Information</h2>
 <?php foreach ($conf as $row2) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('OrderList/update', 'id'=>$row2->id)); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row2,
 	        'attributes'=>array(   
@@ -79,6 +79,7 @@ array('order/update', 'id'=>$row->id)); ?>
 <br>
 <h2>Payment Information</h2>
 <?php foreach ($conf as $row3) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('paymentMethod/update', 'id'=>$row3->id)); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row3,
 	        'attributes'=>array(   
@@ -101,6 +102,7 @@ array('order/update', 'id'=>$row->id)); ?>
 <br>
 <h2>Delivery Information</h2>
 <?php foreach ($conf as $row4) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('delivery/update', 'id'=>$row4->id)); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row4,
 	        'attributes'=>array(   	
