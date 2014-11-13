@@ -18889,3 +18889,12 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=orderList/view&id=1
 HTTP_REFERER=http://localhost/prototype/index.php?r=orderList/index
 ---
+2014/11/13 05:04:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "enrollment/update".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('enrollment/upda...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/prototype/index.php?r=enrollment/update&id=9
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=7
+---

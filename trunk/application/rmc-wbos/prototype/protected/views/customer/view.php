@@ -43,6 +43,8 @@ $this->menu=array(
 <br>
 <h2>Order Information</h2>
 <?php foreach ($conf as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
+array('order/update', 'id'=>$row->id)); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
