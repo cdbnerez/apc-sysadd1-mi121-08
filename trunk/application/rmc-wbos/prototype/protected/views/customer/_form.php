@@ -34,7 +34,7 @@
 	 <div class="row">
                 <?php echo $form->labelEx($model,'cus_type'); ?>
         
-            <?php echo $form->dropDownList($model,'cus_type',array("Retail"=>"Retail", "Wholesale"=>"Wholesale", "Walk-In"=>"Walk-In", "System Admin"=>"System Admin")
+            <?php echo $form->dropDownList($model,'cus_type',array("Retail"=>"Retail", "Wholesale"=>"Wholesale", "Walk-In"=>"Walk-In", "Sytem Admin"=>"System Admin")
                 ,array('empty'=>'Select Customer Type')); ?>
         
                 <?php echo $form->error($model,'cus_type'); ?>

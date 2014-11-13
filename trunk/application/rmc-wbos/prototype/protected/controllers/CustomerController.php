@@ -44,7 +44,7 @@ class CustomerController extends Controller
 				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) &&
-					((Yii::app()->user->type==="System Admin"))'
+					((Yii::app()->user->type==="Sytem Admin"))'
 			),
 			
 			array('deny',  // deny all users

@@ -24,7 +24,7 @@ $this->menu=array(
 <h1 align = center><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
 <br>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('customer/update', 'id'=>$model->id)); ?>
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('customer/delete', 'id'=>$model->id)); ?>
+<?php //echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('customer/delete', 'id'=>$model->id)); ?>
 <h2>Customer Information</h2>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
