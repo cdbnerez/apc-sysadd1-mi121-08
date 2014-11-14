@@ -19,11 +19,12 @@ if ($detect->isMobile() ) {
 </head>
 
 <body>
+
 <div class="container" id="page">
 
 	<div id="header">
 		<div id="logo">
-		<center><h1 style="font-size:150px;color:white;border:25px ridge yellow;background-color:black;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
+		<center><h1 style="font-size:150px;color:white;border:25px ridge white;background-color:black;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
@@ -34,6 +35,7 @@ if ($detect->isMobile() ) {
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				
 				
 			),
