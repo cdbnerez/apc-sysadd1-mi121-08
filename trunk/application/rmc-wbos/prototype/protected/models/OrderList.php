@@ -98,7 +98,14 @@ class OrderList extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-
+	
+	public function getTotalAmount()
+	{
+	   //$this->item->item_price * $this->item_qty
+	   return $this->item_qty ;
+	   
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
