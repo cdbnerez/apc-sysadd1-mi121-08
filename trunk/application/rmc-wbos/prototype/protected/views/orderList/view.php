@@ -3,6 +3,10 @@
 /* @var $model OrderList */
 
 $this->breadcrumbs=array(
+	
+	//$model->order->order_list->id=>array('order_list/view', 'id'=>$model->order_list_id),
+	//$model->id,
+	
 	'Order Lists'=>array('index'),
 	$model->id,
 );
@@ -16,7 +20,7 @@ $this->menu=array(
 	array('label'=>'Manage OrderList', 'url'=>array('admin')),
 	*/
 	
-	array('label'=>'Create Payment Method for Order List ID# ' .$model->id , 'url'=>array('PaymentMethod/create','orderList_id'=>$model->id)),
+	array('label'=>'Create Payment Method for Order List ID# ' .$model->id , 'url'=>array('PaymentMethod/create','order_id'=>$model->order_id)),
 );
 ?>
 

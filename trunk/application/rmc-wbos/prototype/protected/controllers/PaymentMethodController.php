@@ -79,6 +79,7 @@ class PaymentMethodController extends Controller
 		if(isset($_POST['PaymentMethod']))
 		{
 			$model->attributes=$_POST['PaymentMethod'];
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

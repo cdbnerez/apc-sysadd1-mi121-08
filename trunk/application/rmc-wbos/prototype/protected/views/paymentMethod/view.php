@@ -8,11 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	/*
 	array('label'=>'List PaymentMethod', 'url'=>array('index')),
 	array('label'=>'Create PaymentMethod', 'url'=>array('create')),
 	array('label'=>'Update PaymentMethod', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete PaymentMethod', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage PaymentMethod', 'url'=>array('admin')),
+	*/
+	
+	array('label'=>'Create Delivery Address for Payment Method ID# ' .$model->id , 'url'=>array('delivery/create','order_id'=>$model->order_id)),
 );
 ?>
 

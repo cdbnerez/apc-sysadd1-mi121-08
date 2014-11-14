@@ -62,11 +62,10 @@ class OrderList extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'item_qty' => 'Item Qty',
-			//'order_list_total_amount' => 'Order List Total Amount',
+			'item_qty' => 'Item Quantity',
 			'item_order_total' => 'Item Order Total',
-			'item_id' => 'Item',
-			'order_id' => 'Order',
+			'item_id' => 'Item Description',
+			'order_id' => 'Order ID#',
 		);
 	}
 
