@@ -35,3 +35,21 @@ $this->menu=array(
 		'order_total',
 	),
 )); ?>
+
+<?php $conf= OrderList::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Order List Information</h2>
+<?php foreach ($conf as $row2) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('OrderList/update', 'id'=>$row2->id)); ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row2,
+	        'attributes'=>array(   
+				'order_id',
+				'item_qty',
+				array('label'=>'Item Description', 'value'=>$row2->item->item_desc),
+				'item_order_total',
+			),
+	)); ?>
+<br>
+<?php }} ?>
