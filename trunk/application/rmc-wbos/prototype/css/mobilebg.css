@@ -13,7 +13,7 @@ body
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: white;
+	background: black;
 	border: 1px solid #C9E0ED;
 	
 	
@@ -32,8 +32,9 @@ body
 
 #content
 {
-	background-color:white;
+	background-image: url("wew.jpg");
     padding: 20px;
+	color:gray;
 }
 
 #sidebar
@@ -157,6 +158,7 @@ div.breadcrumbs
 {
 	font-size: 0.9em;
 	padding: 5px 20px;
+	color:yellow;
 }
 
 div.breadcrumbs span
