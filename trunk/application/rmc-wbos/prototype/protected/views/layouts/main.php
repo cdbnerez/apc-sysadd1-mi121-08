@@ -11,6 +11,7 @@ if ($detect->isMobile() ) {
 <head>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/mobilebg.css" />
 
 
@@ -24,20 +25,28 @@ if ($detect->isMobile() ) {
 
 	<div id="header">
 		<div id="logo">
-		<center><h1 style="font-size:150px;color:white;border:25px ridge white;background-color:black;"><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
+		<center><h1><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
 		<ul id="menu">
-	<h1 style="font-size:90px;>
+	<h1 id = "tabs">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+				
+				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/index')),
+				array('label'=>'Order', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/order/index')),
+				array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
+				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
+				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
+				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
+				
+				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				
-				
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?></h1></ul>
 		

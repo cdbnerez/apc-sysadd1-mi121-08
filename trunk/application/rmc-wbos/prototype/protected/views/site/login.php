@@ -15,9 +15,9 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1 style="font-size:50px;color:white;border:20px ridge white;background-color:black;">Login</h1>
+<h1 style="color:red;border:20px ridge black;background-color:white;">Login</h1>
 
-<p style = "align:justify;font-size:35px;color:white;">Please fill out the following form with your login credentials:</p>
+<p style = "align:justify;color:red;">Please fill out the following form with your login credentials:</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -28,10 +28,10 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note"><h1 style = "color:white;">Fields with <span class="required">*</span> are required.</h1></p>
+	<p class="note"><h1 style = "color:red;">Fields with <span class="required">*</span> are required.</h1></p>
 
 	<div class="row">
-		<h1 style = "color:white;">
+		<h1 style = "color:red;">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
@@ -39,7 +39,7 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row">
-		<h1 style = "color:white;">
+		<h1 style = "color:red;">
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
@@ -52,14 +52,14 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row rememberMe">
-	<h1 style = "color:white;">
+	<h1 style = "color:red;">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 		</h1>
 	</div>
 
-	<div class="row buttons"><h1 style = "color:white;">
+	<div class="row buttons"><h1 style = "color:red;">
 		<?php echo CHtml::submitButton('Login'); ?>
 		</h1>
 	</div>
