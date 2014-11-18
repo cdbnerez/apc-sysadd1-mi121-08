@@ -1,6 +1,6 @@
 <?php
 
-class CustomerController extends Controller
+class LogsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -31,23 +31,14 @@ class CustomerController extends Controller
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
-			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
 				'users'=>array('@'),
-			),*/
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			
-			
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
-				'users'=>array('@'),
-				'expression'=>'isset(Yii::app()->user->type) &&
-					((Yii::app()->user->type==="Sytem Admin"))'
-			),
-			
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -71,17 +62,16 @@ class CustomerController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Customer;
+		$model=new Logs;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Customer']))
+		if(isset($_POST['Logs']))
 		{
-			$model->attributes=$_POST['Customer'];
-			
+			$model->attributes=$_POST['Logs'];
 			if($model->save())
-				$this->redirect(array('view','customer_id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -101,9 +91,9 @@ class CustomerController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Customer']))
+		if(isset($_POST['Logs']))
 		{
-			$model->attributes=$_POST['Customer'];
+			$model->attributes=$_POST['Logs'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -132,7 +122,7 @@ class CustomerController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Customer');
+		$dataProvider=new CActiveDataProvider('Logs');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -143,10 +133,10 @@ class CustomerController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Customer('search');
+		$model=new Logs('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Customer']))
-			$model->attributes=$_GET['Customer'];
+		if(isset($_GET['Logs']))
+			$model->attributes=$_GET['Logs'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -157,12 +147,12 @@ class CustomerController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Customer the loaded model
+	 * @return Logs the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Customer::model()->findByPk($id);
+		$model=Logs::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -170,11 +160,11 @@ class CustomerController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Customer $model the model to be validated
+	 * @param Logs $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='customer-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='logs-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
