@@ -24,6 +24,7 @@ if ($detect->isMobile() ) {
 <div class="container" id="page">
 
 	<div id="header">
+
 		<div id="logo">
 		<center><h1><?php echo CHtml::encode(Yii::app()->name); ?> </h1></center></div>
 	</div><!-- header -->
@@ -47,10 +48,17 @@ if ($detect->isMobile() ) {
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				
+
 			),
 		)); ?></h1></ul>
 		
 		</div><!-- mainmenu -->
+		
+		
+		
+		
+		
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
@@ -97,6 +105,7 @@ if ($detect->isMobile() ) {
 <div class="container" id="page">
 
 	<div id="header">
+		
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 

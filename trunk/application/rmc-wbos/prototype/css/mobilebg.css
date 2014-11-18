@@ -25,10 +25,12 @@ body
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
 	color:white;
-	font: normal 16px Arial,Helvetica,sans-serif;
+	font: normal 5px Arial,Helvetica,sans-serif;
 	text-align:center;
-	background-color: #B40404;
-	//background-image: url("logo.gif");
+	//background-color: #B40404;
+	background-image: url("redbg.png");
+	background-repeat: repeat x;
+	
 }
 
 #content
@@ -65,14 +67,20 @@ body
 #mainmenu
 {
 	//background:white url(bg.gif) repeat-x left top;
-	background-color:#7B0616;
+	//background-color:yellow;
 	border: 5px ridge gray;
+	background-image: url("img2.jpg");
+	background-repeat: no-repeat;
+	background-size: 310px 140px;
+	height:100px;
+	
 }
 
 #mainmenu ul
 {
-	padding:6px 20px 5px 20px;
+	padding:1px 5px 1px 5px;
 	margin:0px;
+
 }
 
 #mainmenu ul li
@@ -82,12 +90,12 @@ body
 
 #mainmenu ul li a
 {
-	color:#ffffff;
+	color:black;
 	background-color:transparent;
-	font-size:12px;
+	font-size:15px;
 	font-weight:bold;
 	text-decoration:none;
-	padding:5px 8px;
+	padding:2px 2px;
 }
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a

@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1 style="color:white;border:5px ridge yellow;background-color:black;width:80px;">Login</h1>
+<h2 style="color:white;border:3px ridge yellow;background-color:black;width:50px;">Login</h2>
 
 <p style = "align:justify;color:white;">Please fill out the following form with your login credentials:</p>
 
@@ -28,22 +28,23 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note"><h1 style = "color:white;">Fields with <span class="required">*</span> are required.</h1></p>
+	<p class="note"><h3 style = "color:white;">Fields with <span class="required">*</span> are required.</h3></p>
 
 	<div class="row">
-		<h1 style = "color:white;">
+		<h3 style = "color:white;">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username'); ?>
 		<?php echo $form->error($model,'username'); ?>
-		</h1>
+		</h3>
 	</div>
 
 	<div class="row">
-		<h1 style = "color:white;">
-		<?php echo $form->labelEx($model,'password'); ?>
+		<h3 style = "color:white;">
+		<?php echo $form->labelEx($model,'password'); ?>		<br>
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
-		</h1>
+
+		</h3>
 		<!--
 		<p class="hint">
 			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
@@ -52,16 +53,16 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="row rememberMe">
-	<h1 style = "color:white;">
+	<h3 style = "color:white;">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
 		<?php echo $form->label($model,'rememberMe'); ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
-		</h1>
+		</h3>
 	</div>
 
-	<div class="row buttons"><h1 style = "color:white;">
+	<div class="row buttons"><h3 style = "color:white;">
 		<?php echo CHtml::submitButton('Login'); ?>
-		</h1>
+		</h3>
 	</div>
 
 <?php $this->endWidget(); ?>
