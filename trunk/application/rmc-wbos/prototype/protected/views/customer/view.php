@@ -19,6 +19,7 @@ $this->menu=array(
 	
 	
 );
+
 ?>
 
 <h1 align = center><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>

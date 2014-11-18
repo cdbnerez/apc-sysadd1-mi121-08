@@ -79,7 +79,15 @@ class OrderController extends Controller
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
-			if($model->save())
+			
+			$ol=new logs;
+          //  $ol->order_id= $model->id;
+            $ol->customer_id= Yii::app()->user->id;
+            $ol->date= date('Y-m-d H:i:s');
+            //$el->status_id=9;
+            $ol->description= "Customer created order entry:<a href=/rmc-wbos/index.php?r=order/view&id=". $model->id. ">". $model->id;
+			
+			if($model->save()&&$ol->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
