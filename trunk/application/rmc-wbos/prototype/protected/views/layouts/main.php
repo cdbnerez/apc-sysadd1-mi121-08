@@ -43,7 +43,7 @@ if ($detect->isMobile() ) {
 				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
 				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
 				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
-				
+				array('label'=>'Logs', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/logs/index')),
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
@@ -113,7 +113,7 @@ if ($detect->isMobile() ) {
 				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
 				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
 				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
-				
+				array('label'=>'Logs', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/logs/index')),
 				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
