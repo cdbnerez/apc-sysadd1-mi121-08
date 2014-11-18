@@ -80,14 +80,14 @@ class OrderController extends Controller
 		{
 			$model->attributes=$_POST['Order'];
 			
-			$cl=new OrderLog;
-            $cl->order_id= $model->id;
-            $cl->cus_id= Yii::app()->user->id;
-            $cl->date= date('Y-m-d H:i:s');
+			$ol=new logs;
+          //  $ol->order_id= $model->id;
+            $ol->customer_id= Yii::app()->user->id;
+            $ol->date= date('Y-m-d H:i:s');
             //$el->status_id=9;
-            $cl->description= "Customer created order entry:<a href=/rmc-wbos/index.php?r=order/view&id=". $order->id. ">". $order->id;
+            $ol->description= "Customer created order entry:<a href=/rmc-wbos/index.php?r=order/view&id=". $model->id. ">". $model->id;
 			
-			if($model->save())
+			if($model->save()&&$ol->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
