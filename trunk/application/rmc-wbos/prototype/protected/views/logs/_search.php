@@ -31,11 +31,6 @@
 		<?php echo $form->textField($model,'customer_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'order_id'); ?>
-		<?php echo $form->textField($model,'order_id'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

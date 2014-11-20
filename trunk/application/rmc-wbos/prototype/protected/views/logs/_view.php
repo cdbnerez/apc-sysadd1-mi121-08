@@ -27,8 +27,8 @@
 
 <?php
 $this->beginWidget('CMarkdown', array('purifyOutput'=>true));
-        echo $data->description ." by " .CHtml::link(CHtml::encode($data->customer->cus_lname . ", ". $data->customer->cus_fname), array('customer/view', 'id'=>$data->customer_id)) ." at " .$data->date; 
-        $this->endWidget();?>
+       echo $data->description ." by " .CHtml::link(CHtml::encode($data->customer->cus_lname . ", ". $data->customer->cus_fname), array('customer/view', 'id'=>$data->customer_id)) ." at " .$data->date; 
+       $this->endWidget();?>
 </div>
 
 </div>
