@@ -84,6 +84,8 @@ class OrderController extends Controller
             $ol->customer_id= Yii::app()->user->id;
             $ol->date= date('Y-m-d H:i:s');
             $ol->description= "New order entry created";
+			//$el->description= "created entry with containers:<a href=/d5j-ems/index.php?r=view&id=". $model->id. ">". $model->code;
+
 			 
 			if($model->save()&&$ol->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -109,7 +111,13 @@ class OrderController extends Controller
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
-			if($model->save())
+			
+			$ol=new logs;
+            $ol->customer_id= Yii::app()->user->id;
+            $ol->date= date('Y-m-d H:i:s');
+            $ol->description= "An order entry was updated ";
+			
+			if($model->save()&&$ol->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
