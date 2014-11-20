@@ -8,9 +8,11 @@
  * @property string $date
  * @property string $description
  * @property integer $customer_id
+ * @property integer $order_id
  *
  * The followings are the available model relations:
  * @property Customer $customer
+ * @property Order $order
  */
 class Logs extends CActiveRecord
 {
@@ -30,12 +32,12 @@ class Logs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('date, description, customer_id', 'required'),
-			array('customer_id', 'numerical', 'integerOnly'=>true),
+			array('date, description, customer_id, order_id', 'required'),
+			array('customer_id, order_id', 'numerical', 'integerOnly'=>true),
 			array('description', 'length', 'max'=>300),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, date, description, customer_id', 'safe', 'on'=>'search'),
+			array('id, date, description, customer_id, order_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,6 +50,7 @@ class Logs extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
+			'order' => array(self::BELONGS_TO, 'Order', 'order_id'),
 		);
 	}
 
@@ -61,6 +64,7 @@ class Logs extends CActiveRecord
 			'date' => 'Date',
 			'description' => 'Description',
 			'customer_id' => 'Customer',
+			'order_id' => 'Order',
 		);
 	}
 
@@ -86,6 +90,7 @@ class Logs extends CActiveRecord
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('customer_id',$this->customer_id);
+		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

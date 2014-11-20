@@ -25,5 +25,6 @@ $this->menu=array(
 		'date',
 		'description',
 		'customer_id',
+		'order_id',
 	),
 )); ?>
