@@ -68,31 +68,25 @@ class OrderController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
-	{
-		$model=new Order;
-		$model->customer_id = Yii::app()->getRequest()->getParam('customer_id');
+	 public function actionCreate()
+    {
+                $model=new Order;
+                $model->customer_id = Yii::app()->getRequest()->getParam('customer_id');
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+                // Uncomment the following line if AJAX validation is needed
+                // $this->performAjaxValidation($model);
 
-		if(isset($_POST['Order']))
-		{
-			$model->attributes=$_POST['Order'];
-			
-			$ol=new logs;
-            $ol->customer_id= Yii::app()->user->id;
-            $ol->date= date('Y-m-d H:i:s');
-            $ol->description= "New order entry created";
-			 
-			if($model->save()&&$ol->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-	
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
+                if(isset($_POST['Order']))
+                {
+                        $model->attributes=$_POST['Order'];
+                        if($model->save())
+                                $this->redirect(array('view','id'=>$model->id));
+                }
+
+                $this->render('create',array(
+                        'model'=>$model,
+                ));
+    }
 
 	/**
 	 * Updates a particular model.
