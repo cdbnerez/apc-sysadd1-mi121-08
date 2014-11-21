@@ -72,6 +72,8 @@ class CustomerController extends Controller
 	 */
 	public function actionCreate()
 	{
+	
+	/**
 		$model=new Customer;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -88,6 +90,31 @@ class CustomerController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	**/
+	
+	    $model=new Customer;
+		
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Customer']))
+		{
+			$model->attributes=$_POST['Customer'];
+			$model->save();
+			
+			$cl=new logs;
+            $cl->customer_id= Yii::app()->user->id;
+            $cl->date= date('Y-m-d H:i:s');
+			$cl->description= "Customer <a href=/prototype/index.php?r=customer/view&id=". $model->id . ">" . $model->FullName . "</a> has been created ";
+
+			if($cl->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+	
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	
 	}
 
 	/**
@@ -101,12 +128,19 @@ class CustomerController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Customer']))
 		{
-			$model->attributes=$_POST['Customer'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+	        $model->attributes=$_POST['Customer'];
+			$model->save();
+			
+			$cl=new logs;
+            $cl->customer_id= Yii::app()->user->id;
+            $cl->date= date('Y-m-d H:i:s');
+			$cl->description= "Information for Customer <a href=/prototype/index.php?r=customer/view&id=". $model->id . ">" . $model->FullName . "</a> has been updated ";
+
+			if($cl->save())
+				$this->redirect(array('view','id'=>$model->id));	
 		}
 
 		$this->render('update',array(
