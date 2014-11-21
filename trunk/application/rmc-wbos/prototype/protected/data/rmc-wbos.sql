@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2014 at 04:25 AM
--- Server version: 5.5.32
--- PHP Version: 5.4.16
+-- Generation Time: Nov 21, 2014 at 05:59 AM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rmc-wbos`
 --
-CREATE DATABASE IF NOT EXISTS `rmc-wbos` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `rmc-wbos`;
 
 -- --------------------------------------------------------
 
@@ -38,15 +36,14 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cus_user_passwd` varchar(255) NOT NULL,
   `cus_contact_num` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id`, `cus_type`, `cus_company`, `cus_fname`, `cus_lname`, `cus_user_name`, `cus_user_passwd`, `cus_contact_num`) VALUES
-(7, 'Sytem Admin', 'ABC Company', 'Carlos Daniel', 'Nerez', 'cdbnerez', '13bc5da478f4b1ca535308569c29484bdf8bbc299d83f32eb62bb5e99dad06cf', '09226905245'),
-(10, 'Retail', 'Masagana Supermarket', 'Felipe', 'Massa', 'fmassa123', '9a59d13d82fc3831eb5def69955a285794e3d45aad3ea9d5ab266431a926764f', '09524563215');
+(13, 'Sytem Admin', 'Example 1 Company', 'Carlos Daniel', 'Nerez', 'cdbnerez', '13bc5da478f4b1ca535308569c29484bdf8bbc299d83f32eb62bb5e99dad06cf', '09226905245');
 
 -- --------------------------------------------------------
 
@@ -63,14 +60,7 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_delivery_order1_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `delivery`
---
-
-INSERT INTO `delivery` (`id`, `del_add`, `del_city`, `del_country`, `del_zip`, `order_id`) VALUES
-(7, '18B03 Victoria De Manila', 'Manila', 'Philippines', '1006', 8);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -83,17 +73,22 @@ CREATE TABLE IF NOT EXISTS `item` (
   `item_desc` varchar(100) NOT NULL,
   `item_price` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `item`
+-- Table structure for table `logs`
 --
 
-INSERT INTO `item` (`id`, `item_desc`, `item_price`) VALUES
-(4, 'Peanut Butter - 500 grams', '150'),
-(5, 'Peanut Butter - 250 grams', '100'),
-(6, 'Marshmallow - 100 grams', '50'),
-(7, 'Peanut Brittle - 250 grams', '90');
+CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `description` varchar(300) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_logs_customer1_idx` (`customer_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 -- --------------------------------------------------------
 
@@ -109,14 +104,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `order_total` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_order_customer1_idx` (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`, `order_total`) VALUES
-(8, '2014-10-29', 'Pending', 7, NULL);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 -- --------------------------------------------------------
 
@@ -127,21 +115,13 @@ INSERT INTO `order` (`id`, `order_date`, `order_status`, `customer_id`, `order_t
 CREATE TABLE IF NOT EXISTS `order_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `item_qty` int(11) NOT NULL,
-  `order_list_total_amount` decimal(10,0) DEFAULT NULL,
   `item_order_total` decimal(10,0) NOT NULL,
   `item_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_order_list_order1_idx` (`order_id`),
   KEY `fk_order_list_item1_idx` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `order_list`
---
-
-INSERT INTO `order_list` (`id`, `item_qty`, `order_list_total_amount`, `item_order_total`, `item_id`, `order_id`) VALUES
-(6, 1, '150', '150', 4, 8);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -161,14 +141,7 @@ CREATE TABLE IF NOT EXISTS `payment_method` (
   `order_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_payment_method_order1_idx` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `payment_method`
---
-
-INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `bank_name`, `payment_terms`, `payment_per_month`, `payment_discount`, `payment_total_amount`, `order_id`) VALUES
-(4, 'CASH', 'Cash (Straight)', 'Robinsons', 0, 150, 0, '150', 8);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables
@@ -179,6 +152,12 @@ INSERT INTO `payment_method` (`id`, `payment_type`, `payment_desc`, `bank_name`,
 --
 ALTER TABLE `delivery`
   ADD CONSTRAINT `fk_delivery_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `logs`
+--
+ALTER TABLE `logs`
+  ADD CONSTRAINT `fk_logs_customer1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `order`
