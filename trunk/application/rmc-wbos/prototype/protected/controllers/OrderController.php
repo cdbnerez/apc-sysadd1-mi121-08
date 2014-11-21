@@ -79,15 +79,14 @@ class OrderController extends Controller
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
+			$model->save();
 			
 			$ol=new logs;
             $ol->customer_id= Yii::app()->user->id;
             $ol->date= date('Y-m-d H:i:s');
-            $ol->description= "New order entry created";
-			//$el->description= "created entry with containers:<a href=/d5j-ems/index.php?r=view&id=". $model->id. ">". $model->code;
+			$ol->description= "New order entry created: Order #<a href=/prototype/index.php?r=order/view&id=". $model->id . ">" . $model->id . "</a>";
 
-			 
-			if($model->save()&&$ol->save())
+			if($ol->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 	
@@ -110,6 +109,7 @@ class OrderController extends Controller
 
 		if(isset($_POST['Order']))
 		{
+			/**
 			$model->attributes=$_POST['Order'];
 			
 			$ol=new logs;
@@ -119,6 +119,18 @@ class OrderController extends Controller
 			
 			if($model->save()&&$ol->save())
 				$this->redirect(array('view','id'=>$model->id));
+			**/	
+				
+			$model->attributes=$_POST['Order'];
+			$model->save();
+			
+			$ol=new logs;
+            $ol->customer_id= Yii::app()->user->id;
+            $ol->date= date('Y-m-d H:i:s');
+			$ol->description= "Order #<a href=/prototype/index.php?r=order/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
+
+			if($ol->save())
+				$this->redirect(array('view','id'=>$model->id));	
 		}
 
 		$this->render('update',array(
