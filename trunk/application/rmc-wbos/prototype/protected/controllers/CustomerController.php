@@ -36,10 +36,11 @@ class CustomerController extends Controller
 				'users'=>array('@'),
 			),*/
 			
+			/*
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
-			),
+			),*/
 			
 			
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -157,6 +158,12 @@ class CustomerController extends Controller
 	{
 		$this->loadModel($id)->delete();
 
+		    $cl=new logs;
+            $cl->customer_id= Yii::app()->user->id;
+            $cl->date= date('Y-m-d H:i:s');
+			$cl->description= "Customer with ID#" . $id . " has been deleted";
+			$cl->save();
+		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

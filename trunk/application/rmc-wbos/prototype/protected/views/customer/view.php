@@ -25,7 +25,9 @@ $this->menu=array(
 <h1 align = center><?php echo $model->cus_company?><?php echo ' -'?> <?php echo $model->FullName?></h1>
 <br>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('customer/update', 'id'=>$model->id)); ?>
-<?php //echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('customer/delete', 'id'=>$model->id)); ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>',
+      '#', array('submit'=>array('customer/delete','id'=>$model->id),'confirm' => 'Are you sure you want to delete?')); ?>
+
 <h2>Customer Information</h2>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -46,8 +48,11 @@ $this->menu=array(
 <br>
 <h2>Order Information</h2>
 <?php foreach ($conf as $row) { ?>
+
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('order/update', 'id'=>$row->id)); ?>
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('order/delete', 'id'=>$model->id)); ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>',
+      '#', array('submit'=>array('order/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>
+		
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
