@@ -47,7 +47,9 @@ $this->menu=array(
 <h2>Order Information</h2>
 <?php foreach ($conf as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('order/update', 'id'=>$row->id)); ?>
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('order/delete', 'id'=>$model->id)); ?>
+<?php //echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>', array('order/delete', 'id'=>$row->id)); ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/reload.png" align="right"/>',
+        '#', array('submit'=>array('order/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	        'data'=>$row,
 	        'attributes'=>array(   
