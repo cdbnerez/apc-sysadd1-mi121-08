@@ -30,6 +30,7 @@ $this->menu=array(
 		'payment_desc',
 		'bank_name',
 		'payment_terms',
+		//array('label'=>'Payment Per Month', 'value'=>$model->item_qty * $model->item->item_price),
 		'payment_per_month',
 		'payment_discount',
 		'payment_total_amount',

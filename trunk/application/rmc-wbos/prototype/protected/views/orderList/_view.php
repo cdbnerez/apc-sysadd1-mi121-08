@@ -23,6 +23,7 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('item_order_total')); ?>:</b>
 	<?php echo CHtml::encode($data->item_order_total); ?>
+	
 	<br />
 	
 </div>
