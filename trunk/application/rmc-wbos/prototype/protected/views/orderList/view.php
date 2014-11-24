@@ -34,7 +34,7 @@ $this->menu=array(
 		array('label'=>'Customer Name', 'value'=>$model->item->item_desc),
 		'item_qty',
 		array('label'=>'Item Order Total', 'value'=>$model->item_qty * $model->item->item_price),
-		//'item_order_total',
+		//'item_order_total'array('label'=>'Item Order Total', 'value'=>$model->item_qty * $model->item->item_price),
 		//'order_list_total_amount',
 	),
 )); ?>
