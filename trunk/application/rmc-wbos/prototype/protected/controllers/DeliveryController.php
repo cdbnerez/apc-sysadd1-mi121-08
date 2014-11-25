@@ -79,7 +79,14 @@ class DeliveryController extends Controller
 		if(isset($_POST['Delivery']))
 		{
 			$model->attributes=$_POST['Delivery'];
-			if($model->save())
+			$model->save();
+			
+			$dv=new logs;
+            $dv->customer_id= Yii::app()->user->id;
+            $dv->date= date('Y-m-d H:i:s');
+			$dv->description= "New Delivery entry created: Delivery #<a href=/prototype/index.php?r=delivery/view&id=". $model->id . ">" . $model->id . "</a>";
+
+			if($dv->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -103,8 +110,15 @@ class DeliveryController extends Controller
 		if(isset($_POST['Delivery']))
 		{
 			$model->attributes=$_POST['Delivery'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->save();
+			
+			$dv=new logs;
+            $dv->customer_id= Yii::app()->user->id;
+            $dv->date= date('Y-m-d H:i:s');
+			$dv->description= "Delivery #<a href=/prototype/index.php?r=delivery/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
+
+			if($dv->save())
+			$this->redirect(array('view','id'=>$model->id));	
 		}
 
 		$this->render('update',array(
@@ -120,6 +134,12 @@ class DeliveryController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+			$dv=new logs;
+            $dv->customer_id= Yii::app()->user->id;
+            $dv->date= date('Y-m-d H:i:s');
+			$dv->description= "Delivery # " . $id . " has been deleted";
+			$dv->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
