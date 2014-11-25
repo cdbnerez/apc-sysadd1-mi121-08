@@ -80,13 +80,11 @@ class OrderListController extends Controller
 		if(isset($_POST['OrderList']))
 		{
 			$model->attributes=$_POST['OrderList'];
-<<<<<<< HEAD
 			
 			//for math operation
 			$model->item_order_total = $model->item_qty * $model->item->item_price;
 			
 			if($model->save())
-=======
 			$model->save();
 			
 			$old=new logs;
@@ -95,7 +93,7 @@ class OrderListController extends Controller
 			$old->description= "New orderlist entry created: Orderlist #<a href=/prototype/index.php?r=orderList/view&id=". $model->id . ">" . $model->id . "</a>";
 
 			if($old->save())
->>>>>>> 92171b3fe0f499869d9e29111f80a21eedbb13c6
+
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -119,14 +117,12 @@ class OrderListController extends Controller
 		if(isset($_POST['OrderList']))
 		{
 			$model->attributes=$_POST['OrderList'];
-<<<<<<< HEAD
-			
 			//for math operation
 			$model->item_order_total = $model->item_qty * $model->item->item_price;
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
-=======
+
 			$model->save();
 			
 			$old=new logs;
@@ -136,7 +132,7 @@ class OrderListController extends Controller
 
 			if($old->save())
 			$this->redirect(array('view','id'=>$model->id));	
->>>>>>> 92171b3fe0f499869d9e29111f80a21eedbb13c6
+
 		}
 
 		$this->render('update',array(
