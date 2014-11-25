@@ -78,7 +78,14 @@ class ItemController extends Controller
 		if(isset($_POST['Item']))
 		{
 			$model->attributes=$_POST['Item'];
-			if($model->save())
+			$model->save();
+			
+			$it=new logs;
+            $it->customer_id= Yii::app()->user->id;
+            $it->date= date('Y-m-d H:i:s');
+			$it->description= "New Item entry created: Item #<a href=/prototype/index.php?r=item/view&id=". $model->id . ">" . $model->id . "</a>";
+
+			if($it->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -102,8 +109,15 @@ class ItemController extends Controller
 		if(isset($_POST['Item']))
 		{
 			$model->attributes=$_POST['Item'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->save();
+			
+			$it=new logs;
+            $it->customer_id= Yii::app()->user->id;
+            $it->date= date('Y-m-d H:i:s');
+			$it->description= "Item #<a href=/prototype/index.php?r=item/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
+
+			if($it->save())
+			$this->redirect(array('view','id'=>$model->id));	
 		}
 
 		$this->render('update',array(
@@ -119,6 +133,12 @@ class ItemController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+			$it=new logs;
+            $it->customer_id= Yii::app()->user->id;
+            $it->date= date('Y-m-d H:i:s');
+			$it->description= "Item # " . $id . " has been deleted";
+			$it->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
