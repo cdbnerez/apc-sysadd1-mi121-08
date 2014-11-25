@@ -79,8 +79,14 @@ class PaymentMethodController extends Controller
 		if(isset($_POST['PaymentMethod']))
 		{
 			$model->attributes=$_POST['PaymentMethod'];
+			$model->save();
 			
-			if($model->save())
+			$pm=new logs;
+            $pm->customer_id= Yii::app()->user->id;
+            $pm->date= date('Y-m-d H:i:s');
+			$pm->description= "New paymentmethod entry created: PaymentMethod #<a href=/prototype/index.php?r=paymentMethod/view&id=". $model->id . ">" . $model->id . "</a>";
+
+			if($pm->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -104,8 +110,15 @@ class PaymentMethodController extends Controller
 		if(isset($_POST['PaymentMethod']))
 		{
 			$model->attributes=$_POST['PaymentMethod'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->save();
+			
+			$pm=new logs;
+            $pm->customer_id= Yii::app()->user->id;
+            $pm->date= date('Y-m-d H:i:s');
+			$pm->description= "PaymentMethod #<a href=/prototype/index.php?r=paymentMethod/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
+
+			if($pm->save())
+			$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -121,6 +134,12 @@ class PaymentMethodController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+			$pm=new logs;
+            $pm->customer_id= Yii::app()->user->id;
+            $pm->date= date('Y-m-d H:i:s');
+			$pm->description= "PaymentMethod # " . $id . " has been deleted";
+			$pm->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
