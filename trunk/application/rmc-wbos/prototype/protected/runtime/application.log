@@ -21934,12 +21934,200 @@ Stack trace:
 REQUEST_URI=/prototype/index.php?r=customer/delete&id=17
 HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=17
 ---
-2014/11/21 06:28:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php:200
+<<<<<<< HEAD
+2014/11/21 12:13:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'rmc-wbos.logs' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `logs`.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\logs\index.php (20)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\LogsController.php (128)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/11/21 12:13:13 [error] [exception.CDbException] exception 'CDbException' with message 'The table "logs" for active record class "Logs" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
 Stack trace:
-#0 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(65): OrderController->loadModel('36')
-#1 [internal function]: OrderController->actionView('36')
-#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
-#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Logs))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): CListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\logs\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\LogsController.php(128): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogsController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('logs/index')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/prototype/index.php?r=logs/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=customer/view&id=7
+---
+2014/11/21 12:16:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'rmc-wbos.logs' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `logs`.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\logs\index.php (20)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\LogsController.php (128)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/11/21 12:16:04 [error] [exception.CDbException] exception 'CDbException' with message 'The table "logs" for active record class "Logs" cannot be found in the database.' in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Logs))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1601): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#5 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): CListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#11 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\logs\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\JM\Doc...')
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\JM\Doc...', Array, true)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\JM\Doc...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#16 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\LogsController.php(128): CController->render('index', Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): LogsController->actionIndex()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('logs/index')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#29 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/prototype/index.php?r=logs/index
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/index
+---
+2014/11/23 05:08:11 [error] [exception.CException] exception 'CException' with message 'Property "Logs.order_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('order_id', '13')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderListController.php(142): CActiveRecord->__set('order_id', '13')
+#2 [internal function]: OrderListController->actionDelete('4')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderListController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderListController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('orderList/delet...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/prototype/index.php?ajax=order-list-grid&id=4&r=orderList%2Fdelete
+HTTP_REFERER=http://localhost/prototype/index.php?r=orderList/admin
+---
+2014/11/23 05:08:45 [error] [exception.CException] exception 'CException' with message 'Property "Logs.order_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('order_id', '13')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderListController.php(86): CActiveRecord->__set('order_id', '13')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): OrderListController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('OrderList/creat...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/prototype/index.php?r=OrderList/create&order_id=3
+HTTP_REFERER=http://localhost/prototype/index.php?r=OrderList/create&order_id=3
+---
+2014/11/23 05:09:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`id`=3.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (150)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/11/23 05:09:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`id`=3' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('3')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(150): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('3')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/prototype/index.php?ajax=order-grid&id=3&r=order%2Fdelete
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/admin
+---
+2014/11/23 05:09:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`id`=3.
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php (150)
+in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php (13)
+2014/11/23 05:09:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`rmc-wbos`.`order_list`, CONSTRAINT `fk_order_list_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `order` WHERE `order`.`id`=3' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1802): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1222): CActiveRecord->deleteByPk('3')
+#2 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(150): CActiveRecord->delete()
+#3 [internal function]: OrderController->actionDelete('3')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/prototype/index.php?ajax=order-grid&id=3&r=order%2Fdelete
+HTTP_REFERER=http://localhost/prototype/index.php?r=order/admin
+---
+2014/11/25 05:06:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('')
+#1 [internal function]: PaymentMethodController->actionView('')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -21949,6 +22137,172 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=
+HTTP_REFERER=http://localhost/prototype/index.php?r=PaymentMethod/create&order_id=1
+---
+2014/11/25 05:06:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('')
+#1 [internal function]: PaymentMethodController->actionView('')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+=======
+2014/11/21 06:28:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php:200
+Stack trace:
+#0 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\OrderController.php(65): OrderController->loadModel('36')
+#1 [internal function]: OrderController->actionView('36')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(OrderController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(OrderController), Object(ReflectionMethod), Array)
+>>>>>>> abbe32800312679b0749081f8b4d3949cae8fb94
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+<<<<<<< HEAD
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=
+HTTP_REFERER=http://localhost/prototype/index.php?r=PaymentMethod/create&order_id=1
+---
+2014/11/25 05:08:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('')
+#1 [internal function]: PaymentMethodController->actionView('')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=
+HTTP_REFERER=http://localhost/prototype/index.php?r=PaymentMethod/create&order_id=1
+---
+2014/11/25 05:08:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('')
+#1 [internal function]: PaymentMethodController->actionView('')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=
+HTTP_REFERER=http://localhost/prototype/index.php?r=PaymentMethod/create&order_id=1
+---
+2014/11/25 05:10:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('1')
+#1 [internal function]: PaymentMethodController->actionView('1')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=1
+---
+2014/11/25 05:10:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('2')
+#1 [internal function]: PaymentMethodController->actionView('2')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=2
+---
+2014/11/25 05:10:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php:186
+Stack trace:
+#0 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\PaymentMethodController.php(63): PaymentMethodController->loadModel('3')
+#1 [internal function]: PaymentMethodController->actionView('3')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PaymentMethodController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PaymentMethodController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paymentMethod/v...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/prototype/index.php?r=paymentMethod/view&id=3
+---
+2014/11/25 05:22:47 [error] [exception.CException] exception 'CException' with message 'Property "Logs.item_id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('item_id', '13')
+#1 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\controllers\ItemController.php(84): CActiveRecord->__set('item_id', '13')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ItemController->actionCreate()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('item/create')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\Users\JM\Documents\sysadd1-mi121\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/prototype/index.php?r=item/create
+HTTP_REFERER=http://localhost/prototype/index.php?r=item/create
+=======
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('order/view')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\index.php(13): CApplication->run()
@@ -22028,6 +22382,7 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/prototype/index.php?r=order/view&id=3
 HTTP_REFERER=http://localhost/prototype/index.php?r=order/create&customer_id=13
+>>>>>>> abbe32800312679b0749081f8b4d3949cae8fb94
 ---
 2014/11/23 15:36:19 [error] [php] Undefined variable: data (C:\Users\cd\Documents\apc-sysadd1-mi121-08\apc-sysadd1-mi121-08\trunk\application\rmc-wbos\prototype\protected\views\orderList\view.php:36)
 Stack trace:

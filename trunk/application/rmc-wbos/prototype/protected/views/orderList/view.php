@@ -33,8 +33,16 @@ $this->menu=array(
 		'order_id',
 		array('label'=>'Customer Name', 'value'=>$model->item->item_desc),
 		'item_qty',
+<<<<<<< HEAD
+		array('label'=>'Item Order Total', 'value'=>$model->item_qty*200),
+=======
 		array('label'=>'Item Order Total', 'value'=>$model->item_qty * $model->item->item_price),
+<<<<<<< HEAD
 		//'item_order_total'array('label'=>'Item Order Total', 'value'=>$model->item_qty * $model->item->item_price),
+=======
+		//'item_order_total',
+>>>>>>> abbe32800312679b0749081f8b4d3949cae8fb94
+>>>>>>> 92171b3fe0f499869d9e29111f80a21eedbb13c6
 		//'order_list_total_amount',
 	),
 )); ?>

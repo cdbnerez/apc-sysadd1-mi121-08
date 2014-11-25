@@ -75,15 +75,27 @@ class OrderListController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
 
 		if(isset($_POST['OrderList']))
 		{
 			$model->attributes=$_POST['OrderList'];
+<<<<<<< HEAD
 			
 			//for math operation
 			$model->item_order_total = $model->item_qty * $model->item->item_price;
 			
 			if($model->save())
+=======
+			$model->save();
+			
+			$old=new logs;
+            $old->customer_id= Yii::app()->user->id;
+            $old->date= date('Y-m-d H:i:s');
+			$old->description= "New orderlist entry created: Orderlist #<a href=/prototype/index.php?r=orderList/view&id=". $model->id . ">" . $model->id . "</a>";
+
+			if($old->save())
+>>>>>>> 92171b3fe0f499869d9e29111f80a21eedbb13c6
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -107,12 +119,24 @@ class OrderListController extends Controller
 		if(isset($_POST['OrderList']))
 		{
 			$model->attributes=$_POST['OrderList'];
+<<<<<<< HEAD
 			
 			//for math operation
 			$model->item_order_total = $model->item_qty * $model->item->item_price;
 			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
+=======
+			$model->save();
+			
+			$old=new logs;
+            $old->customer_id= Yii::app()->user->id;
+            $old->date= date('Y-m-d H:i:s');
+			$old->description= "Orderlist #<a href=/prototype/index.php?r=orderList/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
+
+			if($old->save())
+			$this->redirect(array('view','id'=>$model->id));	
+>>>>>>> 92171b3fe0f499869d9e29111f80a21eedbb13c6
 		}
 
 		$this->render('update',array(
@@ -128,6 +152,12 @@ class OrderListController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+			$old=new logs;
+            $old->customer_id= Yii::app()->user->id;
+            $old->date= date('Y-m-d H:i:s');
+			$old->description= "Orderlist # " . $id . " has been deleted";
+			$old->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
