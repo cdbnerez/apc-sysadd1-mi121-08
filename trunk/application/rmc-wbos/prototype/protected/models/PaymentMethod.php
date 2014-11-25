@@ -35,9 +35,9 @@ class PaymentMethod extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('payment_type, payment_desc, bank_name, payment_terms, payment_per_month, payment_discount, payment_total_amount, order_id', 'required'),
+			array('payment_type, payment_desc, bank_name, payment_terms, payment_discount, order_id', 'required'),
 			array('payment_terms, payment_per_month, payment_discount, order_id', 'numerical', 'integerOnly'=>true),
-			array('payment_type', 'length', 'max'=>5),
+			array('payment_type', 'length', 'max'=>10),
 			array('payment_desc, bank_name', 'length', 'max'=>45),
 			array('payment_total_amount', 'length', 'max'=>10),
 			// The following rule is used by search().

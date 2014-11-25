@@ -60,16 +60,10 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_terms'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_terms',array(0=>"Straight Payment", 30=>"30 Days", 60=>"60 Days", 90 => "60 Days")
+		<?php echo $form->dropDownList($model,'payment_terms',array(1=>"Straight Payment", 30=>"30 Days", 60=>"60 Days", 90 => "60 Days")
 		,array('empty'=>'Select Bank Name')); ?>
 		
 		<?php echo $form->error($model,'payment_terms'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'payment_per_month'); ?>
-		<?php echo $form->textField($model,'payment_per_month'); ?>
-		<?php echo $form->error($model,'payment_per_month'); ?>
 	</div>
 
 	<div class="row">
@@ -77,13 +71,21 @@
 		<?php echo $form->textField($model,'payment_discount'); ?>
 		<?php echo $form->error($model,'payment_discount'); ?>
 	</div>
+	
+	<?php /**
+	<div class="row">
+		<?php echo $form->labelEx($model,'payment_per_month'); ?>
+		<?php echo $form->textField($model,'payment_per_month'); ?>
+		<?php echo $form->error($model,'payment_per_month'); ?>
+	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_total_amount'); ?>
 		<?php echo $form->textField($model,'payment_total_amount',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'payment_total_amount'); ?>
 	</div>
-
+    **/ ?>
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

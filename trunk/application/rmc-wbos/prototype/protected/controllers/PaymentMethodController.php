@@ -79,6 +79,11 @@ class PaymentMethodController extends Controller
 		if(isset($_POST['PaymentMethod']))
 		{
 			$model->attributes=$_POST['PaymentMethod'];
+			
+			//for math operation
+			$model->payment_per_month = $model->order->order_total / $model->payment_terms;
+			$model->payment_total_amount = $model->order->order_total;
+			
 			$model->save();
 			
 			$pm=new logs;
