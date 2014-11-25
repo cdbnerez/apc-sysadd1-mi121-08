@@ -96,4 +96,27 @@ $this->menu=array(
 			),
 	)); ?>
 <br>
+
+
 <?php }} ?>
+
+<?php
+	
+	$total = Yii::app()->db->createCommand("SELECT SUM(`item_order_total`) AS `total` FROM `order_list` where `order_id` = '$model->id'")->queryAll();
+
+
+
+if(isset($total[0]['total'])){
+
+                echo  '<b>';
+                echo '<span style="color:#5377E3;">'.'Total:'. '</b> <span>'. ' Php '.($total[0]['total']). '</span>';
+				
+				$ordertotal =($total[0]['total']);
+				$sql1 =	"UPDATE  `rmc-wbos`.`order` SET  `order_total` =  '$ordertotal' WHERE  `order`.`id` = '$model->id'";
+                $dataReader =  Yii::app()->db->createCommand($sql1)->query();
+                }else{
+        echo '';
+                }
+
+	
+?>

@@ -196,6 +196,10 @@ class OrderController extends Controller
 	public function loadModel($id)
 	{
 		$model=Order::model()->findByPk($id);
+		
+		//for math operation
+		//$model->order_total = $model->orderList->item_order_total;
+			
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

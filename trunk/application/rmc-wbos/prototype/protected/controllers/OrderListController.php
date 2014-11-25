@@ -107,6 +107,10 @@ class OrderListController extends Controller
 		if(isset($_POST['OrderList']))
 		{
 			$model->attributes=$_POST['OrderList'];
+			
+			//for math operation
+			$model->item_order_total = $model->item_qty * $model->item->item_price;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
