@@ -94,7 +94,7 @@ class OrderListController extends Controller
 
 			if($old->save())
 
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('order/view','id'=>$model->order->id));
 		}
 
 		$this->render('create',array(

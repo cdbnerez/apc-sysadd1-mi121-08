@@ -50,11 +50,17 @@
 	
 	</div>
 	
+	
 	<div class="row">
+	<?php 
+	/**
         <?php echo $form->labelEx($model,'order_total'); ?>
         <?php echo $form->textField($model,'order_total',array('size'=>10,'maxlength'=>10)); ?>
         <?php echo $form->error($model,'order_total'); ?>
-    </div>
+    */
+	?>
+	</div>
+	
 	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

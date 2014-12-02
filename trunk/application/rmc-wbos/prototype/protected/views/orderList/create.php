@@ -8,8 +8,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List OrderList', 'url'=>array('index')),
-	array('label'=>'Manage OrderList', 'url'=>array('admin')),
+	//array('label'=>'List OrderList', 'url'=>array('index')),
+	//array('label'=>'Manage OrderList', 'url'=>array('admin')),
+	array('label'=>'Cancel Order List Entry', 'url'=>array('order/view','id'=>$model->order->id))
 );
 ?>
 
