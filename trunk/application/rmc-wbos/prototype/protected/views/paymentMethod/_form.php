@@ -86,6 +86,12 @@
 	</div>
     **/ ?>
 	
+	<div class="row">
+	<?php echo $form->labelEx($model,'payment_total_amount'); ?>	
+	<?php echo $form->labelEx($model,$model->order->order_total); ?>		
+	<?php echo $form->error($model,'payment_total_amount'); ?>
+	</div>
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
