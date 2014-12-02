@@ -19,8 +19,22 @@ $this->menu=array(
 	array('label'=>'Delete Order', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Order', 'url'=>array('admin')),
 **/	
-	array('label'=>'Create Order List for Order ID# ' .$model->id , 'url'=>array('OrderList/create','order_id'=>$model->id)),
+	array('label'=>'Create Order List Entry for Order ID# ' .$model->id , 'url'=>array('OrderList/create','order_id'=>$model->id)),
+	array('label'=>'Create Payment Method Entry for Order ID# ' .$model->id , 'url'=>array('paymentMethod/create','order_id'=>$model->id)),
+
+	
 );
+?>
+
+<?php
+/**
+if(isset($_GET['total'])){
+       array('label'=>'Create Payment Method Entry for Order ID# ' .$model->id , 'url'=>array('paymentMethod/create','order_id'=>$model->id));
+	}
+	else {
+	   echo '';
+	}
+*/
 ?>
 
 <h1>Order #<?php echo $model->id; ?> Information</h1>

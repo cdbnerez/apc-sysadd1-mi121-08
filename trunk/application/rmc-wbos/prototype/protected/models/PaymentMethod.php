@@ -71,7 +71,7 @@ class PaymentMethod extends CActiveRecord
 			'payment_terms' => 'Payment Terms',
 			'payment_per_month' => 'Payment Per Month',
 			'payment_discount' => 'Payment Discount',
-			'payment_total_amount' => 'Payment Total Amount',
+			'payment_total_amount' => 'Total Amount Due',
 			'order_id' => 'Order ID#',
 		);
 	}

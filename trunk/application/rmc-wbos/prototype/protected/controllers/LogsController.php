@@ -120,13 +120,27 @@ class LogsController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Logs');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+	 public function actionIndex()
+    {
+                if(Yii::app()->user->isGuest)
+				{ 
+                     $this->redirect(array('/site/login'));
+                }
+				else
+				{ 
+                     $criteria=new CDbCriteria(array('order'=> 'date DESC'));
+                     $dataProvider=new CActiveDataProvider('Logs', array (
+                        'pagination'=> array(
+                                      'pageSize'=>10,
+                                      ),
+                                      'criteria'=>$criteria,
+                        ));
+						
+                        $this->render('index',array(
+                                'dataProvider'=>$dataProvider,                                
+                        ));
+                }
+    }
 
 	/**
 	 * Manages all models.
