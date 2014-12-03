@@ -46,6 +46,7 @@ if(isset($_GET['total'])){
 		'order_date',
 		'order_status',
 		array('label'=>'Customer Name', 'value'=>$model->customer->FullName),
+		'customer_id'
 		//array('label'=>'Order Total Amount', 'value'=>$model->orderList->item_order_total),
 		//'order_total',
 	),
