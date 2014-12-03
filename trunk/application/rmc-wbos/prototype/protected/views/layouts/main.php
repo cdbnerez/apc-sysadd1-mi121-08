@@ -32,6 +32,7 @@ if ($detect->isMobile() ) {
 	<div id="mainmenu">
 		<ul id="menu">
 	<h1 id = "tabs">
+	<?php if(Yii::app()->user->isGuest || Yii::app()->user->type==="Sytem Admin"){ ?>
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
@@ -40,9 +41,9 @@ if ($detect->isMobile() ) {
 				
 				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/index')),
 				array('label'=>'Order', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/order/index')),
-				array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
-				array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
-				array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
+				//array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
+				//array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
+				//array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
 				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
 				array('label'=>'Logs', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/logs/index')),
 				
@@ -51,7 +52,38 @@ if ($detect->isMobile() ) {
 				
 
 			),
-		)); ?></h1></ul>
+		)); ?>
+		
+		<?php }else{ ?>
+		
+		<?php 
+		$id = Yii::app()->user->id;
+		$customerID = Order::model()->findAll('customer_id = :a', array(':a'=>$id));
+		$data = CHtml::listData($customerID,'id','id');
+		foreach($data as $value=>$name){
+			$newID=$value;
+		}
+		$this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+				
+				array('label'=>'Customer', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/customer/view','id'=>Yii::app()->user->id)),
+				array('label'=>'Order', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/order/view','id'=>$newID)),
+				//array('label'=>'Order List', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/orderList/index')),
+				//array('label'=>'Payment Method', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/paymentMethod/index')),
+				//array('label'=>'Delivery', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/delivery/index')),
+				array('label'=>'Item', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/item/index')),
+				array('label'=>'Logs', 'visible'=>!Yii::app()->user->isGuest, 'url'=>array('/logs/index')),
+				
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); ?>
+		<?php }?>
+		
+		</h1></ul>
 		
 		</div><!-- mainmenu -->
 		
