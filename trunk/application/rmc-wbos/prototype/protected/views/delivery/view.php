@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Delete Delivery', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Delivery', 'url'=>array('admin')),
 */
-    array('label'=>'Proceed to Main Menu', 'url'=>array('site/index')),
+    array('label'=>'Proceed to Main Menu', 'url'=>array('customer/index')),
 );
 ?>
 

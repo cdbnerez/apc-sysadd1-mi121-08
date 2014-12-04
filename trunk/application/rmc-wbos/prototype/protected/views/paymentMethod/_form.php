@@ -60,7 +60,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'payment_terms'); ?>
 		
-		<?php echo $form->dropDownList($model,'payment_terms',array(1=>"Straight Payment", 30=>"30 Days", 60=>"60 Days", 90 => "60 Days")
+		<?php echo $form->dropDownList($model,'payment_terms',array(1=>"Straight Payment", 30=>"30 Days", 60=>"60 Days", 90 => "90 Days")
 		,array('empty'=>'Select Bank Name')); ?>
 		
 		<?php echo $form->error($model,'payment_terms'); ?>
