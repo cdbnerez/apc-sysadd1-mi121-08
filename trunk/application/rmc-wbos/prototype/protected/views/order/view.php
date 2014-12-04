@@ -125,6 +125,8 @@ if(isset($total[0]['total'])){
 				$ordertotal =($total[0]['total']);
 				$sql1 =	"UPDATE  `rmc-wbos`.`order` SET  `order_total` =  '$ordertotal' WHERE  `order`.`id` = '$model->id'";
                 $dataReader =  Yii::app()->db->createCommand($sql1)->query();
+				
+				
                 }
 				else
 				{
