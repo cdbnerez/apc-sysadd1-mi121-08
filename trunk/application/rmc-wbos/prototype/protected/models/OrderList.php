@@ -89,9 +89,16 @@ class OrderList extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('item_qty',$this->item_qty);
-		/*$criteria->compare('order_list_total_amount',$this->order_list_total_amount,true);*/
+		//$criteria->compare('order_list_total_amount',$this->order_list_total_amount,true);
 		$criteria->compare('item_order_total',$this->item_order_total,true);
-		$criteria->compare('item_id',$this->item_id);
+		
+		$criteria->compare('t.id',$this->id);
+        $criteria->compare('item.item_desc',$this->item_id, true);
+        
+		$criteria->with=array('item');
+		
+		//$criteria->compare('item_id',$this->item_id);
+		
 		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(

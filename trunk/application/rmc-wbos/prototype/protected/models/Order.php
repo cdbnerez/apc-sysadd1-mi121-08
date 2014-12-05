@@ -98,9 +98,10 @@ class Order extends CActiveRecord
         $criteria->compare('t.id',$this->id);
         $criteria->compare('customer.cus_lname',$this->customer_id, true);
 		
-		 $criteria->compare('t.id',$this->id);
+		$criteria->compare('t.id',$this->id);
         $criteria->compare('customer.cus_fname',$this->customer_id, true);
-        $criteria->with=array('customer');
+        
+		$criteria->with=array('customer');
         
 		$criteria->compare('order_total',$this->order_total,true);
 

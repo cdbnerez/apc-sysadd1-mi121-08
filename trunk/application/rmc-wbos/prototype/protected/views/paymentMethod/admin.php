@@ -51,10 +51,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'bank_name',
 		'payment_terms',
 		'payment_per_month',
+		'order_id',
 		/*
 		'payment_discount',
 		'payment_total_amount',
-		'order_id',
 		*/
 		array(
 			'class'=>'CButtonColumn',
