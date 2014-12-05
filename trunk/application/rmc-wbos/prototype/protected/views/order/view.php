@@ -93,28 +93,6 @@ if(isset($_GET['total'])){
 <br>
 <?php }} ?>
 
-<?php $conf= Delivery::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Delivery Information</h2>
-<?php foreach ($conf as $row) { ?>
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('delivery/update', 'id'=>$row->id)); ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-	        'data'=>$row,
-	        'attributes'=>array(   	
-			    'del_add',
-			    'del_city',
-			    'del_country',
-			    'del_zip',
-			    //'customer_id' => 'Customer Name'
-			    //array('label'=>'Person', 'value'=>$model->person->FullName),
-			),
-	)); ?>
-<br>
-
-
-<?php }} ?>
-
 <?php
 	
 $total = Yii::app()->db->createCommand("SELECT SUM(`item_order_total`) AS `total` FROM `order_list` where `order_id` = '$model->id'")->queryAll();
@@ -136,3 +114,25 @@ if(isset($total[0]['total'])){
 
 	
 ?>
+
+<?php $conf= Delivery::model()->findAll('order_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Delivery Information</h2>
+<?php foreach ($conf as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', array('delivery/update', 'id'=>$row->id)); ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	        'data'=>$row,
+	        'attributes'=>array(   	
+			    'del_add',
+			    'del_city',
+			    'del_country',
+			    'del_zip',
+			    //'customer_id' => 'Customer Name'
+			    //array('label'=>'Person', 'value'=>$model->person->FullName),
+			),
+	)); ?>
+<br>
+
+
+<?php }} ?>
