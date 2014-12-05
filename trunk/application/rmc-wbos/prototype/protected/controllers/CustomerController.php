@@ -103,7 +103,7 @@ class CustomerController extends Controller
 			$model->attributes=$_POST['Customer'];
 			$model->save();
 			
-			$cl=new logs;
+			$cl=new Logs;
             $cl->customer_id= Yii::app()->user->id;
             $cl->date= date('Y-m-d H:i:s');
 			$cl->description= "Customer <a href=/prototype/index.php?r=customer/view&id=". $model->id . ">" . $model->FullName . "</a> has been created ";
@@ -135,7 +135,7 @@ class CustomerController extends Controller
 	        $model->attributes=$_POST['Customer'];
 			$model->save();
 			
-			$cl=new logs;
+			$cl=new Logs;
             $cl->customer_id= Yii::app()->user->id;
             $cl->date= date('Y-m-d H:i:s');
 			$cl->description= "Information for Customer <a href=/prototype/index.php?r=customer/view&id=". $model->id . ">" . $model->FullName . "</a> has been updated ";
@@ -158,7 +158,7 @@ class CustomerController extends Controller
 	{
 		$this->loadModel($id)->delete();
 
-		    $cl=new logs;
+		    $cl=new Logs;
             $cl->customer_id= Yii::app()->user->id;
             $cl->date= date('Y-m-d H:i:s');
 			$cl->description= "Customer with ID#" . $id . " has been deleted";

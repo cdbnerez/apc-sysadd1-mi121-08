@@ -86,7 +86,7 @@ class PaymentMethodController extends Controller
 			
 			$model->save();
 			
-			$pm=new logs;
+			$pm=new Logs;
             $pm->customer_id= Yii::app()->user->id;
             $pm->date= date('Y-m-d H:i:s');
 			$pm->description= "New paymentmethod entry created: PaymentMethod #<a href=/prototype/index.php?r=paymentMethod/view&id=". $model->id . ">" . $model->id . "</a>";
@@ -117,7 +117,7 @@ class PaymentMethodController extends Controller
 			$model->attributes=$_POST['PaymentMethod'];
 			$model->save();
 			
-			$pm=new logs;
+			$pm=new Logs;
             $pm->customer_id= Yii::app()->user->id;
             $pm->date= date('Y-m-d H:i:s');
 			$pm->description= "PaymentMethod #<a href=/prototype/index.php?r=paymentMethod/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
@@ -140,7 +140,7 @@ class PaymentMethodController extends Controller
 	{
 		$this->loadModel($id)->delete();
 		
-			$pm=new logs;
+			$pm=new Logs;
             $pm->customer_id= Yii::app()->user->id;
             $pm->date= date('Y-m-d H:i:s');
 			$pm->description= "PaymentMethod # " . $id . " has been deleted";

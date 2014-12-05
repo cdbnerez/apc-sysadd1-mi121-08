@@ -81,7 +81,7 @@ class DeliveryController extends Controller
 			$model->attributes=$_POST['Delivery'];
 			$model->save();
 			
-			$dv=new logs;
+			$dv=new Logs;
             $dv->customer_id= Yii::app()->user->id;
             $dv->date= date('Y-m-d H:i:s');
 			$dv->description= "New Delivery entry created: Delivery #<a href=/prototype/index.php?r=delivery/view&id=". $model->id . ">" . $model->id . "</a>";
@@ -112,7 +112,7 @@ class DeliveryController extends Controller
 			$model->attributes=$_POST['Delivery'];
 			$model->save();
 			
-			$dv=new logs;
+			$dv=new Logs;
             $dv->customer_id= Yii::app()->user->id;
             $dv->date= date('Y-m-d H:i:s');
 			$dv->description= "Delivery #<a href=/prototype/index.php?r=delivery/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
@@ -135,7 +135,7 @@ class DeliveryController extends Controller
 	{
 		$this->loadModel($id)->delete();
 		
-			$dv=new logs;
+			$dv=new Logs;
             $dv->customer_id= Yii::app()->user->id;
             $dv->date= date('Y-m-d H:i:s');
 			$dv->description= "Delivery # " . $id . " has been deleted";

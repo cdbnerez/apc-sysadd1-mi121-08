@@ -80,7 +80,7 @@ class ItemController extends Controller
 			$model->attributes=$_POST['Item'];
 			$model->save();
 			
-			$it=new logs;
+			$it=new Logs;
             $it->customer_id= Yii::app()->user->id;
             $it->date= date('Y-m-d H:i:s');
 			$it->description= "New Item entry created: Item #<a href=/prototype/index.php?r=item/view&id=". $model->id . ">" . $model->id . "</a>";
@@ -111,7 +111,7 @@ class ItemController extends Controller
 			$model->attributes=$_POST['Item'];
 			$model->save();
 			
-			$it=new logs;
+			$it=new Logs;
             $it->customer_id= Yii::app()->user->id;
             $it->date= date('Y-m-d H:i:s');
 			$it->description= "Item #<a href=/prototype/index.php?r=item/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
@@ -134,7 +134,7 @@ class ItemController extends Controller
 	{
 		$this->loadModel($id)->delete();
 		
-			$it=new logs;
+			$it=new Logs;
             $it->customer_id= Yii::app()->user->id;
             $it->date= date('Y-m-d H:i:s');
 			$it->description= "Item # " . $id . " has been deleted";

@@ -87,7 +87,7 @@ class OrderListController extends Controller
 			if($model->save())
 			$model->save();
 			
-			$old=new logs;
+			$old=new Logs;
             $old->customer_id= Yii::app()->user->id;
             $old->date= date('Y-m-d H:i:s');
 			$old->description= "New orderlist entry created: Orderlist #<a href=/prototype/index.php?r=orderList/view&id=". $model->id . ">" . $model->id . "</a>";
@@ -125,7 +125,7 @@ class OrderListController extends Controller
 
 			$model->save();
 			
-			$old=new logs;
+			$old=new Logs;
             $old->customer_id= Yii::app()->user->id;
             $old->date= date('Y-m-d H:i:s');
 			$old->description= "Orderlist #<a href=/prototype/index.php?r=orderList/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
@@ -149,7 +149,7 @@ class OrderListController extends Controller
 	{
 		$this->loadModel($id)->delete();
 		
-			$old=new logs;
+			$old=new Logs;
             $old->customer_id= Yii::app()->user->id;
             $old->date= date('Y-m-d H:i:s');
 			$old->description= "Orderlist # " . $id . " has been deleted";
