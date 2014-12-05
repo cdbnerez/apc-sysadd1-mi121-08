@@ -83,7 +83,7 @@ class OrderController extends Controller
                         $model->attributes=$_POST['Order'];
                         $model->save();
                         
-                        $ol=new logs;
+                        $ol=new Logs;
                         $ol->customer_id= Yii::app()->user->id;
                         $ol->date= date('Y-m-d H:i:s');
                         $ol->description= "New order entry created: Order #<a href=/prototype/index.php?r=order/view&id=". $model->id . ">" . $model->id . "</a>";
@@ -126,7 +126,7 @@ class OrderController extends Controller
                         $model->attributes=$_POST['Order'];
                         $model->save();
                         
-                        $ol=new logs;
+                        $ol=new Logs;
                         $ol->customer_id= Yii::app()->user->id;
                         $ol->date= date('Y-m-d H:i:s');
                         $ol->description= "Order #<a href=/prototype/index.php?r=order/view&id=". $model->id . ">" . $model->id . "</a> has been updated";
@@ -149,7 +149,7 @@ class OrderController extends Controller
         {
                 $this->loadModel($id)->delete();
                 //--------------------
-                        $ol=new logs;
+                        $ol=new Logs;
                         $ol->customer_id= Yii::app()->user->id;
                         $ol->date= date('Y-m-d H:i:s');
                         $ol->description= "Order # " . $id . " has been deleted";
