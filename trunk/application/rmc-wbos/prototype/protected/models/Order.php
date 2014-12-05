@@ -93,9 +93,19 @@ class Order extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('order_date',$this->order_date,true);
 		$criteria->compare('order_status',$this->order_status,true);
-		$criteria->compare('customer_id',$this->customer_id);
+		//$criteria->compare('customer_id',$this->customer_id);
+		
+        $criteria->compare('t.id',$this->id);
+        $criteria->compare('customer.cus_lname',$this->customer_id, true);
+		
+		 $criteria->compare('t.id',$this->id);
+        $criteria->compare('customer.cus_fname',$this->customer_id, true);
+        $criteria->with=array('customer');
+        
 		$criteria->compare('order_total',$this->order_total,true);
 
+		
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

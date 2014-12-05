@@ -48,7 +48,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'order_date',
 		'order_status',
-		'customer_id',
+		//'customer_id',
+		 array('name'=>'customer_id', 'header'=>'Customer Last Name ', 'value'=>'$data->customer->cus_lname'),
+		 array('name'=>'customer_id', 'header'=>'Customer First Name ', 'value'=>'$data->customer->cus_fname'),
 		'order_total',
 		array(
 			'class'=>'CButtonColumn',
